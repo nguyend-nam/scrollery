@@ -37,11 +37,7 @@ export default function Home() {
         <div className="rounded-3xl shadow-md h-full bg-[#B9EDDD]" />
       </RotateCardGroup>
 
-      <LinearlyScaledCardGroup
-        className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]"
-        // bottomLayer={<span>Animate on Scroll</span>}
-        // bottomLayerClassName="text-[40px] md:text-[100px] text-[#577D86] font-bold"
-      >
+      <LinearlyScaledCardGroup className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
         <div className="rounded-3xl shadow-md h-full bg-[#569DAA]" />
       </LinearlyScaledCardGroup>
     </Layout>

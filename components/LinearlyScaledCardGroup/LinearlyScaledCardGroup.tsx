@@ -1,10 +1,12 @@
+import { CSSProperties } from "react";
 import { createRef, ReactNode, useEffect, useState } from "react";
-import cx from "classnames";
 import { LinearlyScaledCard } from "./LinearlyScaledCard";
 
 interface Props {
   children: ReactNode;
+  style?: CSSProperties;
   className?: string;
+  itemStyle?: CSSProperties;
   itemClassName?: string;
   isSticky?: boolean;
   from?: number;
@@ -13,7 +15,9 @@ interface Props {
 
 export const LinearlyScaledCardGroup = ({
   children,
+  style,
   className,
+  itemStyle,
   itemClassName,
   isSticky = true,
   from = 100,
@@ -35,13 +39,14 @@ export const LinearlyScaledCardGroup = ({
 
   return (
     <div
-      className={cx("relative", className)}
-      style={{ height: containerHeight }}
+      style={{ position: "relative", height: containerHeight, ...style }}
+      className={className}
       ref={ref}
     >
       <LinearlyScaledCard
-        className={itemClassName}
+        style={itemStyle}
         isSticky={isSticky}
+        className={itemClassName}
         headerRef={ref}
       >
         {children}

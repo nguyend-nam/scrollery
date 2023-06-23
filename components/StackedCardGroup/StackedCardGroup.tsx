@@ -1,16 +1,20 @@
+import { CSSProperties } from "react";
 import { Children, useState, useRef, ReactNode } from "react";
-import cx from "classnames";
 import { StackedCard } from "./StackedCard";
 
 interface Props {
   children: ReactNode;
+  style?: CSSProperties;
   className?: string;
+  itemStyle?: CSSProperties;
   itemClassName?: string;
 }
 
 export const StackedCardGroup = ({
   children,
+  style,
   className,
+  itemStyle,
   itemClassName,
 }: Props) => {
   const childrenArray = Children.toArray(children);
@@ -19,7 +23,7 @@ export const StackedCardGroup = ({
   const elRefs = useRef<any[]>(new Array((childrenArray || []).length));
 
   return (
-    <div className={cx("relative", className)}>
+    <div style={{ position: "relative", ...style }} className={className}>
       {(childrenArray || []).map((c, i) => (
         <StackedCard
           key={i}
@@ -27,6 +31,7 @@ export const StackedCardGroup = ({
           elRefs={elRefs}
           visibleAmount={visibleAmount}
           setVisibleAmount={setVisibleAmount}
+          style={itemStyle}
           className={itemClassName}
         >
           {c}

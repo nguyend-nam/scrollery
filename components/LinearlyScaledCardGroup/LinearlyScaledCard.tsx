@@ -1,8 +1,9 @@
 import { useEffect, createRef, useState, RefObject, ReactNode } from "react";
-import cx from "classnames";
+import { CSSProperties } from "react";
 
 interface Props {
   children: ReactNode;
+  style?: CSSProperties;
   className?: string;
   isSticky?: boolean;
   from?: number;
@@ -12,6 +13,7 @@ interface Props {
 
 export const LinearlyScaledCard = ({
   children,
+  style,
   className,
   isSticky = true,
   headerRef,
@@ -62,22 +64,18 @@ export const LinearlyScaledCard = ({
 
   return (
     <div
-      className={cx(
-        `w-[80%] h-[60vw] md:w-[300px] md:h-[300px]`,
-        {
-          sticky: isSticky,
-        },
-        className
-      )}
       style={{
+        position: isSticky ? "sticky" : "static",
         height: renderHeight,
         width: renderHeight,
         maxWidth: "100%",
         top: (viewHeight - renderHeight) / 2,
+        ...style,
         // transform: `scale(${renderHeight / from})`,
         // transition: '0.1s',
       }}
       ref={ref}
+      className={className}
     >
       {children}
     </div>

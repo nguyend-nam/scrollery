@@ -1,10 +1,12 @@
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
+import { useIsMdScreenSize } from "../../hooks/useIsMdScreenSize";
 
 export const Layout = ({ children }: { children: ReactNode }) => {
   const [hydrated, setHydrated] = useState(false);
   const { push } = useRouter();
+  const isMd = useIsMdScreenSize();
 
   useEffect(() => {
     setHydrated(true);
@@ -15,20 +17,52 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <div className="h-full min-h-screen bg-gray-100">
-      <main className="w-full">
-        <div className="px-4 py-4 md:px-8 md:py-8">
-          <div className="flex space-y-6 flex-col max-w-7xl w-full mx-auto">
+    <div
+      style={{
+        height: "100%",
+        minHeight: "100vh",
+        backgroundColor: "rgb(243 244 246 / var(--tw-bg-opacity))",
+      }}
+    >
+      <main style={{ width: "100%" }}>
+        <div
+          style={{
+            padding: isMd ? 32 : 16,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: 24,
+              flexDirection: "column",
+              width: "100%",
+              margin: "0 auto",
+            }}
+          >
             {children}
           </div>
         </div>
       </main>
-      <footer className="bg-[#B9EDDD] p-2.5 flex justify-center">
+      <footer
+        style={{
+          backgroundColor: "#B9EDDD",
+          padding: 10,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <Link
           href="https://github.com/nguyend-nam"
           target="_blank"
           rel="noreferrer"
-          className="flex justify-center items-center gap-2 font-medium text-[#577D86]"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 8,
+            fontWeight: 500,
+            color: "#577D86",
+          }}
         >
           Nam Nguyen Dinh
         </Link>

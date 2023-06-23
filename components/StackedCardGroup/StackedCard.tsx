@@ -6,11 +6,12 @@ import {
   MutableRefObject,
   ReactNode,
 } from "react";
-import cx from "classnames";
 import { useIsOnScreen } from "../../hooks/useIsOnScreen";
+import { CSSProperties } from "react";
 
 interface Props {
   children: ReactNode;
+  style?: CSSProperties;
   className?: string;
   index: number;
   visibleAmount: number;
@@ -20,6 +21,7 @@ interface Props {
 
 export const StackedCard = ({
   children,
+  style,
   className,
   index,
   visibleAmount,
@@ -59,7 +61,6 @@ export const StackedCard = ({
 
   return (
     <div
-      className={cx("sticky top-20 h-[500px] w-full", className)}
       style={{
         transform:
           visibleAmount > index + 1
@@ -68,7 +69,13 @@ export const StackedCard = ({
               }0px)`
             : "scale(1)",
         transition: "0.4s",
+        position: "sticky",
+        top: 80,
+        height: 500,
+        width: "100%",
+        ...style,
       }}
+      className={className}
       ref={ref}
     >
       {children}

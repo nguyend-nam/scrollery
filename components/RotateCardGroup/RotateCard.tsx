@@ -1,8 +1,15 @@
-import { useEffect, createRef, useState, ReactNode } from "react";
-import cx from "classnames";
+import {
+  useEffect,
+  createRef,
+  useState,
+  ReactNode,
+  CSSProperties,
+} from "react";
+import { useIsMdScreenSize } from "../../hooks/useIsMdScreenSize";
 
 interface Props {
   children: ReactNode;
+  style?: CSSProperties;
   className?: string;
   index: number;
   stableThreshold?: number;
@@ -14,6 +21,7 @@ interface Props {
 
 export const RotateCard = ({
   children,
+  style,
   className,
   index,
   stableThreshold,
@@ -25,6 +33,8 @@ export const RotateCard = ({
   const ref = createRef<HTMLDivElement>();
   const [offset, setOffset] = useState<number>(0);
   const [viewHeight, setViewHeight] = useState<number>(0);
+  const [viewWidth, setViewWidth] = useState<number>(0);
+  const isMd = useIsMdScreenSize();
 
   useEffect(() => {
     if (window && ref?.current) {
@@ -39,6 +49,7 @@ export const RotateCard = ({
 
   useEffect(() => {
     setViewHeight(window.innerHeight);
+    setViewWidth(window.innerWidth);
   }, []);
 
   const threshold = stableThreshold || viewHeight / 3;
@@ -51,13 +62,6 @@ export const RotateCard = ({
 
   return (
     <div
-      className={cx(
-        `w-[calc(100vw/1.5)] h-[calc(100vw/1.5)] md:w-[300px] md:h-[300px]`,
-        {
-          sticky: isSticky,
-        },
-        className
-      )}
       style={{
         ...(triggerOn === "out" ? { bottom: threshold } : { top: threshold }),
         transform: `rotate(${
@@ -69,8 +73,13 @@ export const RotateCard = ({
         ...(triggerOn === "out"
           ? { zIndex: (childrenAmount - index + 1) * 10 }
           : { zIndex: index * 10 }),
+        width: isMd ? 300 : viewWidth / 1.5,
+        height: isMd ? 300 : viewWidth / 1.5,
+        position: isSticky ? "sticky" : "static",
+        ...style,
       }}
       ref={ref}
+      className={className}
     >
       {children}
     </div>
