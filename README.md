@@ -7,7 +7,7 @@
 ## Quick Start
 
 ```bash
-git clone --depth=1 git@github.com:nguyend-nam/animate-on-scroll.git my-project-name
+git clone --depth=1 git@github.com:nguyend-nam/scrollery.git my-project-name
 cd my-project-name
 yarn
 ```

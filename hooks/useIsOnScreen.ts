@@ -1,4 +1,5 @@
-import { useState, useMemo, useEffect, RefObject } from 'react'
+import { isSSR } from "@dwarvesf/react-utils";
+import { useState, useMemo, useEffect, RefObject } from "react";
 
 /* 
   This hook is used to detect whether a reference argument is
@@ -8,23 +9,26 @@ import { useState, useMemo, useEffect, RefObject } from 'react'
   the viewport.
 */
 export function useIsOnScreen(ref: RefObject<HTMLDivElement>) {
-  const [isIntersecting, setIntersecting] = useState(false)
+  const [isIntersecting, setIntersecting] = useState(false);
 
   const observer = useMemo(() => {
+    if (isSSR()) {
+      return undefined;
+    }
     const obs = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting),
-    )
-    return obs
-  }, [])
+      setIntersecting(entry.isIntersecting)
+    );
+    return obs;
+  }, []);
 
   useEffect(() => {
     if (ref?.current) {
-      observer.observe(ref?.current as Element)
+      observer?.observe(ref?.current as Element);
     }
     return () => {
-      observer.disconnect()
-    }
-  }, [observer, ref])
+      observer?.disconnect();
+    };
+  }, [observer, ref]);
 
-  return isIntersecting
+  return isIntersecting;
 }

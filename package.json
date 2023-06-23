@@ -1,20 +1,22 @@
 {
   "name": "@nguyend-nam/scrollery-ts",
-  "version": "0.1.4",
+  "version": "0.1.14",
   "repository": {
     "type": "git",
     "url": "https://github.com/nguyend-nam/scrollery"
   },
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "d-build": "tsc",
-    "build": "next build",
-    "wp-build": "webpack --mode production --config webpack.config.js",
-    "prepublishOnly": "npm run build"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc && cp package.json README.md ./dist && cp -R ./public ./dist"
+    
   },
   "dependencies": {
+    "@dwarvesf/react-hooks": "^0.7.0",
+    "@dwarvesf/react-utils": "^0.4.1",
     "classnames": "^2.3.2",
     "next": "13.4.7",
     "react": "18.2.0",
@@ -36,13 +38,10 @@
   },
   "description": "Animate your image gallery on scroll.",
   "files": [
-    "dist",
-    "components/RotateCardGroup",
-    "components/LinearlyScaledCardGroup",
-    "components/StackedCardGroup"
+    "dist"
   ],
-  "main": "components",
-  "types": "dist/index.d.ts",
+  "main": "dist/components/index.js",
+  "types": "dist/components/index.d.ts",
   "keywords": [],
   "author": "",
   "license": "ISC"
