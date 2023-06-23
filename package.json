@@ -1,11 +1,11 @@
 {
   "name": "@nguyend-nam/scrollery-ts",
-  "version": "0.1.14",
+  "version": "0.1.17",
   "repository": {
     "type": "git",
     "url": "https://github.com/nguyend-nam/scrollery"
   },
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
