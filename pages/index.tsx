@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <Layout>
       <div>
-        <Heading as="h3" className="!text-[#577D86]">
+        <Heading as="h1" className="!text-[#577D86]">
           Animate on Scroll
         </Heading>
-        <Text className="text-gray-500">
+        <Text className="!text-gray-500">
           &quot;There is no one who loves pain itself, who seeks after it and
           wants to have it, simply because it is pain...&quot;
         </Text>

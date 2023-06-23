@@ -1,28 +1,72 @@
-# Animate on Scroll
+# [Scrollery](https://scrollery.netlify.app/)
 
-**Deployment:** https://scrollery-demo.netlify.app/.
+React Typescript library for animating your **image gallery** on **scroll**.
 
-<image src="./public/preview.gif"></image>
+[Demo](https://scrollery-demo.vercel.app/)
 
-## Quick Start
+<image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/preview.gif"></image>
 
-```bash
-git clone --depth=1 git@github.com:nguyend-nam/scrollery.git my-project-name
-cd my-project-name
-yarn
-```
-
-Then, you can run locally in development mode with live reload:
+## Installation
 
 ```bash
-yarn dev
+npm i @nguyend-nam/scrollery-ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your favorite browser
-to see your project.
+or install using yarn
 
-## Reference
+```bash
+yarn add @nguyend-nam/scrollery-ts
+```
 
-- Behavior: [Swag app](https://swagapp.com/) by Employment Hero
-- Color palette:
-  [Color Hunt](https://colorhunt.co/palette/b9eddd87cbb9569daa577d86)
+## Usage
+
+Import wrapper components
+
+```typescript
+import {
+  LinearlyScaledCardGroup,
+  StackedCardGroup,
+} from "@nguyend-nam/scrollery-ts";
+```
+
+```typescript
+// ...
+
+<LinearlyScaledCardGroup className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
+  <img
+    src="/img/cat1.png"
+    className="w-full h-full object-cover"
+    alt="Coding cat"
+  />
+</LinearlyScaledCardGroup>
+
+<StackedCardGroup className="w-full space-y-[1400px] !mt-8 !mb-40 px-4">
+  <img
+    src="/img/cat2.png"
+    className="w-full h-full object-cover"
+    alt="Flexing cat"
+/>
+  <img
+    src="/img/cat3.png"
+    className="w-full h-full object-cover"
+    alt="Sitting cat"
+/>
+  <img
+    src="/img/cat4.png"
+    className="w-full h-full object-cover"
+    alt="Sleepy cat"
+/>
+</StackedCardGroup>
+
+// ...
+```
+
+<image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/example.gif"></image>
+
+## Contributing
+
+Contributions are always welcome!
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

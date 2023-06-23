@@ -1,6 +1,6 @@
 {
   "name": "@nguyend-nam/scrollery-ts",
-  "version": "0.1.17",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/nguyend-nam/scrollery"
@@ -12,7 +12,7 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf dist",
-    "npm-build": "npm run clean && tsc && cp package.json README.md ./dist && cp -R ./public ./dist"
+    "npm-build": "npm run clean && tsc && cp package.json README.md ./dist"
     
   },
   "dependencies": {
@@ -39,7 +39,8 @@
   },
   "description": "Animate your image gallery on scroll.",
   "files": [
-    "dist"
+    "dist",
+    "public"
   ],
   "main": "dist/components/index.js",
   "types": "dist/components/index.d.ts",
