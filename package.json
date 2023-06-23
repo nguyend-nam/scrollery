@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "d-build": "tsc",
-    "build": "next build && next export",
+    "build": "next build",
     "wp-build": "webpack --mode production --config webpack.config.js",
     "prepublishOnly": "npm run build"
   },
