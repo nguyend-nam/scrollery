@@ -1,24 +1,49 @@
 {
-  "name": "scrollery-dev",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@nguyend-nam/scrollery-ts",
+  "version": "0.1.4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nguyend-nam/scrollery"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "d-build": "tsc",
+    "build": "next build && next export",
+    "wp-build": "webpack --mode production --config webpack.config.js",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "next": "13.4.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "ts-loader": "^9.4.3",
+    "webpack": "^5.88.0"
   },
   "devDependencies": {
     "@types/node": "20.3.1",
     "@types/react": "18.2.13",
     "@types/react-dom": "18.2.6",
+    "autoprefixer": "^10.4.14",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
-    "typescript": "5.1.3"
-  }
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "typescript": "5.1.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "description": "Animate your image gallery on scroll.",
+  "files": [
+    "dist",
+    "components/RotateCardGroup",
+    "components/LinearlyScaledCardGroup",
+    "components/StackedCardGroup"
+  ],
+  "main": "components",
+  "types": "dist/index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
