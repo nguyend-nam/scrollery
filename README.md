@@ -1,6 +1,6 @@
 # Scrollery
 
-React Typescript library for animating your **image gallery** on **scroll**.
+React TypeScript library for animating your **image gallery** on **scroll**.
 
 <image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/preview.gif"></image>
 
@@ -65,10 +65,14 @@ Put the `img`s inside the wrappers with some custom style/className:
 
 <image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/example.gif"></image>
 
+## Official website & documentation
+
+_Coming soon_
+
 ## Contributing
 
 Contributions are always welcome!
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[ISC](https://choosealicense.com/licenses/isc/)
