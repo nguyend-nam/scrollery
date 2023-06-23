@@ -1,10 +1,10 @@
-# [Scrollery](https://scrollery.netlify.app/)
+# Scrollery
 
 React Typescript library for animating your **image gallery** on **scroll**.
 
-[Demo](https://scrollery-demo.vercel.app/)
-
 <image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/preview.gif"></image>
+
+[Demo](https://scrollery-demo.vercel.app/)
 
 ## Installation
 
@@ -12,7 +12,7 @@ React Typescript library for animating your **image gallery** on **scroll**.
 npm i @nguyend-nam/scrollery-ts
 ```
 
-or install using yarn
+or install using yarn:
 
 ```bash
 yarn add @nguyend-nam/scrollery-ts
@@ -20,16 +20,18 @@ yarn add @nguyend-nam/scrollery-ts
 
 ## Usage
 
-Import wrapper components
+Import wrapper components:
 
-```typescript
+```javascript
 import {
   LinearlyScaledCardGroup,
   StackedCardGroup,
 } from "@nguyend-nam/scrollery-ts";
 ```
 
-```typescript
+Put the `img`s inside the wrappers with some custom style/className:
+
+```javascript
 // ...
 
 <LinearlyScaledCardGroup className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
@@ -45,17 +47,17 @@ import {
     src="/img/cat2.png"
     className="w-full h-full object-cover"
     alt="Flexing cat"
-/>
+  />
   <img
     src="/img/cat3.png"
     className="w-full h-full object-cover"
     alt="Sitting cat"
-/>
+  />
   <img
     src="/img/cat4.png"
     className="w-full h-full object-cover"
     alt="Sleepy cat"
-/>
+  />
 </StackedCardGroup>
 
 // ...
