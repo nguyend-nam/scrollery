@@ -8,10 +8,11 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && cp package.json README.md ./dist && cp -R ./public ./dist"
+    "npm-build": "npm run clean && tsc && cp package.json README.md ./dist && cp -R ./public ./dist"
     
   },
   "dependencies": {
