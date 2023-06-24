@@ -1,0 +1,41 @@
+# LinearlyScaledCardWrapper
+
+## Example
+
+<iframe
+  src="/examples/linearly-scaled-card-wrapper"
+  height={500}
+  width="100%"
+  className="mt-6 rounded-xl border bordr-slate-50"
+/>
+
+```javascript filename="index.tsx" copy
+import { LinearlyScaledCardWrapper } from "@nguyend-nam/scrollery-ts";
+
+export default function LinearlyScaledCardWrapperDemo() {
+  return (
+    <div className="!bg-slate-50 p-8">
+      <h1 className="!text-[#577D86] mb-[300px]">
+        <code>LinearlyScaledCardWrapper</code>
+      </h1>
+
+      <LinearlyScaledCardWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
+        <div className="rounded-3xl shadow-md h-full bg-[#569DAA]" />
+      </LinearlyScaledCardWrapper>
+    </div>
+  );
+}
+```
+
+## Props
+
+| Name              | Type            | Default | Description                                                        | Required |
+| ----------------- | --------------- | ------- | ------------------------------------------------------------------ | -------- |
+| **children**      | `JSX.Element`   |         | The single image for the content you want to animate on scroll     | &check;  |
+| **style**         | `CSSProperties` |         | The styles you want to apply to the wrapper                        |          |
+| **className**     | `string`        |         | The classes you want to apply to the wrapper                       |          |
+| **itemStyle**     | `CSSProperties` |         | The styles you want to apply to each item                          |          |
+| **itemClassName** | `string`        |         | The classes you want to apply to each item                         |          |
+| **isSticky**      | `boolean`       | `true`  | If `true`, then the image stays inside the viewport when animating |          |
+| **from**          | `number`        | `100`   | The starting size of the image                                     |          |
+| **to**            | `number`        |         | The ending size of the image                                       |          |
