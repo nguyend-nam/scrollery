@@ -3,10 +3,10 @@
 ## Example
 
 <iframe
-  src="/rotate-card-wrapper"
+  src="/examples/rotate-card-wrapper"
   height={700}
   width="100%"
-  className="mt-6 rounded-xl"
+  className="mt-6 rounded-xl border bordr-slate-50"
 />
 
 ```javascript filename="index.tsx" copy
@@ -15,13 +15,9 @@ import { RotateCardWrapper } from "@nguyend-nam/scrollery-ts";
 export default function Home() {
   return (
     <div className="!bg-slate-50 p-8">
-      <h1 className="!text-[#577D86]">
+      <h1 className="!text-[#577D86] mb-[300px]">
         <code>RotateCardWrapper</code>
       </h1>
-      <p className="!text-gray-500 mb-[300px]">
-        &quot;There is no one who loves pain itself, who seeks after it and
-        wants to have it, simply because it is pain...&quot;
-      </p>
 
       <RotateCardWrapper
         className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]"
@@ -39,11 +35,6 @@ export default function Home() {
 ```
 
 ## Props
-
-bottomLayer?: ReactElement;
-bottomLayerStyle?: CSSProperties;
-bottomLayerClassName?: string;
-offsetGetter?: (index?: number) => number;
 
 | Name                     | Type            | Default         | Description                                                                                 | Required |
 | ------------------------ | --------------- | --------------- | ------------------------------------------------------------------------------------------- | -------- |

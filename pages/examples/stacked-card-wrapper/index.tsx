@@ -1,4 +1,4 @@
-import { StackedCardWrapper } from "../../components/StackedCardWrapper";
+import { StackedCardWrapper } from "../../../components/StackedCardWrapper";
 
 export default function StackedCardWrapperDemo() {
   return (
@@ -6,10 +6,6 @@ export default function StackedCardWrapperDemo() {
       <h1 className="!text-[#577D86]">
         <code>StackedCardWrapper</code>
       </h1>
-      <p className="!text-gray-500">
-        &quot;There is no one who loves pain itself, who seeks after it and
-        wants to have it, simply because it is pain...&quot;
-      </p>
 
       <StackedCardWrapper
         className="w-full space-y-[800px] !mt-8 !mb-40"

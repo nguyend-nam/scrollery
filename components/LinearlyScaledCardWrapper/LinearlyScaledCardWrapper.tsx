@@ -10,6 +10,7 @@ interface Props {
   itemClassName?: string;
   isSticky?: boolean;
   from?: number;
+  to?: number;
 }
 
 export const LinearlyScaledCardWrapper = ({
@@ -20,6 +21,7 @@ export const LinearlyScaledCardWrapper = ({
   itemClassName,
   isSticky = true,
   from = 100,
+  to,
 }: Props) => {
   const [viewHeight, setViewHeight] = useState<number>(0);
   const [containerHeight, setContainerHeight] = useState<number>(0);
@@ -45,6 +47,7 @@ export const LinearlyScaledCardWrapper = ({
         className={itemClassName}
         headerRef={ref}
         from={from}
+        to={to}
       >
         {children}
       </LinearlyScaledCard>
