@@ -10,7 +10,6 @@ interface Props {
   itemClassName?: string;
   isSticky?: boolean;
   from?: number;
-  origin?: number;
 }
 
 export const LinearlyScaledCardWrapper = ({
@@ -21,7 +20,6 @@ export const LinearlyScaledCardWrapper = ({
   itemClassName,
   isSticky = true,
   from = 100,
-  origin: propOrigin,
 }: Props) => {
   const [viewHeight, setViewHeight] = useState<number>(0);
   const [containerHeight, setContainerHeight] = useState<number>(0);
@@ -31,11 +29,9 @@ export const LinearlyScaledCardWrapper = ({
     setViewHeight(window.innerHeight);
   }, []);
 
-  const origin = propOrigin || viewHeight / 3;
-
   useEffect(() => {
     setContainerHeight(2 * viewHeight);
-  }, [viewHeight, origin, from]);
+  }, [viewHeight]);
 
   return (
     <div
@@ -48,6 +44,7 @@ export const LinearlyScaledCardWrapper = ({
         isSticky={isSticky}
         className={itemClassName}
         headerRef={ref}
+        from={from}
       >
         {children}
       </LinearlyScaledCard>
