@@ -3,7 +3,7 @@ import { createRef, ReactNode, useEffect, useState } from "react";
 import { LinearlyScaledCard } from "./LinearlyScaledCard";
 
 interface Props {
-  children: ReactNode;
+  children: JSX.Element;
   style?: CSSProperties;
   className?: string;
   itemStyle?: CSSProperties;
@@ -13,7 +13,7 @@ interface Props {
   origin?: number;
 }
 
-export const LinearlyScaledCardGroup = ({
+export const LinearlyScaledCardWrapper = ({
   children,
   style,
   className,

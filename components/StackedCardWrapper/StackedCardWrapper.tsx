@@ -10,7 +10,7 @@ interface Props {
   itemClassName?: string;
 }
 
-export const StackedCardGroup = ({
+export const StackedCardWrapper = ({
   children,
   style,
   className,
