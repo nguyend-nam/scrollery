@@ -1,6 +1,6 @@
 {
   "name": "@nguyend-nam/scrollery-ts",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/nguyend-nam/scrollery"
@@ -13,7 +13,6 @@
     "lint": "next lint",
     "clean": "rm -rf dist",
     "npm-build": "npm run clean && tsc && cp package.json README.md ./dist"
-    
   },
   "dependencies": {
     "@dwarvesf/react-hooks": "^0.7.0",
@@ -43,7 +42,7 @@
   ],
   "main": "dist/components/index.js",
   "types": "dist/components/index.d.ts",
-  "keywords": ["transition", "animation", "on-scroll-animation", "image-gallery"],
+  "keywords": ["transition", "animation", "scroll-animation", "image-gallery", "image-scroll-animation"],
   "author": "",
   "license": "ISC"
 }
