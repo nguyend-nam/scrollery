@@ -2,9 +2,11 @@
 
 React TypeScript library for animating your **image gallery** on **scroll**.
 
-<image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/preview.gif"></image>
+[Official website](https://scrollery.netlify.app)
 
-[Demo](https://scrollery-demo.vercel.app/)
+View on: [NPM](https://www.npmjs.com/package/@nguyend-nam/scrollery-ts) &bullet; [GitHub](https://github.com/nguyend-nam/scrollery)
+
+<image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/preview.gif"></image>
 
 ## Installation
 
@@ -67,7 +69,8 @@ Put the `img`s inside the wrappers with some custom style/className:
 
 ## Official website & documentation
 
-_Coming soon_
+- Official website: https://scrollery.netlify.app
+- Document: https://scrollery.netlify.app/overview
 
 ## Contributing
 
