@@ -74,7 +74,7 @@ export default function Home() {
             to={500}
             itemClassName="!w-[500px] max-w-screen"
           >
-            <div className="rounded-md overflow-hidden h-full p-4 bg-[#569DAA]">
+            <div className="rounded-md overflow-hidden h-full p-4 md:p-6 bg-[#569DAA]">
               <p className="text-lg font-light leading-9 text-white">
                 <span className="font-normal border-b">Our vision</span> is to
                 provide a comprehensive set of tools and components specifically
@@ -95,10 +95,10 @@ export default function Home() {
             Key Features
           </h2>
           <StackedCardWrapper
-            className="w-full space-y-[600px] !mt-8 !mb-40"
+            className="w-full space-y-[600px] !mt-8 !mb-[calc(100vh/3)]"
             itemClassName="!h-max !top-[180px]"
           >
-            <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4">
+            <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
               <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold capitalize">
                 Visual experience enhance
               </div>
@@ -109,7 +109,7 @@ export default function Home() {
                 captivating scroll animations.
               </p>
             </div>
-            <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4">
+            <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
               <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold capitalize">
                 Simple Integration
               </div>
@@ -122,7 +122,7 @@ export default function Home() {
                 unnecessary complexity.
               </p>
             </div>
-            <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4">
+            <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
               <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold capitalize">
                 Customizable and Flexible
               </div>
@@ -139,7 +139,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className="relative p-4 py-8 md:py-12 bg-slate-100 w-full">
+      <footer className="relative px-4 md:px-6 py-8 md:py-12 bg-slate-100 w-full">
         <div>
           View on:{" "}
           <a
