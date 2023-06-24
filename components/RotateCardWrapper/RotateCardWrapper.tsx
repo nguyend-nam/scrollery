@@ -21,6 +21,7 @@ interface Props {
   triggerOn?: "in" | "out";
   isSticky?: boolean;
   offsetGetter?: (index?: number) => number;
+  threshold?: number;
 }
 
 export const RotateCardWrapper = ({
@@ -35,6 +36,7 @@ export const RotateCardWrapper = ({
   triggerOn = "out",
   isSticky = true,
   offsetGetter,
+  threshold,
 }: Props) => {
   const childrenArray = Children.toArray(children);
   const [viewHeight, setViewHeight] = useState<number>(0);
@@ -59,6 +61,7 @@ export const RotateCardWrapper = ({
             isSticky={isSticky}
             offsetGetter={offsetGetter}
             childrenAmount={(childrenArray || []).length}
+            stableThreshold={threshold}
           >
             {c}
           </RotateCard>
