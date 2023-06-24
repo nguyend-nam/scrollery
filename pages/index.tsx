@@ -1,9 +1,8 @@
-import Image from "next/image";
 import { Heading } from "../components/Heading";
 import { Text } from "../components/Text";
-import { LinearlyScaledCardGroup } from "../components/LinearlyScaledCardGroup";
-import { RotateCardGroup } from "../components/RotateCardGroup";
-import { StackedCardGroup } from "../components/StackedCardGroup";
+import { LinearlyScaledCardWrapper } from "../components/LinearlyScaledCardWrapper";
+import { RotateCardWrapper } from "../components/RotateCardWrapper";
+import { StackedCardWrapper } from "../components/StackedCardWrapper";
 import { Layout } from "../components/Layout";
 
 export default function Home() {
@@ -19,14 +18,14 @@ export default function Home() {
         </Text>
       </div>
 
-      <StackedCardGroup className="w-full space-y-[1400px] !mt-8 !mb-40">
+      <StackedCardWrapper className="w-full space-y-[1400px] !mt-8 !mb-40">
         <div className="rounded-3xl shadow-md h-full bg-[#577D86]" />
         <div className="rounded-3xl shadow-md h-full bg-[#569DAA]" />
         <div className="rounded-3xl shadow-md h-full bg-[#87CBB9]" />
         <div className="rounded-3xl shadow-md h-full bg-[#B9EDDD]" />
-      </StackedCardGroup>
+      </StackedCardWrapper>
 
-      <RotateCardGroup
+      <RotateCardWrapper
         className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]"
         bottomLayer={<span>Animate on Scroll</span>}
         bottomLayerClassName="text-[40px] md:text-[100px] text-[#577D86] font-bold"
@@ -35,11 +34,11 @@ export default function Home() {
         <div className="rounded-3xl shadow-md h-full bg-[#569DAA]" />
         <div className="rounded-3xl shadow-md h-full bg-[#87CBB9]" />
         <div className="rounded-3xl shadow-md h-full bg-[#B9EDDD]" />
-      </RotateCardGroup>
+      </RotateCardWrapper>
 
-      <LinearlyScaledCardGroup className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
+      <LinearlyScaledCardWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
         <div className="rounded-3xl shadow-md h-full bg-[#569DAA]" />
-      </LinearlyScaledCardGroup>
+      </LinearlyScaledCardWrapper>
     </Layout>
   );
 }

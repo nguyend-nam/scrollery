@@ -23,7 +23,7 @@ interface Props {
   offsetGetter?: (index?: number) => number;
 }
 
-export const RotateCardGroup = ({
+export const RotateCardWrapper = ({
   children,
   style,
   className,
