@@ -19,6 +19,8 @@
     "@dwarvesf/react-utils": "^0.4.1",
     "classnames": "^2.3.2",
     "next": "13.4.7",
+    "nextra": "^2.8.0",
+    "nextra-theme-docs": "^2.8.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "ts-loader": "^9.4.3",
@@ -42,7 +44,13 @@
   ],
   "main": "dist/components/index.js",
   "types": "dist/components/index.d.ts",
-  "keywords": ["transition", "animation", "scroll-animation", "image-gallery", "image-scroll-animation"],
+  "keywords": [
+    "transition",
+    "animation",
+    "scroll-animation",
+    "image-gallery",
+    "image-scroll-animation"
+  ],
   "author": "",
   "license": "ISC"
 }

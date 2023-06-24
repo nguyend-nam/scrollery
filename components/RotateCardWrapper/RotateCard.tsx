@@ -65,7 +65,7 @@ export const RotateCard = ({
       style={{
         ...(triggerOn === "out" ? { bottom: threshold } : { top: threshold }),
         transform: `rotate(${
-          triggerCondition
+          triggerCondition || offset === 0
             ? cardOffset * 6
             : cardOffset * 6 - (viewHeight - threshold - offset) / 7
         }deg)`,

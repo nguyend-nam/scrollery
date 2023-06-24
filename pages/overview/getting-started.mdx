@@ -1,0 +1,75 @@
+import { Tab, Tabs } from "nextra-theme-docs";
+
+# Getting Started
+
+## Installation
+
+To get started with Scrollery, you can install the library using npm or yarn. Open your terminal and run one of the following commands:
+
+<Tabs items={["npm", "yarn"]}>
+  <Tab>
+  
+```bash
+npm install @nguyend-nam/scrollery-ts
+```
+
+</Tab>
+<Tab>
+   
+```bash
+yarn add @nguyend-nam/scrollery-ts
+```
+
+</Tab>
+</Tabs>
+
+## Importing Wrapper Components
+
+Once you have installed Scrollery, you can import the wrapper components into your project. In your JavaScript or TypeScript file, add the following import statements:
+
+```javascript
+import {
+  LinearlyScaledCardWrapper,
+  StackedCardWrapper,
+} from "@nguyend-nam/scrollery-ts";
+```
+
+## Usage
+
+To animate your images, you need to wrap them with the appropriate wrapper component and apply any desired custom styles or class names. Here's an example of using the wrapper components:
+
+```javascript
+// ...
+
+<LinearlyScaledCardWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
+  <img
+    src="/img/cat1.png"
+    className="w-full h-full object-cover"
+    alt="Coding cat"
+  />
+</LinearlyScaledCardWrapper>
+
+<StackedCardWrapper className="w-full space-y-[1400px] !mt-8 !mb-40 px-4">
+  <img
+    src="/img/cat2.png"
+    className="w-full h-full object-cover"
+    alt="Flexing cat"
+  />
+  <img
+    src="/img/cat3.png"
+    className="w-full h-full object-cover"
+    alt="Sitting cat"
+  />
+  <img
+    src="/img/cat4.png"
+    className="w-full h-full object-cover"
+    alt="Sleepy cat"
+  />
+</StackedCardWrapper>
+
+// ...
+```
+
+<div align="center">
+  ![](https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/example.gif)
+</div>

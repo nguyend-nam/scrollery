@@ -1,0 +1,5 @@
+{
+    "stacked-card-wrapper": "StackedCardWrapper",
+    "linearly-scaled-card-wrapper": "LinearlyScaledCardWrapper",
+    "rotate-card-wrapper": "RotateCardWrapper"
+}

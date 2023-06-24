@@ -1,0 +1,60 @@
+# RotateCardWrapper
+
+## Example
+
+<iframe
+  src="/rotate-card-wrapper"
+  height={700}
+  width="100%"
+  className="mt-6 rounded-xl"
+/>
+
+```javascript filename="index.tsx" copy
+import { RotateCardWrapper } from "@nguyend-nam/scrollery-ts";
+
+export default function Home() {
+  return (
+    <div className="!bg-slate-50 p-8">
+      <h1 className="!text-[#577D86]">
+        <code>RotateCardWrapper</code>
+      </h1>
+      <p className="!text-gray-500 mb-[300px]">
+        &quot;There is no one who loves pain itself, who seeks after it and
+        wants to have it, simply because it is pain...&quot;
+      </p>
+
+      <RotateCardWrapper
+        className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]"
+        bottomLayer={<span>Animate on Scroll</span>}
+        bottomLayerClassName="text-[30px] md:text-[70px] text-[#577D86] font-bold"
+      >
+        <div className="rounded-3xl shadow-md h-full bg-[#577D86]" />
+        <div className="rounded-3xl shadow-md h-full bg-[#569DAA]" />
+        <div className="rounded-3xl shadow-md h-full bg-[#87CBB9]" />
+        <div className="rounded-3xl shadow-md h-full bg-[#B9EDDD]" />
+      </RotateCardWrapper>
+    </div>
+  );
+}
+```
+
+## Props
+
+bottomLayer?: ReactElement;
+bottomLayerStyle?: CSSProperties;
+bottomLayerClassName?: string;
+offsetGetter?: (index?: number) => number;
+
+| Name                     | Type            | Default         | Description                                                                                 | Required |
+| ------------------------ | --------------- | --------------- | ------------------------------------------------------------------------------------------- | -------- |
+| **children**             | `ReactNode`     |                 | The images for the content you want to animate on scroll                                    | &check;  |
+| **style**                | `CSSProperties` |                 | The styles you want to apply to the wrapper                                                 |          |
+| **className**            | `string`        |                 | The classes you want to apply to the wrapper                                                |          |
+| **itemStyle**            | `CSSProperties` |                 | The styles you want to apply to each item                                                   |          |
+| **itemClassName**        | `string`        |                 | The classes you want to apply to each item                                                  |          |
+| **triggerOn**            | `"in" \| "out"` | `"in"`          | The prop to specify if the animation is triggered when the images go in or out the viewport |          |
+| **isSticky**             | `boolean`       | `true`          | If `true`, then the images stay inside the viewport when animating                          |          |
+| **threshold**            | `number`        | 1/3 view height | the threshold where the animation is triggered                                              |          |
+| **bottomLayer**          | `ReactNode`     |                 | The bottom layer behind the images                                                          |          |
+| **bottomLayerStyle**     | `CSSProperties` |                 | The styles you want to apply to the bottom layer                                            |          |
+| **bottomLayerClassName** | `string`        |                 | The classes you want to apply to the bottom layer                                           |          |
