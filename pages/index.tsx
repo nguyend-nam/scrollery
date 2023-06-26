@@ -20,9 +20,20 @@ export default function Home() {
         <title>Scrollery</title>
       </Head>
       <div>
-        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-4 px-6 text-[#577D86] font-semibold shadow-md text-xl">
-          <Logo width={36} height={36} />
-          Scrollery
+        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-4 px-6 text-[#577D86] font-semibold shadow-md justify-between">
+          <div className="flex gap-2 items-center text-xl">
+            <Logo width={36} height={36} />
+            Scrollery
+          </div>
+
+          <button
+            className="ring-slate-400 py-0.5 max-w-full rounded-md text-slate-400 shrink flex flex-nowrap gap-2 items-center"
+            onClick={() => {
+              push("/overview");
+            }}
+          >
+            <span className="truncate w-full font-normal">Docs</span>
+          </button>
         </header>
         <div
           className="flex justify-start items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 px-4 md:px-32"
@@ -251,6 +262,7 @@ export default function Home() {
               <a
                 href="https://github.com/nguyend-nam/scrollery"
                 target="_blank"
+                rel="noreferrer"
                 className="font-normal border-b"
               >
                 https://github.com/nguyend-nam/scrollery
@@ -267,6 +279,7 @@ export default function Home() {
             <a
               href="https://www.npmjs.com/package/@nguyend-nam/scrollery-ts"
               target="_blank"
+              rel="noreferrer"
               className="text-[#577D86] font-medium"
             >
               NPM
@@ -275,19 +288,25 @@ export default function Home() {
             <a
               href="https://github.com/nguyend-nam/scrollery"
               target="_blank"
+              rel="noreferrer"
               className="text-[#577D86] font-medium"
             >
               GitHub
             </a>
           </div>
           <div>
-            <a href="https://choosealicense.com/licenses/isc/" target="_blank">
+            <a
+              href="https://choosealicense.com/licenses/isc/"
+              target="_blank"
+              rel="noreferrer"
+            >
               ISC
             </a>{" "}
             ©{" "}
             <a
               href="https://github.com/nguyend-nam"
               target="_blank"
+              rel="noreferrer"
               className="text-[#577D86] font-medium"
             >
               Nam Nguyen Dinh
