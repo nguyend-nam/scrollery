@@ -20,12 +20,12 @@ export default function Home() {
         <title>Scrollery</title>
       </Head>
       <div>
-        <header className="fixed flex items-center gap-2 top-0 z-10 bg-white w-screen p-4 px-6 text-[#577D86] font-semibold shadow-md text-xl">
+        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-4 px-6 text-[#577D86] font-semibold shadow-md text-xl">
           <Logo width={36} height={36} />
           Scrollery
         </header>
         <div
-          className="flex justify-start items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 px-4 md:px-40"
+          className="flex justify-start items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 px-4 md:px-32"
           style={{
             backgroundImage: "url(thumb.png)",
             backgroundRepeat: "no-repeat",
@@ -33,7 +33,7 @@ export default function Home() {
             backgroundSize: "cover",
           }}
         >
-          <div className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-md shadow-md max-w-2xl space-y-2">
+          <div className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-md shadow-md max-w-full md:max-w-2xl space-y-2">
             <h2 className="!text-2xl md:!text-4xl font-light md:font-extralight text-slate-500">
               enhanced{" "}
               <span className="font-bold capitalize bg-gradient-to-l from-[#577D86] via-[#577D86] to-[#87CBB9] !bg-clip-text text-transparent">
@@ -77,12 +77,12 @@ export default function Home() {
               </button>
 
               <button
-                className="ring-2 ring-[#569DAA] p-2 text-lg rounded-md text-[#569DAA] shrink flex flex-nowrap gap-2 items-center"
+                className="ring-2 ring-[#569DAA] max-w-full p-2 text-lg rounded-md text-[#569DAA] shrink flex flex-nowrap gap-2 items-center"
                 onClick={() => {
                   onCopy();
                 }}
               >
-                <span className="truncate max-w-[200px]">
+                <span className="truncate w-full">
                   yarn add @nguyend-nam/scrollery-ts
                 </span>
                 {hasCopied ? (
@@ -202,12 +202,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#577D86] relative p-4 md:p-8">
+        <div className="bg-[#577D86] relative p-4 md:p-8 min-h-[calc(100vh/1.5)] flex flex-col">
           <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-slate-50 capitalize">
             Start creating
           </h2>
 
-          <div className="flex gap-4 items-start flex-wrap justify-center my-20">
+          <div className="flex flex-col md:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10 !bg-[#577D86]">
             <div className="flex flex-col items-start md:items-end gap-4 flex-wrap w-full md:w-max">
               <button
                 className="bg-[#569DAA] p-2 text-lg rounded-md text-white flex gap-2 items-center"
@@ -224,12 +224,12 @@ export default function Home() {
               </button>
 
               <button
-                className="ring-2 ring-slate-50 p-2 text-lg rounded-md text-slate-50 shrink flex flex-nowrap gap-2 items-center"
+                className="ring-2 ring-slate-50 p-2 max-w-full text-lg rounded-md text-slate-50 shrink flex flex-nowrap gap-2 items-center"
                 onClick={() => {
                   onCopy();
                 }}
               >
-                <span className="truncate max-w-[200px]">
+                <span className="truncate w-full">
                   yarn add @nguyend-nam/scrollery-ts
                 </span>
                 {hasCopied ? (
@@ -261,7 +261,7 @@ export default function Home() {
           </div>
         </div>
 
-        <footer className="relative px-4 md:px-6 py-8 md:py-12 bg-slate-100 w-full text-slate-600">
+        <footer className="relative px-4 md:px-6 py-12 bg-slate-100 w-full text-slate-600">
           <div>
             View on:{" "}
             <a
