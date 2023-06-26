@@ -17,8 +17,6 @@ export default function Document() {
         <meta property="og:image" content="/og.png" />
 
         <link rel="icon" href="/logo.png" type="image/x-icon" />
-        {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
-        <title>Scrollery</title>
       </Head>
       <body>
         <Main />
