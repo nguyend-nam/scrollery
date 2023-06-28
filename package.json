@@ -1,11 +1,12 @@
 {
   "name": "@nguyend-nam/scrollery-ts",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/nguyend-nam/scrollery"
   },
   "homepage": "https://scrollery.netlify.app/",
+  "readme": "https://github.com/nguyend-nam/scrollery#readme",
   "type": "commonjs",
   "scripts": {
     "dev": "next dev",
