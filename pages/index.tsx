@@ -214,13 +214,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-slate-100 relative p-4 md:p-8 min-h-[calc(100vh/1.5)] flex flex-col">
+        <div className="bg-slate-50 relative p-4 md:p-8 min-h-[calc(100vh/1.5)] flex flex-col">
           <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-[#577D86] capitalize">
             Collaborators
           </h2>
 
           <div className="flex py-4 md:py-0 gap-4 md:gap-20 items-center flex-wrap flex-1 justify-center relative h-full z-10">
-            <div className="flex flex-col gap-4 items-center">
+            <div className="flex flex-col items-center">
               <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
                 <Image
                   layout="fill"
@@ -229,19 +229,20 @@ export default function Home() {
                   className="object-cover absolute"
                 />
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="text-base md:text-xl font-light">
+              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-50/0">
+                <div className="text-base md:text-xl font-light text-slate-700">
                   Nam Nguyen Dinh
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-1 md:gap-2">
                   <a
                     href="https://github.com/nguyend-nam"
                     target="_blank"
                     rel="noreferrer"
+                    className="p-1 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="uim:github"
-                      className="text-3xl md:text-4xl text-[#577D86]"
+                      icon="openmoji:github"
+                      className="text-3xl md:text-4xl"
                     />
                   </a>
 
@@ -249,17 +250,18 @@ export default function Home() {
                     href="https://www.linkedin.com/in/nguyendinhnam0320/"
                     target="_blank"
                     rel="noreferrer"
+                    className="p-1 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="uim:linkedin"
-                      className="text-3xl md:text-4xl text-[#577D86]"
+                      icon="openmoji:linkedin"
+                      className="text-3xl md:text-4xl"
                     />
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 items-center">
+            <div className="flex flex-col items-center">
               <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
                 <Image
                   layout="fill"
@@ -268,19 +270,20 @@ export default function Home() {
                   className="object-cover absolute"
                 />
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="text-base md:text-xl font-light">
+              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-50/0">
+                <div className="text-base md:text-xl font-light text-slate-700">
                   Lap Nguyen Ngo
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-1 md:gap-2">
                   <a
                     href="https://github.com/ngolapnguyen"
                     target="_blank"
                     rel="noreferrer"
+                    className="p-1 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="uim:github"
-                      className="text-3xl md:text-4xl text-[#577D86]"
+                      icon="openmoji:github"
+                      className="text-3xl md:text-4xl"
                     />
                   </a>
 
@@ -288,10 +291,11 @@ export default function Home() {
                     href="https://www.linkedin.com/in/ngo-lap-nguyen/"
                     target="_blank"
                     rel="noreferrer"
+                    className="p-1 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="uim:linkedin"
-                      className="text-3xl md:text-4xl text-[#577D86]"
+                      icon="openmoji:linkedin"
+                      className="text-3xl md:text-4xl"
                     />
                   </a>
                 </div>
@@ -305,7 +309,7 @@ export default function Home() {
             Start creating
           </h2>
 
-          <div className="flex flex-col md:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10 !bg-[#577D86]">
+          <div className="flex flex-col mt-4 md:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10 !bg-[#577D86]">
             <div className="flex flex-col items-start md:items-end gap-4 flex-wrap w-full md:w-max">
               <button
                 className="bg-[#569DAA] p-2 text-lg rounded-md text-white flex gap-2 items-center"
