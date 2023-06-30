@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import Head from "next/head";
 import { useClipboard } from "@dwarvesf/react-hooks";
+import Image from "next/image";
 
 export default function Home() {
   const { push } = useRouter();
@@ -117,7 +118,7 @@ export default function Home() {
               Vision
             </h2>
             <LinearlyScaledCardWrapper
-              className="w-full flex flex-col items-center gap-[800px] !my-20"
+              className="w-full flex flex-col items-center gap-[800px] !my-20 !h-[1260px]"
               from={120}
               to={500}
               itemClassName="!w-[500px] max-w-screen"
@@ -213,6 +214,92 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="bg-slate-100 relative p-4 md:p-8 min-h-[calc(100vh/1.5)] flex flex-col">
+          <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-[#577D86] capitalize">
+            Collaborators
+          </h2>
+
+          <div className="flex py-4 md:py-0 gap-4 md:gap-20 items-center flex-wrap flex-1 justify-center relative h-full z-10">
+            <div className="flex flex-col gap-4 items-center">
+              <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
+                <Image
+                  layout="fill"
+                  src="/namnd.jpg"
+                  alt="namnd"
+                  className="object-cover absolute"
+                />
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="text-base md:text-xl font-light">
+                  Nam Nguyen Dinh
+                </div>
+                <div className="flex gap-2">
+                  <a
+                    href="https://github.com/nguyend-nam"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Icon
+                      icon="uim:github"
+                      className="text-3xl md:text-4xl text-[#577D86]"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/nguyendinhnam0320/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Icon
+                      icon="uim:linkedin"
+                      className="text-3xl md:text-4xl text-[#577D86]"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4 items-center">
+              <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
+                <Image
+                  layout="fill"
+                  src="/lapnn.jpeg"
+                  alt="lapnn"
+                  className="object-cover absolute"
+                />
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="text-base md:text-xl font-light">
+                  Lap Nguyen Ngo
+                </div>
+                <div className="flex gap-2">
+                  <a
+                    href="https://github.com/ngolapnguyen"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Icon
+                      icon="uim:github"
+                      className="text-3xl md:text-4xl text-[#577D86]"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/ngo-lap-nguyen/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Icon
+                      icon="uim:linkedin"
+                      className="text-3xl md:text-4xl text-[#577D86]"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-[#577D86] relative p-4 md:p-8 min-h-[calc(100vh/1.5)] flex flex-col">
           <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-slate-50 capitalize">
             Start creating
@@ -253,7 +340,6 @@ export default function Home() {
                 )}
               </button>
             </div>
-            {/* <div className="flex-1 flex gap-4"> */}
             <div className="max-w-lg font-light text-lg text-slate-100">
               Whether you have ideas for new features, want to report bugs, or
               are interested in improving the library&rsquo;s functionality,
@@ -269,7 +355,6 @@ export default function Home() {
               </a>{" "}
               to get involved and contribute to the project.
             </div>
-            {/* </div> */}
           </div>
         </div>
 
