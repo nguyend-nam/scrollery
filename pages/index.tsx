@@ -112,13 +112,24 @@ export default function Home() {
 
         <div className="relative w-full h-[calc(100vh/5)] bg-gradient-to-b from-white/0 to-white" />
 
-        <div className="relative bg-gradient-to-b from-white via-white to-[#87CBB9]">
+        <div className="relative bg-gradient-to-b from-white via-white to-[#B9EDDD]">
           <div className="relative p-4 md:p-8">
-            <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-slate-500 capitalize">
-              Vision
+            <div
+              className="absolute hidden md:block top-0 right-0 w-2/3 h-full bg-left bg-cover pointer-events-none"
+              style={{ backgroundImage: `url(/bgjar-vision-bg.svg)` }}
+            />
+
+            <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
+
+            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-500">
+              our
+              <br />
+              <span className="font-bold capitalize bg-gradient-to-l from-[#577D86] via-[#577D86] to-[#87CBB9] !bg-clip-text text-transparent">
+                Vision
+              </span>
             </h2>
             <LinearlyScaledCardWrapper
-              className="w-full flex flex-col items-center gap-[800px] !my-20 !h-[1260px]"
+              className="w-full flex flex-col items-center gap-[800px] !my-20 !h-[1330px]"
               from={120}
               to={500}
               itemClassName="!w-[500px] max-w-screen"
@@ -148,16 +159,20 @@ export default function Home() {
           </div>
 
           <div className="relative p-4 md:p-8">
-            <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-slate-500 capitalize">
-              Key features
+            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-500">
+              key
+              <br />
+              <span className="font-bold capitalize bg-gradient-to-l from-[#577D86] via-[#577D86] to-[#87CBB9] !bg-clip-text text-transparent">
+                Features
+              </span>
             </h2>
             <StackedCardWrapper
-              className="w-full space-y-[600px] !my-20"
+              className="w-full space-y-[800px] !my-20"
               itemClassName="!h-max !top-[180px]"
             >
               <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
-                <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold capitalize">
-                  Visual experience enhance
+                <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold">
+                  Visual Experience Enhancement
                 </div>
                 <div className="w-full flex justify-center mb-4">
                   <Icon
@@ -173,7 +188,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
-                <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold capitalize">
+                <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold">
                   Simple Integration
                 </div>
                 <div className="w-full flex justify-center mb-4">
@@ -192,8 +207,8 @@ export default function Home() {
                 </p>
               </div>
               <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
-                <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold capitalize">
-                  Customizable and Flexible
+                <div className="text-[#577D86] pb-4 mb-4 border-b text-2xl font-semibold">
+                  Customization and Flexibility
                 </div>
                 <div className="w-full flex justify-center mb-4">
                   <Icon
@@ -214,9 +229,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-slate-50 relative p-4 md:p-8 min-h-[calc(100vh/1.5)] flex flex-col">
-          <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-[#577D86] capitalize">
-            Collaborators
+        <div className="bg-slate-50 relative p-4 md:p-8 min-h-[calc(100vh/1.2)] flex flex-col">
+          <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-500">
+            meet the
+            <br />
+            <span className="font-bold capitalize bg-gradient-to-l from-[#577D86] via-[#577D86] to-[#87CBB9] !bg-clip-text text-transparent">
+              Team
+            </span>
           </h2>
 
           <div className="flex py-4 md:py-0 gap-4 md:gap-20 items-center flex-wrap flex-1 justify-center relative h-full z-10">
@@ -304,15 +323,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#577D86] relative p-4 md:p-8 min-h-[calc(100vh/1.5)] flex flex-col">
-          <h2 className="!text-2xl md:!text-4xl font-light sticky top-[100px] text-slate-50 capitalize">
-            Start creating
+        <div className="bg-[#569DAA] relative p-4 md:p-8 min-h-[calc(100vh/1.2)] flex flex-col">
+          <div
+            className="absolute bottom-0 right-0 w-full h-full bg-left bg-cover pointer-events-none"
+            style={{ backgroundImage: `url(/bgjar-create-bg.svg)` }}
+          />
+          <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-50">
+            start
+            <br />
+            <span className="font-bold capitalize bg-gradient-to-r from-[#569DAA] via-[#B9EDDD] to-[#B9EDDD] !bg-clip-text text-transparent">
+              Creating
+            </span>
           </h2>
 
-          <div className="flex flex-col mt-4 md:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10 !bg-[#577D86]">
-            <div className="flex flex-col items-start md:items-end gap-4 flex-wrap w-full md:w-max">
+          <div className="flex flex-col mt-4 lg:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10">
+            <div className="flex flex-col items-start lg:items-end gap-4 flex-wrap w-full max-w-lg lg:w-max">
               <button
-                className="bg-[#569DAA] p-2 text-lg rounded-md text-white flex gap-2 items-center"
+                className="bg-[#577D86] p-2 text-lg rounded-md text-white flex gap-2 items-center"
                 onClick={() => {
                   setIsLoading(true);
                   push("/overview");
@@ -326,7 +353,7 @@ export default function Home() {
               </button>
 
               <button
-                className="ring-2 ring-slate-50 p-2 max-w-full text-lg rounded-md text-slate-50 shrink flex flex-nowrap gap-2 items-center"
+                className="ring-2 ring-slate-50 p-2 max-w-full text-lg rounded-md bg-[#569DAA] text-slate-50 shrink flex flex-nowrap gap-2 items-center"
                 onClick={() => {
                   onCopy();
                 }}
@@ -353,7 +380,7 @@ export default function Home() {
                 href="https://github.com/nguyend-nam/scrollery"
                 target="_blank"
                 rel="noreferrer"
-                className="font-normal border-b"
+                className="font-normal border-b rounded-none"
               >
                 https://github.com/nguyend-nam/scrollery
               </a>{" "}
