@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+import { useEffect } from "react";
 import { Children, useState, useRef, ReactNode } from "react";
 import { StackedCard } from "./StackedCard";
 
@@ -8,6 +9,7 @@ interface Props {
   className?: string;
   itemStyle?: CSSProperties;
   itemClassName?: string;
+  getCurrentVisibleItems?: (amount: number) => void;
 }
 
 export const StackedCardWrapper = ({
@@ -16,9 +18,14 @@ export const StackedCardWrapper = ({
   className,
   itemStyle,
   itemClassName,
+  getCurrentVisibleItems,
 }: Props) => {
   const childrenArray = Children.toArray(children);
   const [visibleAmount, setVisibleAmount] = useState(1);
+
+  useEffect(() => {
+    getCurrentVisibleItems?.(visibleAmount);
+  }, [getCurrentVisibleItems, visibleAmount]);
 
   const elRefs = useRef<any[]>(new Array((childrenArray || []).length));
 

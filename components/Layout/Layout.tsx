@@ -45,7 +45,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
       </main>
       <footer
         style={{
-          backgroundColor: "#B9EDDD",
+          backgroundColor: "#A5F1E9",
           padding: 10,
           display: "flex",
           justifyContent: "center",
@@ -61,7 +61,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
             alignItems: "center",
             gap: 8,
             fontWeight: 500,
-            color: "#577D86",
+            color: "#477076",
           }}
         >
           Nam Nguyen Dinh
