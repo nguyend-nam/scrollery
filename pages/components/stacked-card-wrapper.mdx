@@ -15,16 +15,16 @@ import { StackedCardWrapper } from "@nguyend-nam/scrollery-ts";
 export default function StackedCardWrapperDemo() {
   return (
     <div className="!bg-slate-50 p-8">
-      <h1 className="!text-[#577D86]">Animate on Scroll</h1>
+      <h1 className="!text-[#477076]">Animate on Scroll</h1>
 
       <StackedCardWrapper
         className="w-full space-y-[800px] !mt-8 !mb-40"
         itemClassName="!h-[300px]"
       >
-        <div className="rounded-3xl shadow-md h-full bg-[#577D86]" />
+        <div className="rounded-3xl shadow-md h-full bg-[#477076]" />
         <div className="rounded-3xl shadow-md h-full bg-[#569DAA]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#87CBB9]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#B9EDDD]" />
+        <div className="rounded-3xl shadow-md h-full bg-[#32C4C0]" />
+        <div className="rounded-3xl shadow-md h-full bg-[#A5F1E9]" />
       </StackedCardWrapper>
     </div>
   );
@@ -33,10 +33,11 @@ export default function StackedCardWrapperDemo() {
 
 ## Props
 
-| Name              | Type            | Default | Description                                              | Required |
-| ----------------- | --------------- | ------- | -------------------------------------------------------- | -------- |
-| **children**      | `ReactNode`     |         | The images for the content you want to animate on scroll | &check;  |
-| **style**         | `CSSProperties` |         | The styles you want to apply to the wrapper              |          |
-| **className**     | `string`        |         | The classes you want to apply to the wrapper             |          |
-| **itemStyle**     | `CSSProperties` |         | The styles you want to apply to each item                |          |
-| **itemClassName** | `string`        |         | The classes you want to apply to each item               |          |
+| Name                        | Type                       | Default | Description                                              | Required |
+| --------------------------- | -------------------------- | ------- | -------------------------------------------------------- | -------- |
+| **children**                | `ReactNode`                |         | The images for the content you want to animate on scroll | &check;  |
+| **style**                   | `CSSProperties`            |         | The styles you want to apply to the wrapper              |          |
+| **className**               | `string`                   |         | The classes you want to apply to the wrapper             |          |
+| **itemStyle**               | `CSSProperties`            |         | The styles you want to apply to each item                |          |
+| **itemClassName**           | `string`                   |         | The classes you want to apply to each item               |          |
+| **getCurrentVisibleAmount** | `(amount: number) => void` |         | Get the amount of child items that appeard in viewport   |          |

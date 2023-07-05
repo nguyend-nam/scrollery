@@ -1,13 +1,30 @@
 {
   "compilerOptions": {
     "strict": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "declaration": true,
     "esModuleInterop": true,
     "outDir": "dist",
     "target": "es6",
     "module": "commonjs",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": ["components"]
+  "include": [
+    "components"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

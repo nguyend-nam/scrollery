@@ -3,7 +3,7 @@ import { LinearlyScaledCardWrapper } from "../../../components/LinearlyScaledCar
 export default function LinearlyScaledCardWrapperDemo() {
   return (
     <div className="!bg-slate-50 p-8">
-      <h1 className="!text-[#577D86] mb-[300px]">
+      <h1 className="!text-[#477076] mb-[300px]">
         <code>LinearlyScaledCardWrapper</code>
       </h1>
 
