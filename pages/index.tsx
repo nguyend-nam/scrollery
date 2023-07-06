@@ -9,6 +9,45 @@ import { useClipboard } from "@dwarvesf/react-hooks";
 import Image from "next/image";
 import cx from "classnames";
 
+const featuresMedias = [
+  {
+    id: 1,
+    img: "/feature-1-bg.jpg",
+    url: "https://unsplash.com/photos/-WBYxmW4yuw",
+    icon: "fluent:hand-draw-28-regular",
+  },
+  {
+    id: 2,
+    img: "/feature-2-bg.jpg",
+    url: "https://unsplash.com/photos/RSvJQ-IP_pk",
+    icon: "fluent:target-arrow-20-regular",
+  },
+  {
+    id: 3,
+    img: "/feature-3-bg.jpg",
+    url: "https://unsplash.com/photos/KE0nC8-58MQ",
+    icon: "fluent:code-text-edit-20-regular",
+  },
+];
+
+const keyFeatures = [
+  {
+    title: "Visual Experience Enhancement",
+    description:
+      "Whether you're building a portfolio website, a creative landing page, or an interactive storytelling platform, Scrollery empowers you to effortlessly bring your designs to life with captivating scroll animations.",
+  },
+  {
+    title: "Simple Integration",
+    description:
+      "Scrollery offers a user-friendly and straightforward integration process, allowing you to easily animate images with minimal setup. Our library provides a set of intuitive components that seamlessly work with your existing codebase, enabling you to focus on creating visually impactful scroll animations without unnecessary complexity.",
+  },
+  {
+    title: "Customization and Flexibility",
+    description:
+      "Scrollery provides a wide range of customization options, empowering you to tailor the image animations to suit your project's specific requirements. Adjust animation timings, effects, transitions, and more to create personalized and immersive experiences that perfectly align with your design vision.",
+  },
+];
+
 export default function Home() {
   const { push } = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -39,11 +78,10 @@ export default function Home() {
           </button>
         </header>
         <div
-          className="flex justify-start items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 px-4 md:px-32"
+          className="flex justify-start bg-top md:bg-left-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 px-4 md:px-32"
           style={{
             backgroundImage: "url(thumb.png)",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "top center",
             backgroundSize: "cover",
           }}
         >
@@ -84,10 +122,12 @@ export default function Home() {
                 }}
               >
                 Get started
-                <Icon
-                  icon="gg:scroll-h"
-                  className={`text-2xl ${isLoading ? "animate-spin" : ""}`}
-                />
+                <span className="w-6">
+                  <Icon
+                    icon="gg:scroll-h"
+                    className={`text-2xl ${isLoading ? "animate-spin" : ""}`}
+                  />
+                </span>
               </button>
 
               <button
@@ -99,14 +139,16 @@ export default function Home() {
                 <span className="truncate w-full">
                   yarn add @nguyend-nam/scrollery-ts
                 </span>
-                {hasCopied ? (
-                  <Icon
-                    icon="fluent:checkbox-checked-16-regular"
-                    className="text-2xl"
-                  />
-                ) : (
-                  <Icon icon="fluent:copy-24-regular" className="text-2xl" />
-                )}
+                <span className="w-6">
+                  {hasCopied ? (
+                    <Icon
+                      icon="fluent:checkbox-checked-16-regular"
+                      className="text-2xl"
+                    />
+                  ) : (
+                    <Icon icon="fluent:copy-24-regular" className="text-2xl" />
+                  )}
+                </span>
               </button>
             </div>
           </div>
@@ -161,69 +203,54 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative bg-white">
+        <div
+          className={cx("relative", {
+            "bg-[#32C4C0]": visibleAmount === 1,
+            "bg-blue-400": visibleAmount === 2,
+            "bg-amber-400": visibleAmount === 3,
+          })}
+          style={{ transition: "background-color 0.4s" }}
+        >
           <div className="relative p-4 md:p-8">
-            {/* left bg */}
-            <div
-              className={cx("absolute top-0 left-0 h-full w-full md:w-1/2", {
-                "bg-[#32C4C0]": visibleAmount === 1,
-                "bg-blue-400": visibleAmount === 2,
-                "bg-amber-400": visibleAmount === 3,
-              })}
-              style={{ transition: "background-color 0.4s" }}
-            >
-              <div
-                className="sticky top-0 right-0 w-full h-screen bg-center bg-cover pointer-events-none"
-                style={{
-                  ...(visibleAmount === 1
-                    ? { backgroundImage: `url(/bgjar-feature-1.svg)` }
-                    : null),
-                  ...(visibleAmount === 2
-                    ? { backgroundImage: `url(/bgjar-feature-2.svg)` }
-                    : null),
-                  ...(visibleAmount === 3
-                    ? { backgroundImage: `url(/bgjar-feature-3.svg)` }
-                    : null),
-                  transition: "background-image 0.4s",
-                }}
-              />
+            {/* images bg */}
+            <div className="absolute top-0 right-0 h-full w-full bg-white md:w-2/5 opacity-10 md:opacity-100">
+              <div className="sticky top-0 right-0 w-full h-screen">
+                {featuresMedias.map((media) => (
+                  <div
+                    key={media.id}
+                    className={cx(
+                      "w-full absolute h-full bg-center bg-cover pointer-events-none transition-all duration-300",
+                      {
+                        "opacity-100": visibleAmount === media.id,
+                        "opacity-0": visibleAmount !== media.id,
+                      }
+                    )}
+                    style={{
+                      backgroundImage: `url(${media.img})`,
+                    }}
+                  />
+                ))}
+              </div>
             </div>
-            {/* right bg */}
-            <div
-              className="absolute top-0 right-0 h-full w-1/2 hidden md:block"
-              style={{ transition: "background-color 0.4s" }}
-            >
-              <div className="sticky top-0 right-0 w-full h-screen pointer-events-none flex justify-center items-center">
-                <Icon
-                  icon="fluent:hand-draw-28-regular"
-                  className={cx(
-                    "text-[#32C4C0] text-[140px] absolute transition-all delay-400",
-                    {
-                      "opacity-1": visibleAmount === 1,
-                      "opacity-0": visibleAmount !== 1,
-                    }
-                  )}
-                />
-                <Icon
-                  icon="fluent:target-arrow-20-regular"
-                  className={cx(
-                    "text-blue-400 text-[140px] absolute transition-all delay-400",
-                    {
-                      "opacity-1": visibleAmount === 2,
-                      "opacity-0": visibleAmount !== 2,
-                    }
-                  )}
-                />
-                <Icon
-                  icon="fluent:code-text-edit-20-regular"
-                  className={cx(
-                    "text-amber-400 text-[140px] absolute transition-all delay-400",
-                    {
-                      "opacity-1": visibleAmount === 3,
-                      "opacity-0": visibleAmount !== 3,
-                    }
-                  )}
-                />
+            {/* icons bg */}
+            <div className="absolute top-0 right-0 h-full w-2/5 hidden md:block">
+              <div className="sticky top-0 right-0 w-full p-4 h-screen pointer-events-none flex justify-end items-end">
+                {featuresMedias.map((media) => (
+                  <Icon
+                    key={media.id}
+                    icon={media.icon}
+                    className={cx(
+                      "text-[80px] absolute transition-all delay-400",
+                      {
+                        "opacity-1": visibleAmount === media.id,
+                        "opacity-0": visibleAmount !== media.id,
+                        "text-[#32C4C0]": media.id === 1,
+                        "text-blue-400": media.id === 2,
+                        "text-amber-400": media.id === 3,
+                      }
+                    )}
+                  />
+                ))}
               </div>
             </div>
             <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-50">
@@ -241,65 +268,37 @@ export default function Home() {
               </span>
             </h2>
             <StackedCardWrapper
-              className="w-full space-y-[800px] !my-20 !mb-[200px]"
-              itemClassName="!h-max !top-[180px]"
+              className="w-full md:w-3/5 right-0 md:right-4 space-y-[800px] !my-20 !mb-[200px]"
+              itemClassName="!h-max !top-[calc(100vh/3.5)]"
               getCurrentVisibleItems={setVisibleAmount}
             >
-              <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
-                <div className="text-slate-600 pb-4 mb-4 border-b text-2xl font-semibold">
-                  Visual Experience Enhancement
+              {keyFeatures.map((feature, index) => (
+                <div
+                  key={feature.title}
+                  className="rounded-lg h-max mx-auto max-w-lg bg-white p-4 md:p-6"
+                >
+                  <div className="text-slate-600 pb-4 mb-4 border-b text-2xl font-semibold">
+                    {feature.title}
+                  </div>
+                  <div className="w-full flex justify-center mb-4">
+                    <Icon
+                      icon={featuresMedias[index].icon}
+                      className="text-slate-500 text-4xl"
+                    />
+                  </div>
+                  <p className="font-light text-slate-500 text-lg">
+                    {feature.description}
+                  </p>
+                  <a
+                    href={featuresMedias[index].url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-light text-slate-500 text-sm"
+                  >
+                    <i>[Image]</i>
+                  </a>
                 </div>
-                <div className="w-full flex justify-center mb-4">
-                  <Icon
-                    icon="fluent:hand-draw-28-regular"
-                    className="text-slate-500 text-4xl"
-                  />
-                </div>
-                <p className="font-light text-slate-500 text-lg">
-                  Whether you&rsquo;re building a portfolio website, a creative
-                  landing page, or an interactive storytelling platform,
-                  Scrollery empowers you to effortlessly bring your designs to
-                  life with captivating scroll animations.
-                </p>
-              </div>
-              <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
-                <div className="text-slate-600 pb-4 mb-4 border-b text-2xl font-semibold">
-                  Simple Integration
-                </div>
-                <div className="w-full flex justify-center mb-4">
-                  <Icon
-                    icon="fluent:target-arrow-20-regular"
-                    className="text-slate-500 text-4xl"
-                  />
-                </div>
-                <p className="font-light text-slate-500 text-lg">
-                  Scrollery offers a user-friendly and straightforward
-                  integration process, allowing you to easily animate images
-                  with minimal setup. Our library provides a set of intuitive
-                  components that seamlessly work with your existing codebase,
-                  enabling you to focus on creating visually impactful scroll
-                  animations without unnecessary complexity.
-                </p>
-              </div>
-              <div className="rounded-lg shadow-md h-max mx-auto max-w-lg bg-white p-4 md:p-6">
-                <div className="text-slate-600 pb-4 mb-4 border-b text-2xl font-semibold">
-                  Customization and Flexibility
-                </div>
-                <div className="w-full flex justify-center mb-4">
-                  <Icon
-                    icon="fluent:code-text-edit-20-regular"
-                    className="text-slate-500 text-4xl"
-                  />
-                </div>
-                <p className="font-light text-slate-500 text-lg">
-                  Scrollery provides a wide range of customization options,
-                  empowering you to tailor the image animations to suit your
-                  project&rsquo;s specific requirements. Adjust animation
-                  timings, effects, transitions, and more to create personalized
-                  and immersive experiences that perfectly align with your
-                  design vision.
-                </p>
-              </div>
+              ))}
             </StackedCardWrapper>
           </div>
         </div>
@@ -436,14 +435,17 @@ export default function Home() {
                 <span className="truncate w-full">
                   yarn add @nguyend-nam/scrollery-ts
                 </span>
-                {hasCopied ? (
-                  <Icon
-                    icon="fluent:checkbox-checked-16-regular"
-                    className="text-2xl"
-                  />
-                ) : (
-                  <Icon icon="fluent:copy-24-regular" className="text-2xl" />
-                )}
+
+                <span className="w-6">
+                  {hasCopied ? (
+                    <Icon
+                      icon="fluent:checkbox-checked-16-regular"
+                      className="text-2xl"
+                    />
+                  ) : (
+                    <Icon icon="fluent:copy-24-regular" className="text-2xl" />
+                  )}
+                </span>
               </button>
             </div>
             <div className="max-w-lg font-light text-lg text-slate-100">
