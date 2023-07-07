@@ -219,7 +219,7 @@ export default function Home() {
                   <div
                     key={media.id}
                     className={cx(
-                      "w-full absolute h-full bg-center bg-cover pointer-events-none transition-all duration-300",
+                      "w-full absolute h-full bg-center bg-cover pointer-events-none transition-all duration-200",
                       {
                         "opacity-100": visibleAmount === media.id,
                         "opacity-0": visibleAmount !== media.id,
@@ -240,7 +240,7 @@ export default function Home() {
                     key={media.id}
                     icon={media.icon}
                     className={cx(
-                      "text-[80px] absolute transition-all delay-400",
+                      "text-[80px] absolute transition-all duration-200",
                       {
                         "opacity-1": visibleAmount === media.id,
                         "opacity-0": visibleAmount !== media.id,
