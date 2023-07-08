@@ -17,21 +17,21 @@ export const Logo = ({ width, height }: Props) => {
       <path
         d="M49.1858 23.8052H27.1269C22.483 23.8052 19 27.2881 19 31.9321C19 36.5761 22.483 40.059 27.1269 40.059H46.8638H52.6687C57.3127 40.059 60.7957 43.542 60.7957 48.186C60.7957 52.8299 57.3127 56.3129 52.6687 56.3129H21.322"
         stroke="white"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M27.127 62.1177L21.322 56.3128L27.127 50.5078"
         stroke="white"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M55.195 18C51.9891 18 49.3901 20.5989 49.3901 23.8049C49.3901 27.0109 51.9891 29.6099 55.195 29.6099C58.401 29.6099 61 27.0109 61 23.8049C61 20.5989 58.401 18 55.195 18Z"
         stroke="white"
-        stroke-width="3"
+        strokeWidth="3"
       />
       <defs>
         <pattern

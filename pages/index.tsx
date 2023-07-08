@@ -1,6 +1,6 @@
 import { LinearlyScaledCardWrapper } from "../components/LinearlyScaledCardWrapper";
 import { StackedCardWrapper } from "../components/StackedCardWrapper";
-import { Logo } from "../components/Logo";
+import { Logo } from "../public/Logo";
 import { useRouter } from "next/router";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
@@ -78,40 +78,42 @@ export default function Home() {
           </button>
         </header>
         <div
-          className="flex justify-start bg-top md:bg-left-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 px-4 md:px-32"
+          className="flex justify-between md:bg-top bg-right-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 pl-4 pr-4 md:pl-24 md:pr-12 gap-24"
           style={{
-            backgroundImage: "url(thumb.png)",
+            backgroundImage: "url(oooscillate-bg.svg)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
         >
-          <div className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-md border border-slate-200 max-w-full md:max-w-2xl space-y-2">
-            <h2 className="!text-2xl md:!text-4xl font-light md:font-extralight text-slate-500">
-              enhanced{" "}
-              <span className="font-bold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
-                visual experience
+          <div className="bg-white/70 md:bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-md max-w-full md:max-w-2xl space-y-2">
+            <h2 className="!text-3xl md:!text-5xl font-light md:font-extralight text-slate-500">
+              <span className="font-bold bg-gradient-to-l from-[#477076] via-[#569DAA] to-[#32C4C0] !bg-clip-text text-transparent">
+                Empowers developers to effortlessly animate images on scroll.
               </span>
             </h2>
 
-            <h2 className="!text-2xl md:!text-4xl font-light md:font-extralight text-slate-500">
-              interactive{" "}
-              <span className="font-bold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
-                image animations
-              </span>
-            </h2>
+            <ul className="pl-4 list-disc !my-4 md:!my-6">
+              <li className="!text-xl md:!text-2xl font-light md:font-extralight text-slate-500">
+                enhanced{" "}
+                <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
+                  visual experience
+                </span>
+              </li>
 
-            <h2 className="!text-2xl md:!text-4xl font-light md:font-extralight text-slate-500">
-              simple{" "}
-              <span className="font-bold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
-                integration
-              </span>
-            </h2>
+              <li className="!text-xl md:!text-2xl font-light md:font-extralight text-slate-500">
+                interactive{" "}
+                <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
+                  image animations
+                </span>
+              </li>
 
-            <p className="font-light text-base !my-4 text-slate-700">
-              Scrollery is a specialized UI library that empowers developers to
-              effortlessly animate images as users scroll through web
-              applications.
-            </p>
+              <li className="!text-xl md:!text-2xl font-light md:font-extralight text-slate-500">
+                simple{" "}
+                <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
+                  integration
+                </span>
+              </li>
+            </ul>
 
             <div className="flex gap-4 flex-wrap">
               <button
@@ -152,6 +154,14 @@ export default function Home() {
               </button>
             </div>
           </div>
+          <div className="h-[440px] w-[440px] relative rounded-lg hidden lg:block pointer-events-none">
+            <Image
+              layout="fill"
+              src="/intro-preview.png"
+              alt="preview"
+              className="object-contain floating"
+            />
+          </div>
         </div>
 
         <div className="relative w-full h-[calc(100vh/5)] bg-gradient-to-b from-white/0 to-white" />
@@ -160,7 +170,7 @@ export default function Home() {
           <div className="p-4 md:p-8">
             <div
               className="absolute hidden md:block top-0 right-0 w-2/3 h-full bg-left bg-cover pointer-events-none"
-              style={{ backgroundImage: `url(/bgjar-vision-bg.svg)` }}
+              style={{ backgroundImage: `url(/ffflurry-bg.svg)` }}
             />
 
             <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
@@ -178,7 +188,7 @@ export default function Home() {
               to={500}
               itemClassName="!w-[500px] max-w-screen"
             >
-              <div className="rounded-md relative overflow-hidden h-full p-4 md:p-6 bg-[#569DAA] border border-slate-200">
+              <div className="rounded-md relative overflow-hidden h-full p-4 md:p-6 bg-[#569DAA]">
                 <p className="text-lg font-light leading-9 text-white">
                   <span className="font-normal border-b">Our vision</span> is to
                   provide a comprehensive set of tools and components
@@ -219,7 +229,7 @@ export default function Home() {
                   <div
                     key={media.id}
                     className={cx(
-                      "w-full absolute h-full bg-center bg-cover pointer-events-none transition-all duration-200",
+                      "w-full absolute h-full bg-center bg-cover pointer-events-none transition-all",
                       {
                         "opacity-100": visibleAmount === media.id,
                         "opacity-0": visibleAmount !== media.id,
@@ -239,16 +249,13 @@ export default function Home() {
                   <Icon
                     key={media.id}
                     icon={media.icon}
-                    className={cx(
-                      "text-[80px] absolute transition-all duration-200",
-                      {
-                        "opacity-1": visibleAmount === media.id,
-                        "opacity-0": visibleAmount !== media.id,
-                        "text-[#32C4C0]": media.id === 1,
-                        "text-blue-400": media.id === 2,
-                        "text-amber-400": media.id === 3,
-                      }
-                    )}
+                    className={cx("text-[80px] absolute transition-all", {
+                      "opacity-1": visibleAmount === media.id,
+                      "opacity-0": visibleAmount !== media.id,
+                      "text-[#32C4C0]": media.id === 1,
+                      "text-blue-400": media.id === 2,
+                      "text-amber-400": media.id === 3,
+                    })}
                   />
                 ))}
               </div>

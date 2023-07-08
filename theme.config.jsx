@@ -1,4 +1,4 @@
-import {Logo} from './components/Logo'
+import {Logo} from './public/Logo'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
