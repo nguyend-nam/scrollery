@@ -28,3 +28,7 @@ a {
     background: black;
   }
 }
+
+.floating {
+  transform: translate(0, 10px) rotate(2deg);
+}
