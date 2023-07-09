@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "nextra-theme-docs";
+import { Tab, Tabs, Steps } from "nextra-theme-docs";
 
 # Getting Started
 
@@ -9,36 +9,40 @@ To get started with Scrollery, you can install the library using npm or yarn. Op
 <Tabs items={["yarn", "npm"]}>
   <Tab>
    
-```bash
+```bash copy
 yarn add @nguyend-nam/scrollery-ts
 ```
 
   </Tab>
   <Tab>
   
-```bash
+```bash copy
 npm install @nguyend-nam/scrollery-ts
 ```
 
   </Tab>
 </Tabs>
 
-## Importing Wrapper Components
+## Usage
+
+<Steps>
+
+### Importing Wrapper Components
 
 Once you have installed Scrollery, you can import the wrapper components into your project. In your JavaScript or TypeScript file, add the following import statements:
 
-```javascript
+```javascript copy
 import {
   LinearlyScaledCardWrapper,
   StackedCardWrapper,
 } from "@nguyend-nam/scrollery-ts";
 ```
 
-## Usage
+### Using in the web
 
 To animate your images, you need to wrap them with the appropriate wrapper component and apply any desired custom styles or class names. Here's an example of using the wrapper components:
 
-```javascript
+```javascript copy
 // ...
 
 <LinearlyScaledCardWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
@@ -70,7 +74,12 @@ To animate your images, you need to wrap them with the appropriate wrapper compo
 // ...
 ```
 
+### Preview
+
 <img
   src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/example.gif"
   width="100%"
+  className="mt-6"
 />
+
+</Steps>

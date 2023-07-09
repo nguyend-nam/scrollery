@@ -1,28 +1,28 @@
 # Scrollery
 
-React TypeScript library for animating your **image gallery** on **scroll**.
+View on: [NPM](https://www.npmjs.com/package/@nguyend-nam/scrollery-ts) &bullet; [GitHub](https://github.com/nguyend-nam/scrollery)
 
 [Official website](https://scrollery.netlify.app)
 
-View on: [NPM](https://www.npmjs.com/package/@nguyend-nam/scrollery-ts) &bullet; [GitHub](https://github.com/nguyend-nam/scrollery)
+Scrollery is a specialized UI library that empowers developers to effortlessly animate images as users scroll through web applications. With Scrollery, you can create stunning, interactive, and engaging image animations that leave a lasting impression on your users.
 
 <image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/preview.gif"></image>
 
 ## Installation
 
 ```bash
-npm i @nguyend-nam/scrollery-ts
+yarn add @nguyend-nam/scrollery-ts
 ```
 
-or install using yarn:
+or install using npm:
 
 ```bash
-yarn add @nguyend-nam/scrollery-ts
+npm i @nguyend-nam/scrollery-ts
 ```
 
 ## Usage
 
-Import wrapper components:
+### Import wrapper components
 
 ```javascript
 import {
@@ -30,6 +30,8 @@ import {
   StackedCardWrapper,
 } from "@nguyend-nam/scrollery-ts";
 ```
+
+### Using in the web
 
 Put the `img`s inside the wrappers with some custom style/className:
 
@@ -65,16 +67,18 @@ Put the `img`s inside the wrappers with some custom style/className:
 // ...
 ```
 
+### Preview
+
 <image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/example.gif"></image>
 
 ## Official website & documentation
 
 - Official website: https://scrollery.netlify.app
-- Document: https://scrollery.netlify.app/overview
+- Document: https://scrollery.netlify.app/introduction
 
 ## Contributing
 
-Contributions are always welcome!
+Scrollery is an open-source project hosted on GitHub, and we encourage you to join us in shaping its future. Whether you have ideas for new features, want to report bugs, or are interested in improving the library's functionality, your contributions are highly valued. Visit our GitHub repository at https://github.com/nguyend-nam/scrollery to get involved and contribute to the project.
 
 ## License
 
