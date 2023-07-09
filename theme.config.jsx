@@ -23,5 +23,8 @@ export default {
         .
       </span>
     ),
+  },
+  sidebar: {
+    titleComponent: ({title})=><span className='truncate'>{String(title)}</span>
   }
 };

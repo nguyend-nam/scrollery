@@ -71,14 +71,14 @@ export default function Home() {
           <button
             className="ring-slate-400 py-0.5 max-w-full rounded-md text-slate-500 shrink flex flex-nowrap gap-2 items-center"
             onClick={() => {
-              push("/overview");
+              push("/introduction");
             }}
           >
             <span className="truncate w-full font-normal">Docs</span>
           </button>
         </header>
         <div
-          className="flex justify-between md:bg-top bg-right-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 pl-4 pr-4 md:pl-24 md:pr-12 gap-24"
+          className="flex justify-between md:bg-top bg-right-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 pl-4 pr-4 md:pl-24 md:pr-24 lg:pr-12 gap-24"
           style={{
             backgroundImage: "url(oooscillate-bg.svg)",
             backgroundRepeat: "no-repeat",
@@ -93,21 +93,21 @@ export default function Home() {
             </h2>
 
             <ul className="pl-4 list-disc !my-4 md:!my-6">
-              <li className="!text-xl md:!text-2xl font-light md:font-extralight text-slate-500">
+              <li className="!text-xl md:!text-2xl font-light text-slate-500">
                 enhanced{" "}
                 <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
                   visual experience
                 </span>
               </li>
 
-              <li className="!text-xl md:!text-2xl font-light md:font-extralight text-slate-500">
+              <li className="!text-xl md:!text-2xl font-light text-slate-500">
                 interactive{" "}
                 <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
                   image animations
                 </span>
               </li>
 
-              <li className="!text-xl md:!text-2xl font-light md:font-extralight text-slate-500">
+              <li className="!text-xl md:!text-2xl font-light text-slate-500">
                 simple{" "}
                 <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
                   integration
@@ -120,7 +120,7 @@ export default function Home() {
                 className="bg-[#569DAA] p-2 text-lg rounded-md text-white flex gap-2 items-center"
                 onClick={() => {
                   setIsLoading(true);
-                  push("/overview");
+                  push("/introduction");
                 }}
               >
                 Get started
@@ -423,7 +423,7 @@ export default function Home() {
                 className="bg-[#477076] p-2 text-lg rounded-md text-white flex gap-2 items-center"
                 onClick={() => {
                   setIsLoading(true);
-                  push("/overview");
+                  push("/introduction");
                 }}
               >
                 Get started
