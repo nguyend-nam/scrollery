@@ -62,14 +62,14 @@ export default function Home() {
         <title>Scrollery</title>
       </Head>
       <div>
-        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-4 px-6 text-[#569DAA] font-semibold border-b border-slate-200 justify-between">
+        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-4 px-6 text-v2-green-dark font-semibold border-b border-slate-200 justify-between">
           <div className="flex gap-2 items-center text-xl">
             <Logo width={36} height={36} />
             Scrollery
           </div>
 
           <button
-            className="ring-slate-400 py-0.5 max-w-full rounded-md text-slate-500 shrink flex flex-nowrap gap-2 items-center"
+            className="ring-slate-400 py-0.5 max-w-full rounded-md text-v2-blue-extraDark shrink flex flex-nowrap gap-2 items-center"
             onClick={() => {
               push("/introduction");
             }}
@@ -78,107 +78,114 @@ export default function Home() {
           </button>
         </header>
         <div
-          className="flex justify-between md:bg-top bg-right-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[86px] md:pt-4 pb-4 pl-4 pr-4 md:pl-24 md:pr-24 lg:pr-12 gap-24"
+          className="flex justify-between md:bg-top bg-right-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[69px] gap-24"
           style={{
-            backgroundImage: "url(oooscillate-bg.svg)",
+            backgroundImage: "url(banner.svg)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
         >
-          <div className="bg-white/70 md:bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-md max-w-full md:max-w-2xl space-y-2">
-            <h2 className="!text-3xl md:!text-5xl font-light md:font-extralight text-slate-500">
-              <span className="font-bold bg-gradient-to-l from-[#477076] via-[#569DAA] to-[#32C4C0] !bg-clip-text text-transparent">
-                Empowers developers to effortlessly animate images on scroll.
-              </span>
-            </h2>
-
-            <ul className="pl-4 list-disc !my-4 md:!my-6">
-              <li className="!text-xl md:!text-2xl font-light text-slate-500">
-                enhanced{" "}
-                <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
-                  visual experience
+          <div className="bg-white/75 px-6 md:px-8 pt-4 md:pt-8 !pb-0 w-full h-[calc(100vh-69px)] gap-14 md:gap-24 flex flex-col justify-between">
+            <div className="flex flex-col items-center">
+              <h2 className="!text-4xl md:!text-5xl font-light md:font-extralight text-slate-500 max-w-xl">
+                <span className="font-bold bg-gradient-to-l from-v2-blue-dark via-v2-green-dark to-v2-green-normal !bg-clip-text text-transparent">
+                  Empowers developers to effortlessly animate images on scroll.
                 </span>
-              </li>
+              </h2>
 
-              <li className="!text-xl md:!text-2xl font-light text-slate-500">
-                interactive{" "}
-                <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
-                  image animations
-                </span>
-              </li>
+              <ul className="pl-[18px] list-disc !my-4 md:!my-5 max-w-full w-full md:w-max">
+                <li className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark">
+                  enhanced{" "}
+                  <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+                    visual experience
+                  </span>
+                </li>
 
-              <li className="!text-xl md:!text-2xl font-light text-slate-500">
-                simple{" "}
-                <span className="font-semibold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
-                  integration
-                </span>
-              </li>
-            </ul>
+                <li className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark">
+                  interactive{" "}
+                  <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+                    image animations
+                  </span>
+                </li>
 
-            <div className="flex gap-4 flex-wrap">
-              <button
-                className="bg-[#569DAA] p-2 text-lg rounded-md text-white flex gap-2 items-center"
-                onClick={() => {
-                  setIsLoading(true);
-                  push("/introduction");
-                }}
-              >
-                Get started
-                <span className="w-6">
-                  <Icon
-                    icon="gg:scroll-h"
-                    className={`text-2xl ${isLoading ? "animate-spin" : ""}`}
-                  />
-                </span>
-              </button>
+                <li className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark">
+                  simple{" "}
+                  <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+                    integration
+                  </span>
+                </li>
+              </ul>
 
-              <button
-                className="ring-2 ring-[#569DAA] max-w-full p-2 text-lg rounded-md text-[#569DAA] shrink flex flex-nowrap gap-2 items-center"
-                onClick={() => {
-                  onCopy();
-                }}
-              >
-                <span className="truncate w-full">
-                  yarn add @nguyend-nam/scrollery-ts
-                </span>
-                <span className="w-6">
-                  {hasCopied ? (
+              <div className="flex gap-4 flex-wrap max-w-full">
+                <button
+                  className="bg-gradient-to-r from-v2-green-dark to to-v2-green-normal p-2 text-lg rounded-md text-white flex gap-2 items-center"
+                  onClick={() => {
+                    setIsLoading(true);
+                    push("/introduction");
+                  }}
+                >
+                  Get started
+                  <span className="w-6">
                     <Icon
-                      icon="fluent:checkbox-checked-16-regular"
-                      className="text-2xl"
+                      icon="gg:scroll-h"
+                      className={`text-2xl ${isLoading ? "animate-spin" : ""}`}
                     />
-                  ) : (
-                    <Icon icon="fluent:copy-24-regular" className="text-2xl" />
-                  )}
-                </span>
-              </button>
+                  </span>
+                </button>
+
+                <button
+                  className="ring-2 ring-v2-blue-dark max-w-full p-2 text-lg rounded-md text-v2-blue-dark shrink flex flex-nowrap gap-2 items-center"
+                  onClick={() => {
+                    onCopy();
+                  }}
+                >
+                  <span className="truncate w-full">
+                    yarn add @nguyend-nam/scrollery-ts
+                  </span>
+                  <span className="w-6">
+                    {hasCopied ? (
+                      <Icon
+                        icon="fluent:checkbox-checked-16-regular"
+                        className="text-2xl"
+                      />
+                    ) : (
+                      <Icon
+                        icon="fluent:copy-24-regular"
+                        className="text-2xl"
+                      />
+                    )}
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="h-[440px] w-[440px] relative rounded-lg hidden lg:block pointer-events-none">
-            <Image
-              layout="fill"
-              src="/intro-preview.png"
-              alt="preview"
-              className="object-contain floating"
-            />
+            <div className="w-full md:w-full flex-1 flex justify-center">
+              <div className="w-full h-full md:w-3/5 relative rounded-t-lg overflow-hidden ring ring-v2-purple-dark">
+                <Image
+                  layout="fill"
+                  src="/doc-preview.png"
+                  alt="doc-preview"
+                  className="object-cover object-top"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="relative w-full h-[calc(100vh/5)] bg-gradient-to-b from-white/0 to-white" />
 
         <div className="relative bg-white">
-          <div className="p-4 md:p-8">
+          <div className="p-6 md:p-8 pt-4 md:pt-8">
             <div
-              className="absolute hidden md:block top-0 right-0 w-2/3 h-full bg-left bg-cover pointer-events-none"
+              className="absolute top-0 right-0 w-full md:w-2/3 h-full bg-left bg-cover pointer-events-none"
               style={{ backgroundImage: `url(/ffflurry-bg.svg)` }}
             />
 
             <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
 
-            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-500">
+            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
               our
               <br />
-              <span className="font-bold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
+              <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
                 Vision
               </span>
             </h2>
@@ -188,7 +195,7 @@ export default function Home() {
               to={500}
               itemClassName="!w-[500px] max-w-screen"
             >
-              <div className="rounded-md relative overflow-hidden h-full p-4 md:p-6 bg-[#569DAA]">
+              <div className="rounded-md relative overflow-hidden h-full p-4 md:p-6 bg-v2-green-dark">
                 <p className="text-lg font-light leading-9 text-white">
                   <span className="font-normal border-b">Our vision</span> is to
                   provide a comprehensive set of tools and components
@@ -204,7 +211,7 @@ export default function Home() {
                   <div className="bg-white p-2 rounded-full flex justify-center items-center">
                     <Icon
                       icon="iconoir:transition-down"
-                      className="!text-[#569DAA] text-2xl"
+                      className="!text-v2-green-dark text-2xl"
                     />
                   </div>
                 </div>
@@ -215,15 +222,15 @@ export default function Home() {
 
         <div
           className={cx("relative", {
-            "bg-[#32C4C0]": visibleAmount === 1,
-            "bg-blue-400": visibleAmount === 2,
-            "bg-amber-400": visibleAmount === 3,
+            "bg-v2-green-normal": visibleAmount === 1,
+            "bg-v2-purple-dark": visibleAmount === 2,
+            "bg-v2-rose-normal": visibleAmount === 3,
           })}
           style={{ transition: "background-color 0.4s" }}
         >
-          <div className="relative p-4 md:p-8">
+          <div className="relative p-6 md:p-8 pt-4 md:pt-8">
             {/* images bg */}
-            <div className="absolute top-0 right-0 h-full w-full bg-white md:w-2/5 opacity-10 md:opacity-100">
+            <div className="absolute top-0 right-0 h-full w-full bg-white md:w-[calc(100vw/3.5)] opacity-10 md:opacity-100">
               <div className="sticky top-0 right-0 w-full h-screen">
                 {featuresMedias.map((media) => (
                   <div
@@ -243,7 +250,7 @@ export default function Home() {
               </div>
             </div>
             {/* icons bg */}
-            <div className="absolute top-0 right-0 h-full w-2/5 hidden md:block">
+            <div className="absolute top-0 right-0 h-full w-[calc(100vw/3.5)] hidden md:block">
               <div className="sticky top-0 right-0 w-full p-4 h-screen pointer-events-none flex justify-end items-end">
                 {featuresMedias.map((media) => (
                   <Icon
@@ -252,22 +259,22 @@ export default function Home() {
                     className={cx("text-[80px] absolute transition-all", {
                       "opacity-1": visibleAmount === media.id,
                       "opacity-0": visibleAmount !== media.id,
-                      "text-[#32C4C0]": media.id === 1,
-                      "text-blue-400": media.id === 2,
-                      "text-amber-400": media.id === 3,
+                      "text-v2-green-normal": media.id === 1,
+                      "text-v2-purple-dark": media.id === 2,
+                      "text-v2-rose-normal": media.id === 3,
                     })}
                   />
                 ))}
               </div>
             </div>
-            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-50">
+            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[85px] md:top-[101px] text-slate-50">
               key
               <br />
               <span
                 className={cx("font-bold capitalize", {
-                  "text-[#477076]": visibleAmount === 1,
-                  "text-blue-800": visibleAmount === 2,
-                  "text-amber-800": visibleAmount === 3,
+                  "text-v2-blue-dark": visibleAmount === 1,
+                  "text-v2-green-dark": visibleAmount === 2,
+                  "text-v2-blue-normal": visibleAmount === 3,
                 })}
                 style={{ transition: "color 0.4s" }}
               >
@@ -275,8 +282,8 @@ export default function Home() {
               </span>
             </h2>
             <StackedCardWrapper
-              className="w-full md:w-3/5 right-0 md:right-4 space-y-[800px] !my-20 !mb-[200px]"
-              itemClassName="!h-max !top-[calc(100vh/3.5)]"
+              className="w-full md:w-[calc(100vw*2.5/3.5-64px)] left-0 md:right-4 space-y-[800px] !my-20 md:!mb-[calc(100vh/4)]"
+              itemClassName="!h-max !top-[calc(100vh/4)]"
               getCurrentVisibleItems={setVisibleAmount}
             >
               {keyFeatures.map((feature, index) => (
@@ -310,11 +317,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-slate-50 relative p-4 md:p-8 min-h-[calc(100vh/1.2)] flex flex-col">
-          <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-500">
+        <div className="bg-white relative p-6 md:p-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
+          <div
+            className="absolute bottom-0 right-0 w-[120px] md:w-[180px] h-[120px] md:h-[180px] bg-left bg-cover pointer-events-none"
+            style={{ backgroundImage: `url(/iiisometric.svg)` }}
+          />
+          <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
             meet the
             <br />
-            <span className="font-bold capitalize bg-gradient-to-l from-[#477076] via-[#477076] to-[#32C4C0] !bg-clip-text text-transparent">
+            <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
               Team
             </span>
           </h2>
@@ -329,20 +340,20 @@ export default function Home() {
                   className="object-cover absolute"
                 />
               </div>
-              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-50/0">
-                <div className="text-base md:text-xl font-light text-slate-700">
+              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
+                <div className="text-base md:text-xl font-light text-v2-blue-dark">
                   Nam Nguyen Dinh
                 </div>
-                <div className="flex gap-1 md:gap-2">
+                <div className="flex gap-2">
                   <a
                     href="https://github.com/nguyend-nam"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1 rounded-full bg-slate-50"
+                    className="p-2 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="openmoji:github"
-                      className="text-3xl md:text-4xl"
+                      icon="akar-icons:github-fill"
+                      className="text-2xl md:text-3xl text-v2-purple-dark"
                     />
                   </a>
 
@@ -350,11 +361,11 @@ export default function Home() {
                     href="https://www.linkedin.com/in/nguyendinhnam0320/"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1 rounded-full bg-slate-50"
+                    className="p-2 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="openmoji:linkedin"
-                      className="text-3xl md:text-4xl"
+                      icon="akar-icons:linkedin-fill"
+                      className="text-2xl md:text-3xl text-v2-green-normal"
                     />
                   </a>
                 </div>
@@ -370,20 +381,20 @@ export default function Home() {
                   className="object-cover absolute"
                 />
               </div>
-              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-50/0">
-                <div className="text-base md:text-xl font-light text-slate-700">
+              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
+                <div className="text-base md:text-xl font-light text-v2-blue-dark">
                   Lap Nguyen Ngo
                 </div>
-                <div className="flex gap-1 md:gap-2">
+                <div className="flex gap-2">
                   <a
                     href="https://github.com/ngolapnguyen"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1 rounded-full bg-slate-50"
+                    className="p-2 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="openmoji:github"
-                      className="text-3xl md:text-4xl"
+                      icon="akar-icons:github-fill"
+                      className="text-2xl md:text-3xl text-v2-purple-dark"
                     />
                   </a>
 
@@ -391,11 +402,11 @@ export default function Home() {
                     href="https://www.linkedin.com/in/ngo-lap-nguyen/"
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1 rounded-full bg-slate-50"
+                    className="p-2 rounded-full bg-slate-50"
                   >
                     <Icon
-                      icon="openmoji:linkedin"
-                      className="text-3xl md:text-4xl"
+                      icon="akar-icons:linkedin-fill"
+                      className="text-2xl md:text-3xl text-v2-green-normal"
                     />
                   </a>
                 </div>
@@ -404,7 +415,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-[#569DAA] relative p-4 md:p-8 min-h-[calc(100vh/1.2)] flex flex-col">
+        <div className="bg-v2-green-dark relative p-4 md:p-8 min-h-[calc(100vh/1.2)] flex flex-col">
           <div
             className="absolute bottom-0 right-0 w-full h-full bg-left bg-cover pointer-events-none"
             style={{ backgroundImage: `url(/bgjar-create-bg.svg)` }}
@@ -412,7 +423,7 @@ export default function Home() {
           <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-50">
             start
             <br />
-            <span className="font-bold capitalize bg-gradient-to-r from-[#569DAA] via-[#A5F1E9] to-[#A5F1E9] !bg-clip-text text-transparent">
+            <span className="font-bold capitalize bg-gradient-to-r from-v2-green-dark via-v2-green-light to-v2-green-light !bg-clip-text text-transparent">
               Creating
             </span>
           </h2>
@@ -420,7 +431,7 @@ export default function Home() {
           <div className="flex flex-col mt-4 lg:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10">
             <div className="flex flex-col items-start lg:items-end gap-4 flex-wrap w-full max-w-lg lg:w-max">
               <button
-                className="bg-[#477076] p-2 text-lg rounded-md text-white flex gap-2 items-center"
+                className="bg-v2-green-extraDark p-2 text-lg rounded-md text-white flex gap-2 items-center"
                 onClick={() => {
                   setIsLoading(true);
                   push("/introduction");
@@ -434,7 +445,7 @@ export default function Home() {
               </button>
 
               <button
-                className="ring-2 ring-slate-50 p-2 max-w-full text-lg rounded-md bg-[#569DAA] text-slate-50 shrink flex flex-nowrap gap-2 items-center"
+                className="ring-2 ring-slate-50 p-2 max-w-full text-lg rounded-md bg-v2-green-dark text-slate-50 shrink flex flex-nowrap gap-2 items-center"
                 onClick={() => {
                   onCopy();
                 }}
@@ -480,7 +491,7 @@ export default function Home() {
               href="https://www.npmjs.com/package/@nguyend-nam/scrollery-ts"
               target="_blank"
               rel="noreferrer"
-              className="text-[#477076] font-medium"
+              className="text-v2-green-extraDark font-medium"
             >
               NPM
             </a>
@@ -489,7 +500,7 @@ export default function Home() {
               href="https://github.com/nguyend-nam/scrollery"
               target="_blank"
               rel="noreferrer"
-              className="text-[#477076] font-medium"
+              className="text-v2-green-extraDark font-medium"
             >
               GitHub
             </a>
@@ -507,7 +518,7 @@ export default function Home() {
               href="https://github.com/nguyend-nam"
               target="_blank"
               rel="noreferrer"
-              className="text-[#477076] font-medium"
+              className="text-v2-green-extraDark font-medium"
             >
               Nam Nguyen Dinh
             </a>

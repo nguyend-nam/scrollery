@@ -8,7 +8,7 @@ export default function Document() {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="twitter:card" content="summary" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#569DAA" />
+        <meta name="theme-color" content="#0DBBA5" />
         <meta property="og:title" content="Scrollery" />
         <meta
           property="og:description"

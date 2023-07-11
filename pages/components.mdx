@@ -1,6 +1,56 @@
+import { Card, Cards } from "nextra-theme-docs";
+
 # Wrapper Components
 
 Scrollery provides wrapper components for animating images on scroll.
+
+<Cards>
+  <Card
+    className="h-[240px] border border-slate-200 transition-all duration-400 bg-slate-50 overflow-hidden hover:shadow-md"
+    title={
+      <div className="flex flex-col justify-between items-center gap-10 w-full h-full">
+        <code className="w-max text-v2-blue-dark">StackedCardWrapper</code>
+        <img
+          src="/stacked-card-demo.png"
+          className="pointer-events-none w-[160px]"
+        />
+      </div>
+    }
+    href="/components/stacked-card-wrapper"
+  />
+  <Card
+    className="h-[240px] border border-slate-200 transition-all duration-400 bg-slate-50 overflow-hidden hover:shadow-md"
+    title={
+      <div className="flex flex-col justify-between items-center gap-4 w-full h-full">
+        <code className="w-max text-v2-blue-dark">RotateCardWrapper</code>
+        <img
+          src="/rotate-card-demo.png"
+          className="pointer-events-none w-[200px]"
+        />
+      </div>
+    }
+    href="/components/rotate-card-wrapper"
+  />
+  <Card
+    className="h-[240px] border border-slate-200 transition-all duration-400 bg-slate-50 overflow-hidden hover:shadow-md"
+    title={
+      <div className="flex flex-col justify-between items-center gap-8 w-full h-full">
+        <code className="w-max text-v2-blue-dark">
+          LinearlyScaledCardWrapper
+        </code>
+        <img
+          src="/linearly-scaled-card-demo.png"
+          className="pointer-events-none w-[180px]"
+        />
+      </div>
+    }
+    href="/components/linearly-scaled-card-wrapper"
+  />
+</Cards>
+
+<div className="mt-4 flex w-full justify-center">
+  And much more components below
+</div>
 
 - [StackedCardWrapper](/components/stacked-card-wrapper)
 - [RotateCardWrapper](/components/rotate-card-wrapper)

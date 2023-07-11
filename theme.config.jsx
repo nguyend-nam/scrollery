@@ -2,7 +2,7 @@ import {Logo} from './public/Logo'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  logo:<header style={{color: '#569DAA', fontWeight: 700, fontSize: 20, display: 'flex', gap: 8, alignItems: 'center'}}>
+  logo:<header style={{color: '#02A8A8', fontWeight: 700, fontSize: 20, display: 'flex', gap: 8, alignItems: 'center'}}>
         <Logo width={36} height={36} />
         Scrollery
       </header>,
@@ -17,7 +17,7 @@ export default {
           ISC
         </a>
         {' '}©{' '}
-        <a href="https://github.com/nguyend-nam" target="_blank" style={{fontWeight: 600, color: '#477076'}}>
+        <a href="https://github.com/nguyend-nam" target="_blank" style={{fontWeight: 600, color: '#018383'}}>
           Nam Nguyen Dinh
         </a>
         .
