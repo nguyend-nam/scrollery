@@ -307,7 +307,7 @@ export default function Home() {
                     href={featuresMedias[index].url}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-light text-slate-500 text-sm"
+                    className="font-light text-slate-700 text-sm"
                   >
                     <i>[Image]</i>
                   </a>
@@ -341,7 +341,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
-                <div className="text-base md:text-xl font-light text-v2-blue-dark">
+                <div className="text-lg md:text-xl font-light text-v2-blue-extraDark">
                   Nam Nguyen Dinh
                 </div>
                 <div className="flex gap-2">
@@ -382,7 +382,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
-                <div className="text-base md:text-xl font-light text-v2-blue-dark">
+                <div className="text-lg md:text-xl font-light text-v2-blue-extraDark">
                   Lap Nguyen Ngo
                 </div>
                 <div className="flex gap-2">
@@ -415,7 +415,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-v2-green-dark relative p-4 md:p-8 min-h-[calc(100vh/1.2)] flex flex-col">
+        <div className="bg-v2-green-dark relative p-6 md:p-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
           <div
             className="absolute bottom-0 right-0 w-full h-full bg-left bg-cover pointer-events-none"
             style={{ backgroundImage: `url(/bgjar-create-bg.svg)` }}
@@ -484,7 +484,7 @@ export default function Home() {
           </div>
         </div>
 
-        <footer className="relative px-4 md:px-6 py-12 bg-slate-100 w-full text-slate-600">
+        <footer className="relative px-6 md:px-8 py-12 bg-slate-100 w-full text-slate-600">
           <div>
             View on:{" "}
             <a
