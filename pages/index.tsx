@@ -3,50 +3,17 @@ import { StackedCardWrapper } from "../components/StackedCardWrapper";
 import { Logo } from "../public/Logo";
 import { useRouter } from "next/router";
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useClipboard } from "@dwarvesf/react-hooks";
 import Image from "next/image";
 import cx from "classnames";
-
-const featuresMedias = [
-  {
-    id: 1,
-    img: "/feature-1-bg.jpg",
-    url: "https://unsplash.com/photos/-WBYxmW4yuw",
-    icon: "fluent:hand-draw-28-regular",
-  },
-  {
-    id: 2,
-    img: "/feature-2-bg.jpg",
-    url: "https://unsplash.com/photos/RSvJQ-IP_pk",
-    icon: "fluent:target-arrow-20-regular",
-  },
-  {
-    id: 3,
-    img: "/feature-3-bg.jpg",
-    url: "https://unsplash.com/photos/KE0nC8-58MQ",
-    icon: "fluent:code-text-edit-20-regular",
-  },
-];
-
-const keyFeatures = [
-  {
-    title: "Visual Experience Enhancement",
-    description:
-      "Whether you're building a portfolio website, a creative landing page, or an interactive storytelling platform, Scrollery empowers you to effortlessly bring your designs to life with captivating scroll animations.",
-  },
-  {
-    title: "Simple Integration",
-    description:
-      "Scrollery offers a user-friendly and straightforward integration process, allowing you to easily animate images with minimal setup. Our library provides a set of intuitive components that seamlessly work with your existing codebase, enabling you to focus on creating visually impactful scroll animations without unnecessary complexity.",
-  },
-  {
-    title: "Customization and Flexibility",
-    description:
-      "Scrollery provides a wide range of customization options, empowering you to tailor the image animations to suit your project's specific requirements. Adjust animation timings, effects, transitions, and more to create personalized and immersive experiences that perfectly align with your design vision.",
-  },
-];
+import {
+  featuresMedias,
+  featuresSummary,
+  keyFeatures,
+  teamMems,
+} from "../constants";
 
 export default function Home() {
   const { push } = useRouter();
@@ -55,6 +22,13 @@ export default function Home() {
     "yarn add @nguyend-nam/scrollery-ts"
   );
   const [visibleAmount, setVisibleAmount] = useState(1);
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+      setIsSafari(true);
+    }
+  }, []);
 
   return (
     <>
@@ -64,7 +38,18 @@ export default function Home() {
       <div>
         <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-4 px-6 text-v2-green-dark font-semibold border-b border-slate-200 justify-between">
           <div className="flex gap-2 items-center text-xl">
-            <Logo width={36} height={36} />
+            {isSafari ? (
+              <div className="h-9 w-9 relative overflow-hidden">
+                <Image
+                  layout="fill"
+                  src="/logo.png"
+                  alt="/logo.png"
+                  className="object-cover absolute"
+                />
+              </div>
+            ) : (
+              <Logo width={36} height={36} />
+            )}
             Scrollery
           </div>
 
@@ -78,11 +63,12 @@ export default function Home() {
           </button>
         </header>
         <div
-          className="flex justify-between md:bg-top bg-right-top items-start md:items-center sticky top-0 min-h-screen bg-slate-100 pt-[69px] gap-24"
+          className="flex justify-between md:bg-top bg-right-top items-start md:items-center top-0 min-h-screen bg-slate-100 pt-[69px] gap-24"
           style={{
             backgroundImage: "url(banner.svg)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            position: isSafari ? "static" : "sticky",
           }}
         >
           <div className="bg-white/75 px-6 md:px-8 pt-4 md:pt-8 !pb-0 w-full h-[calc(100vh-69px)] gap-14 md:gap-24 flex flex-col justify-between">
@@ -94,26 +80,17 @@ export default function Home() {
               </h2>
 
               <ul className="pl-[18px] list-disc !my-4 md:!my-5 max-w-full w-full md:w-max">
-                <li className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark">
-                  enhanced{" "}
-                  <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
-                    visual experience
-                  </span>
-                </li>
-
-                <li className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark">
-                  interactive{" "}
-                  <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
-                    image animations
-                  </span>
-                </li>
-
-                <li className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark">
-                  simple{" "}
-                  <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
-                    integration
-                  </span>
-                </li>
+                {featuresSummary.map((sum) => (
+                  <li
+                    className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark"
+                    key={sum.feature}
+                  >
+                    {sum.feature}{" "}
+                    <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+                      {sum.action}
+                    </span>
+                  </li>
+                ))}
               </ul>
 
               <div className="flex gap-4 flex-wrap max-w-full">
@@ -171,7 +148,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative w-full h-[calc(100vh/5)] bg-gradient-to-b from-white/0 to-white" />
+        {!isSafari ? (
+          <div className="relative w-full h-[calc(100vh/5)] bg-gradient-to-b from-white/0 to-white" />
+        ) : null}
 
         <div className="relative bg-white">
           <div className="p-6 md:p-8 pt-4 md:pt-8">
@@ -331,87 +310,48 @@ export default function Home() {
           </h2>
 
           <div className="flex py-4 md:py-0 gap-4 md:gap-20 items-center flex-wrap flex-1 justify-center relative h-full z-10">
-            <div className="flex flex-col items-center">
-              <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
-                <Image
-                  layout="fill"
-                  src="/namnd.jpg"
-                  alt="namnd"
-                  className="object-cover absolute"
-                />
-              </div>
-              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
-                <div className="text-lg md:text-xl font-light text-v2-blue-extraDark">
-                  Nam Nguyen Dinh
+            {teamMems.map((mem) => (
+              <div className="flex flex-col items-center" key={mem.img}>
+                <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
+                  <Image
+                    layout="fill"
+                    src={mem.img}
+                    alt={mem.img}
+                    className="object-cover absolute"
+                  />
                 </div>
-                <div className="flex gap-2">
-                  <a
-                    href="https://github.com/nguyend-nam"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2 rounded-full bg-slate-50"
-                  >
-                    <Icon
-                      icon="akar-icons:github-fill"
-                      className="text-2xl md:text-3xl text-v2-purple-dark"
-                    />
-                  </a>
+                <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
+                  <div className="text-lg md:text-xl font-light text-v2-blue-extraDark">
+                    {mem.fullName}
+                  </div>
+                  <div className="flex gap-2">
+                    <a
+                      href={mem.gitHub}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-2 rounded-full bg-slate-50"
+                    >
+                      <Icon
+                        icon="akar-icons:github-fill"
+                        className="text-2xl md:text-3xl text-v2-purple-dark"
+                      />
+                    </a>
 
-                  <a
-                    href="https://www.linkedin.com/in/nguyendinhnam0320/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2 rounded-full bg-slate-50"
-                  >
-                    <Icon
-                      icon="akar-icons:linkedin-fill"
-                      className="text-2xl md:text-3xl text-v2-green-normal"
-                    />
-                  </a>
+                    <a
+                      href={mem.linkedIn}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-2 rounded-full bg-slate-50"
+                    >
+                      <Icon
+                        icon="akar-icons:linkedin-fill"
+                        className="text-2xl md:text-3xl text-v2-green-normal"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-col items-center">
-              <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
-                <Image
-                  layout="fill"
-                  src="/lapnn.jpeg"
-                  alt="lapnn"
-                  className="object-cover absolute"
-                />
-              </div>
-              <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
-                <div className="text-lg md:text-xl font-light text-v2-blue-extraDark">
-                  Lap Nguyen Ngo
-                </div>
-                <div className="flex gap-2">
-                  <a
-                    href="https://github.com/ngolapnguyen"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2 rounded-full bg-slate-50"
-                  >
-                    <Icon
-                      icon="akar-icons:github-fill"
-                      className="text-2xl md:text-3xl text-v2-purple-dark"
-                    />
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/ngo-lap-nguyen/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2 rounded-full bg-slate-50"
-                  >
-                    <Icon
-                      icon="akar-icons:linkedin-fill"
-                      className="text-2xl md:text-3xl text-v2-green-normal"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
