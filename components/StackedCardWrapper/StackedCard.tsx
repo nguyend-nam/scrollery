@@ -8,6 +8,7 @@ import {
 } from "react";
 import { useIsOnScreen } from "../../hooks/useIsOnScreen";
 import { CSSProperties } from "react";
+import { useDebounce } from "@dwarvesf/react-hooks";
 
 interface Props {
   children: ReactNode;
@@ -17,6 +18,8 @@ interface Props {
   visibleAmount: number;
   setVisibleAmount: Dispatch<SetStateAction<number>>;
   elRefs: MutableRefObject<any[]>;
+  childrenAmount: number;
+  transitionDebounce: number;
 }
 
 export const StackedCard = ({
@@ -27,9 +30,16 @@ export const StackedCard = ({
   visibleAmount,
   elRefs,
   setVisibleAmount,
+  childrenAmount,
+  transitionDebounce,
 }: Props) => {
   const ref = createRef<HTMLDivElement>();
   const isVisible = useIsOnScreen(ref);
+
+  const debouncedInternalVisibleAmount = useDebounce(
+    visibleAmount,
+    transitionDebounce * 1000
+  );
 
   useEffect(() => {
     elRefs.current[index] = ref;
@@ -38,16 +48,34 @@ export const StackedCard = ({
   useEffect(() => {
     const handleScroll = () => {
       if (isVisible) {
-        if (index > 0) {
-          const currentRect = ref.current?.getBoundingClientRect();
+        const currentRect = ref.current?.getBoundingClientRect();
+        if (index > 0 && index < childrenAmount - 1) {
           const prevRect =
             elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
+          const nextRect =
+            elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
 
-          if (currentRect && prevRect && currentRect.top < prevRect.bottom) {
-            setVisibleAmount(index + 1);
+          if (currentRect && prevRect && nextRect) {
+            if (currentRect.top < prevRect.bottom) {
+              if (!(nextRect.top < currentRect.bottom)) {
+                setVisibleAmount(index + 1);
+              }
+            } else {
+              setVisibleAmount(index);
+            }
+          }
+        } else if (index === 0) {
+          const nextRect =
+            elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
+          if (currentRect && nextRect && nextRect.top > currentRect.bottom) {
+            setVisibleAmount(1);
           }
         } else {
-          setVisibleAmount(1);
+          const prevRect =
+            elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
+          if (currentRect && prevRect && currentRect.top < prevRect.bottom) {
+            setVisibleAmount(childrenAmount);
+          }
         }
       }
     };
@@ -57,15 +85,25 @@ export const StackedCard = ({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [elRefs, index, isVisible, ref, setVisibleAmount]);
+  }, [
+    childrenAmount,
+    elRefs,
+    index,
+    isVisible,
+    ref,
+    setVisibleAmount,
+    visibleAmount,
+  ]);
 
   return (
     <div
       style={{
         transform:
-          visibleAmount > index + 1
-            ? `scale(${1 - (visibleAmount - index - 1) / 14}) translateY(-${
-                (visibleAmount - index - 1) * 6
+          debouncedInternalVisibleAmount > index + 1
+            ? `scale(${
+                1 - (debouncedInternalVisibleAmount - index - 1) / 14
+              }) translateY(-${
+                (debouncedInternalVisibleAmount - index - 1) * 6
               }0px)`
             : "scale(1)",
         transition: "0.4s",
