@@ -17,6 +17,7 @@ interface Props {
   visibleAmount: number;
   setVisibleAmount: Dispatch<SetStateAction<number>>;
   elRefs: MutableRefObject<any[]>;
+  childrenAmount: number;
 }
 
 export const StackedCard = ({
@@ -27,6 +28,7 @@ export const StackedCard = ({
   visibleAmount,
   elRefs,
   setVisibleAmount,
+  childrenAmount,
 }: Props) => {
   const ref = createRef<HTMLDivElement>();
   const isVisible = useIsOnScreen(ref);
@@ -38,16 +40,34 @@ export const StackedCard = ({
   useEffect(() => {
     const handleScroll = () => {
       if (isVisible) {
-        if (index > 0) {
-          const currentRect = ref.current?.getBoundingClientRect();
+        const currentRect = ref.current?.getBoundingClientRect();
+        if (index > 0 && index < childrenAmount - 1) {
           const prevRect =
             elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
+          const nextRect =
+            elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
 
-          if (currentRect && prevRect && currentRect.top < prevRect.bottom) {
-            setVisibleAmount(index + 1);
+          if (currentRect && prevRect && nextRect) {
+            if (currentRect.top < prevRect.bottom) {
+              if (!(nextRect.top < currentRect.bottom)) {
+                setVisibleAmount(index + 1);
+              }
+            } else {
+              setVisibleAmount(index);
+            }
+          }
+        } else if (index === 0) {
+          const nextRect =
+            elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
+          if (currentRect && nextRect && nextRect.top > currentRect.bottom) {
+            setVisibleAmount(1);
           }
         } else {
-          setVisibleAmount(1);
+          const prevRect =
+            elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
+          if (currentRect && prevRect && currentRect.top < prevRect.bottom) {
+            setVisibleAmount(childrenAmount);
+          }
         }
       }
     };
@@ -57,7 +77,15 @@ export const StackedCard = ({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [elRefs, index, isVisible, ref, setVisibleAmount]);
+  }, [
+    childrenAmount,
+    elRefs,
+    index,
+    isVisible,
+    ref,
+    setVisibleAmount,
+    visibleAmount,
+  ]);
 
   return (
     <div

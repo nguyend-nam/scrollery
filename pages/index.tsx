@@ -263,6 +263,7 @@ export default function Home() {
             <StackedCardWrapper
               className="w-full md:w-[calc(100vw*2.5/3.5-64px)] left-0 md:right-4 space-y-[800px] !my-20 md:!mb-[calc(100vh/4)]"
               itemClassName="!h-max !top-[calc(100vh/4)]"
+              itemStyle={{ transition: "0.25s" }}
               getCurrentVisibleItems={setVisibleAmount}
             >
               {keyFeatures.map((feature, index) => (

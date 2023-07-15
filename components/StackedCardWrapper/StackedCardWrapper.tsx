@@ -27,6 +27,8 @@ export const StackedCardWrapper = ({
     getCurrentVisibleItems?.(visibleAmount);
   }, [getCurrentVisibleItems, visibleAmount]);
 
+  console.log(visibleAmount);
+
   const elRefs = useRef<any[]>(new Array((childrenArray || []).length));
 
   return (
@@ -39,6 +41,7 @@ export const StackedCardWrapper = ({
           visibleAmount={visibleAmount}
           setVisibleAmount={setVisibleAmount}
           style={itemStyle}
+          childrenAmount={(childrenArray || []).length}
           className={itemClassName}
         >
           {c}
