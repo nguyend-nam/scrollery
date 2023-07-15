@@ -10,6 +10,7 @@ interface Props {
   itemStyle?: CSSProperties;
   itemClassName?: string;
   getCurrentVisibleItems?: (amount: number) => void;
+  transitionDebounce?: number;
 }
 
 export const StackedCardWrapper = ({
@@ -19,6 +20,7 @@ export const StackedCardWrapper = ({
   itemStyle,
   itemClassName,
   getCurrentVisibleItems,
+  transitionDebounce = 0,
 }: Props) => {
   const childrenArray = Children.toArray(children);
   const [visibleAmount, setVisibleAmount] = useState(1);
@@ -26,8 +28,6 @@ export const StackedCardWrapper = ({
   useEffect(() => {
     getCurrentVisibleItems?.(visibleAmount);
   }, [getCurrentVisibleItems, visibleAmount]);
-
-  console.log(visibleAmount);
 
   const elRefs = useRef<any[]>(new Array((childrenArray || []).length));
 
@@ -43,6 +43,7 @@ export const StackedCardWrapper = ({
           style={itemStyle}
           childrenAmount={(childrenArray || []).length}
           className={itemClassName}
+          transitionDebounce={transitionDebounce}
         >
           {c}
         </StackedCard>

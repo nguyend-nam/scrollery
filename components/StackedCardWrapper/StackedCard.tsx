@@ -8,6 +8,7 @@ import {
 } from "react";
 import { useIsOnScreen } from "../../hooks/useIsOnScreen";
 import { CSSProperties } from "react";
+import { useDebounce } from "@dwarvesf/react-hooks";
 
 interface Props {
   children: ReactNode;
@@ -18,6 +19,7 @@ interface Props {
   setVisibleAmount: Dispatch<SetStateAction<number>>;
   elRefs: MutableRefObject<any[]>;
   childrenAmount: number;
+  transitionDebounce: number;
 }
 
 export const StackedCard = ({
@@ -29,9 +31,15 @@ export const StackedCard = ({
   elRefs,
   setVisibleAmount,
   childrenAmount,
+  transitionDebounce,
 }: Props) => {
   const ref = createRef<HTMLDivElement>();
   const isVisible = useIsOnScreen(ref);
+
+  const debouncedInternalVisibleAmount = useDebounce(
+    visibleAmount,
+    transitionDebounce * 1000
+  );
 
   useEffect(() => {
     elRefs.current[index] = ref;
@@ -91,9 +99,11 @@ export const StackedCard = ({
     <div
       style={{
         transform:
-          visibleAmount > index + 1
-            ? `scale(${1 - (visibleAmount - index - 1) / 14}) translateY(-${
-                (visibleAmount - index - 1) * 6
+          debouncedInternalVisibleAmount > index + 1
+            ? `scale(${
+                1 - (debouncedInternalVisibleAmount - index - 1) / 14
+              }) translateY(-${
+                (debouncedInternalVisibleAmount - index - 1) * 6
               }0px)`
             : "scale(1)",
         transition: "0.4s",

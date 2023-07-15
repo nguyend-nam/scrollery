@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useClipboard } from "@dwarvesf/react-hooks";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import cx from "classnames";
 import {
   featuresMedias,
@@ -265,13 +265,14 @@ export default function Home() {
               itemClassName="!h-max !top-[calc(100vh/4)]"
               itemStyle={{ transition: "0.25s" }}
               getCurrentVisibleItems={setVisibleAmount}
+              transitionDebounce={0.15}
             >
               {keyFeatures.map((feature, index) => (
                 <div
                   key={feature.title}
                   className="rounded-lg h-max mx-auto max-w-lg bg-white p-4 md:p-6"
                 >
-                  <div className="text-slate-600 pb-4 mb-4 border-b text-2xl font-semibold">
+                  <div className="text-slate-600 pb-4 mb-4 border-b text-xl md:text-2xl font-semibold">
                     {feature.title}
                   </div>
                   <div className="w-full flex justify-center mb-4">
