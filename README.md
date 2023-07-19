@@ -2,7 +2,7 @@
 
 View on: [NPM](https://www.npmjs.com/package/@nguyend-nam/scrollery-ts) &bullet; [GitHub](https://github.com/nguyend-nam/scrollery)
 
-[Official website](https://scrollery.netlify.app)
+[Official website](https://scrollery.js.org)
 
 Scrollery is a specialized UI library that empowers developers to effortlessly animate images as users scroll through web applications. With Scrollery, you can create stunning, interactive, and engaging image animations that leave a lasting impression on your users.
 
@@ -73,8 +73,8 @@ Put the `img`s inside the wrappers with some custom style/className:
 
 ## Official website & documentation
 
-- Official website: https://scrollery.netlify.app
-- Document: https://scrollery.netlify.app/introduction
+- Official website: https://scrollery.js.org
+- Document: https://scrollery.js.org/introduction
 
 ## Contributing
 
