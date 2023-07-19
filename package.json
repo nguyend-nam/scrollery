@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/nguyend-nam/scrollery"
   },
-  "homepage": "https://scrollery.js.org/",
+  "homepage": "https://scrollery.js.org",
   "readme": "https://github.com/nguyend-nam/scrollery#readme",
   "type": "commonjs",
   "scripts": {
