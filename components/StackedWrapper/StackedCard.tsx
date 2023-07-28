@@ -34,7 +34,7 @@ export const StackedCard = ({
   transitionDebounce,
 }: Props) => {
   const ref = createRef<HTMLDivElement>();
-  const isVisible = useIsOnScreen(ref);
+  const { isVisible } = useIsOnScreen(ref);
 
   const debouncedInternalVisibleAmount = useDebounce(
     visibleAmount,

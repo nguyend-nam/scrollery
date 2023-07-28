@@ -8,8 +8,24 @@ import { useState, useMemo, useEffect, RefObject } from "react";
   the sticky header when the main header is scrolled outside
   the viewport.
 */
-export function useIsOnScreen(ref: RefObject<HTMLDivElement>) {
+
+export interface UseIsOnScreenReturn {
+  isVisible: boolean;
+  visibleCounts: number;
+}
+
+export function useIsOnScreen(
+  ref: RefObject<HTMLDivElement>
+): UseIsOnScreenReturn {
   const [isIntersecting, setIntersecting] = useState(false);
+  const [appearTimes, setAppearTimes] = useState(0);
+
+  useEffect(() => {
+    if (isIntersecting) {
+      setAppearTimes(appearTimes + 1);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isIntersecting]);
 
   const observer = useMemo(() => {
     if (isSSR()) {
@@ -30,5 +46,5 @@ export function useIsOnScreen(ref: RefObject<HTMLDivElement>) {
     };
   }, [observer, ref]);
 
-  return isIntersecting;
+  return { isVisible: isIntersecting, visibleCounts: appearTimes };
 }

@@ -73,7 +73,7 @@ export default function Home() {
         >
           <div className="bg-white/75 px-6 md:px-8 pt-4 md:pt-8 !pb-0 w-full h-[calc(100vh-69px)] gap-14 md:gap-24 flex flex-col justify-between">
             <div className="flex flex-col items-center">
-              <h2 className="!text-4xl md:!text-5xl font-light md:font-extralight text-slate-500 max-w-xl">
+              <h2 className="!text-4xl md:!text-5xl font-normal md:font-light text-slate-500 max-w-xl">
                 <span className="font-bold bg-gradient-to-l from-v2-blue-dark via-v2-green-dark to-v2-green-normal !bg-clip-text text-transparent">
                   Empowers developers to effortlessly animate images on scroll.
                 </span>
@@ -82,7 +82,7 @@ export default function Home() {
               <ul className="pl-[18px] list-disc !my-4 md:!my-5 max-w-full w-full md:w-max">
                 {featuresSummary.map((sum) => (
                   <li
-                    className="!text-xl md:!text-2xl font-light text-v2-blue-extraDark"
+                    className="!text-xl md:!text-2xl font-normal text-v2-blue-extraDark"
                     key={sum.feature}
                   >
                     {sum.feature}{" "}
@@ -161,7 +161,7 @@ export default function Home() {
 
             <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
 
-            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
+            <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
               our
               <br />
               <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
@@ -175,7 +175,7 @@ export default function Home() {
               itemClassName="!w-[500px] max-w-screen"
             >
               <div className="rounded-md relative overflow-hidden h-full p-4 md:p-6 bg-v2-green-dark">
-                <p className="text-lg font-light leading-9 text-white">
+                <p className="text-lg font-normal leading-9 text-white">
                   <span className="font-normal border-b">Our vision</span> is to
                   provide a comprehensive set of tools and components
                   specifically designed to enhance the visual experience of
@@ -186,7 +186,7 @@ export default function Home() {
                   <span className="font-normal border-b">engaging</span> image
                   animations that leave a lasting impression on your users.
                 </p>
-                <div className="absolute bottom-4 md:bottom-6 left-0 !w-full flex justify-center">
+                <div className="absolute bottom-0 py-4 md:py-6 left-0 !w-full flex justify-center bg-gradient-to-b from-white/0 to-v2-green-dark">
                   <div className="bg-white p-2 rounded-full flex justify-center items-center">
                     <Icon
                       icon="iconoir:transition-down"
@@ -199,14 +199,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div
-          className={cx("relative", {
-            "bg-v2-green-normal": visibleAmount === 1,
-            "bg-v2-purple-dark": visibleAmount === 2,
-            "bg-v2-rose-normal": visibleAmount === 3,
-          })}
-          style={{ transition: "background-color 0.4s" }}
-        >
+        <div className="relative bg-v2-purple-dark">
           <div className="relative p-6 md:p-8 pt-4 md:pt-8">
             {/* images bg */}
             <div className="absolute top-0 right-0 h-full w-full bg-white md:w-[calc(100vw/3.5)] opacity-10 md:opacity-100">
@@ -215,7 +208,7 @@ export default function Home() {
                   <div
                     key={media.id}
                     className={cx(
-                      "w-full absolute h-full bg-center bg-cover pointer-events-none transition-all",
+                      "w-full absolute h-full bg-center bg-cover pointer-events-none transition-all duration-200",
                       {
                         "opacity-100": visibleAmount === media.id,
                         "opacity-0": visibleAmount !== media.id,
@@ -235,26 +228,22 @@ export default function Home() {
                   <Icon
                     key={media.id}
                     icon={media.icon}
-                    className={cx("text-[80px] absolute transition-all", {
-                      "opacity-1": visibleAmount === media.id,
-                      "opacity-0": visibleAmount !== media.id,
-                      "text-v2-green-normal": media.id === 1,
-                      "text-v2-purple-dark": media.id === 2,
-                      "text-v2-rose-normal": media.id === 3,
-                    })}
+                    className={cx(
+                      "text-[80px] absolute transition-all text-v2-green-normal",
+                      {
+                        "opacity-1": visibleAmount === media.id,
+                        "opacity-0": visibleAmount !== media.id,
+                      }
+                    )}
                   />
                 ))}
               </div>
             </div>
-            <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[85px] md:top-[101px] text-slate-50">
+            <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[85px] md:top-[101px] text-slate-50">
               key
               <br />
               <span
-                className={cx("font-bold capitalize", {
-                  "text-v2-blue-dark": visibleAmount === 1,
-                  "text-v2-green-dark": visibleAmount === 2,
-                  "text-v2-blue-normal": visibleAmount === 3,
-                })}
+                className="font-bold capitalize text-v2-green-normal"
                 style={{ transition: "color 0.4s" }}
               >
                 Features
@@ -270,7 +259,7 @@ export default function Home() {
               {keyFeatures.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="rounded-lg h-max mx-auto max-w-lg bg-white p-4 md:p-6"
+                  className="rounded-lg h-max mx-auto max-w-lg bg-white p-4 md:p-6 border"
                 >
                   <div className="text-slate-600 pb-4 mb-4 border-b text-xl md:text-2xl font-semibold">
                     {feature.title}
@@ -281,14 +270,14 @@ export default function Home() {
                       className="text-slate-500 text-4xl"
                     />
                   </div>
-                  <p className="font-light text-slate-500 text-lg">
+                  <p className="font-normal text-slate-500 text-lg">
                     {feature.description}
                   </p>
                   <a
                     href={featuresMedias[index].url}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-light text-slate-700 text-sm"
+                    className="font-normal text-slate-700 text-sm"
                   >
                     <i>[Image]</i>
                   </a>
@@ -303,7 +292,7 @@ export default function Home() {
             className="absolute bottom-0 right-0 w-[120px] md:w-[180px] h-[120px] md:h-[180px] bg-left bg-cover pointer-events-none"
             style={{ backgroundImage: `url(/iiisometric.svg)` }}
           />
-          <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
+          <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
             meet the
             <br />
             <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
@@ -323,7 +312,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
-                  <div className="text-lg md:text-xl font-light text-v2-blue-extraDark">
+                  <div className="text-lg md:text-xl font-normal text-v2-blue-extraDark">
                     {mem.fullName}
                   </div>
                   <div className="flex gap-2">
@@ -362,7 +351,7 @@ export default function Home() {
             className="absolute bottom-0 right-0 w-full h-full bg-left bg-cover pointer-events-none"
             style={{ backgroundImage: `url(/bgjar-create-bg.svg)` }}
           />
-          <h2 className="!text-3xl md:!text-4xl font-light md:font-extralight sticky top-[100px] text-slate-50">
+          <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[100px] text-slate-50">
             start
             <br />
             <span className="font-bold capitalize bg-gradient-to-r from-v2-green-dark via-v2-green-light to-v2-green-light !bg-clip-text text-transparent">
@@ -408,7 +397,7 @@ export default function Home() {
                 </span>
               </button>
             </div>
-            <div className="max-w-lg font-light text-lg text-slate-100">
+            <div className="max-w-lg font-normal text-lg text-slate-100">
               Whether you have ideas for new features, want to report bugs, or
               are interested in improving the library&rsquo;s functionality,
               your contributions are highly valued. Visit our GitHub repository

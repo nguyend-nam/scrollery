@@ -5,7 +5,6 @@ export default function Document() {
     <Html>
       <Head>
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="twitter:card" content="summary" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#0DBBA5" />
