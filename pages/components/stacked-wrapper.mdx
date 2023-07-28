@@ -1,23 +1,23 @@
-# StackedCardWrapper
+# StackedWrapper
 
 ## Example
 
 <iframe
-  src="/examples/stacked-card-wrapper"
+  src="/examples/stacked-wrapper"
   height={500}
   width="100%"
   className="mt-6 rounded-xl border bordr-slate-50"
 />
 
 ```javascript filename="index.tsx" copy
-import { StackedCardWrapper } from "@nguyend-nam/scrollery-ts";
+import { StackedWrapper } from "@nguyend-nam/scrollery-ts";
 
-export default function StackedCardWrapperDemo() {
+export default function StackedWrapperDemo() {
   return (
     <div className="!bg-slate-50 p-8">
       <h1 className="!text-[#018383]">Animate on Scroll</h1>
 
-      <StackedCardWrapper
+      <StackedWrapper
         className="w-full space-y-[800px] !mt-8 !mb-40"
         itemClassName="!h-[300px]"
       >
@@ -25,7 +25,7 @@ export default function StackedCardWrapperDemo() {
         <div className="rounded-3xl shadow-md h-full bg-[#02A8A8]" />
         <div className="rounded-3xl shadow-md h-full bg-[#0DBBA5]" />
         <div className="rounded-3xl shadow-md h-full bg-[#03FBA2]" />
-      </StackedCardWrapper>
+      </StackedWrapper>
     </div>
   );
 }

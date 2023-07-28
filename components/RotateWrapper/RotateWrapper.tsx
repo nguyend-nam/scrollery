@@ -24,7 +24,7 @@ interface Props {
   threshold?: number;
 }
 
-export const RotateCardWrapper = ({
+export const RotateWrapper = ({
   children,
   style,
   className,

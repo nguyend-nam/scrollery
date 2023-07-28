@@ -1,27 +1,27 @@
-# LinearlyScaledCardWrapper
+# LinearlyScaledWrapper
 
 ## Example
 
 <iframe
-  src="/examples/linearly-scaled-card-wrapper"
+  src="/examples/linearly-scaled-wrapper"
   height={500}
   width="100%"
   className="mt-6 rounded-xl border bordr-slate-50"
 />
 
 ```javascript filename="index.tsx" copy
-import { LinearlyScaledCardWrapper } from "@nguyend-nam/scrollery-ts";
+import { LinearlyScaledWrapper } from "@nguyend-nam/scrollery-ts";
 
-export default function LinearlyScaledCardWrapperDemo() {
+export default function LinearlyScaledWrapperDemo() {
   return (
     <div className="!bg-slate-50 p-8">
       <h1 className="!text-[#018383] mb-[300px]">
-        <code>LinearlyScaledCardWrapper</code>
+        <code>LinearlyScaledWrapper</code>
       </h1>
 
-      <LinearlyScaledCardWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
+      <LinearlyScaledWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
         <div className="rounded-3xl shadow-md h-full bg-[#02A8A8]" />
-      </LinearlyScaledCardWrapper>
+      </LinearlyScaledWrapper>
     </div>
   );
 }

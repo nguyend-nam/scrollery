@@ -1,5 +1,5 @@
-import { LinearlyScaledCardWrapper } from "../components/LinearlyScaledCardWrapper";
-import { StackedCardWrapper } from "../components/StackedCardWrapper";
+import { LinearlyScaledWrapper } from "../components/LinearlyScaledWrapper";
+import { StackedWrapper } from "../components/StackedWrapper";
 import { Logo } from "../public/Logo";
 import { useRouter } from "next/router";
 import { Icon } from "@iconify/react";
@@ -168,7 +168,7 @@ export default function Home() {
                 Vision
               </span>
             </h2>
-            <LinearlyScaledCardWrapper
+            <LinearlyScaledWrapper
               className="w-full flex flex-col items-center gap-[800px] !my-20 !h-[1330px]"
               from={120}
               to={500}
@@ -195,7 +195,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </LinearlyScaledCardWrapper>
+            </LinearlyScaledWrapper>
           </div>
         </div>
 
@@ -260,7 +260,7 @@ export default function Home() {
                 Features
               </span>
             </h2>
-            <StackedCardWrapper
+            <StackedWrapper
               className="w-full md:w-[calc(100vw*2.5/3.5-64px)] left-0 md:right-4 space-y-[800px] !my-20 md:!mb-[calc(100vh/4)]"
               itemClassName="!h-max !top-[calc(100vh/4)]"
               itemStyle={{ transition: "0.25s" }}
@@ -294,7 +294,7 @@ export default function Home() {
                   </a>
                 </div>
               ))}
-            </StackedCardWrapper>
+            </StackedWrapper>
           </div>
         </div>
 
