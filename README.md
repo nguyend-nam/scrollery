@@ -26,8 +26,8 @@ npm i @nguyend-nam/scrollery-ts
 
 ```javascript
 import {
-  LinearlyScaledCardWrapper,
-  StackedCardWrapper,
+  LinearlyScaledWrapper,
+  StackedWrapper,
 } from "@nguyend-nam/scrollery-ts";
 ```
 
@@ -38,15 +38,15 @@ Put the `img`s inside the wrappers with some custom style/className:
 ```javascript
 // ...
 
-<LinearlyScaledCardWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
+<LinearlyScaledWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
   <img
     src="/img/cat1.png"
     className="w-full h-full object-cover"
     alt="Coding cat"
   />
-</LinearlyScaledCardWrapper>
+</LinearlyScaledWrapper>
 
-<StackedCardWrapper className="w-full space-y-[1400px] !mt-8 !mb-40 px-4">
+<StackedWrapper className="w-full space-y-[1400px] !mt-8 !mb-40 px-4">
   <img
     src="/img/cat2.png"
     className="w-full h-full object-cover"
@@ -62,7 +62,7 @@ Put the `img`s inside the wrappers with some custom style/className:
     className="w-full h-full object-cover"
     alt="Sleepy cat"
   />
-</StackedCardWrapper>
+</StackedWrapper>
 
 // ...
 ```

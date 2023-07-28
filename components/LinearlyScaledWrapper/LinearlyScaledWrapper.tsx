@@ -13,7 +13,7 @@ interface Props {
   to?: number;
 }
 
-export const LinearlyScaledCardWrapper = ({
+export const LinearlyScaledWrapper = ({
   children,
   style,
   className,

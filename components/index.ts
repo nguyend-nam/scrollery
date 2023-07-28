@@ -1,3 +1,3 @@
-export * from "./StackedCardWrapper";
-export * from "./RotateCardWrapper";
-export * from "./LinearlyScaledCardWrapper";
+export * from "./StackedWrapper";
+export * from "./RotateWrapper";
+export * from "./LinearlyScaledWrapper";

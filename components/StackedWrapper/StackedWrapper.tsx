@@ -13,7 +13,7 @@ interface Props {
   transitionDebounce?: number;
 }
 
-export const StackedCardWrapper = ({
+export const StackedWrapper = ({
   children,
   style,
   className,
