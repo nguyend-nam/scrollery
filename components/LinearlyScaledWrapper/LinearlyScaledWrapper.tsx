@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { createRef, ReactNode, useEffect, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 import { LinearlyScaledCard } from "./LinearlyScaledCard";
 
 interface Props {

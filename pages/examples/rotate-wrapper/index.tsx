@@ -10,7 +10,8 @@ export default function Home() {
       <RotateWrapper
         className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]"
         bottomLayer={<span>Animate on Scroll</span>}
-        bottomLayerClassName="text-[30px] md:text-[70px] text-v2-green-extraDark font-bold"
+        bottomLayerClassName="text-[30px] md:text-[70px] text-v2-green-extraDark font-bold !h-[200px]"
+        itemClassName="!w-[200px] !h-[200px]"
       >
         <div className="rounded-3xl shadow-md h-full bg-v2-green-extraDark" />
         <div className="rounded-3xl shadow-md h-full bg-v2-green-dark" />

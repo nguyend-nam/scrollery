@@ -27,27 +27,41 @@ export const LinearlyScaledCard = ({
   const [viewHeight, setViewHeight] = useState<number>(0);
 
   useEffect(() => {
-    if (window && ref?.current) {
-      window.addEventListener("scroll", () => {
+    const currentRef = ref?.current;
+    const handleOffset = () => {
+      if (window && currentRef) {
         const yTop = ref?.current?.getBoundingClientRect().top;
         const yBottom = ref?.current?.getBoundingClientRect().bottom;
         if (typeof yTop === "number" && typeof yBottom === "number") {
           setOffset((yTop + yBottom) / 2);
         }
-      });
-    }
+      }
+    };
+
+    window.addEventListener("scroll", handleOffset);
+
+    return () => {
+      window.removeEventListener("scroll", handleOffset);
+    };
   }, [ref, setOffset]);
 
   useEffect(() => {
-    if (window && headerRef?.current) {
-      window.addEventListener("scroll", () => {
+    const currentRef = ref?.current;
+    const handleContainerOffset = () => {
+      if (window && currentRef) {
         const y = headerRef?.current?.getBoundingClientRect().top;
         if (typeof y === "number") {
           setContainerOffset(y);
         }
-      });
-    }
-  }, [headerRef, setContainerOffset]);
+      }
+    };
+
+    window.addEventListener("scroll", handleContainerOffset);
+
+    return () => {
+      window.removeEventListener("scroll", handleContainerOffset);
+    };
+  }, [headerRef, ref, setContainerOffset]);
 
   useEffect(() => {
     setViewHeight(window.innerHeight);
@@ -71,8 +85,6 @@ export const LinearlyScaledCard = ({
         maxWidth: "100%",
         top: (viewHeight - renderHeight) / 2,
         ...style,
-        // transform: `scale(${renderHeight / from})`,
-        // transition: '0.1s',
       }}
       ref={ref}
       className={className}
