@@ -76,7 +76,8 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <h2 className="!text-4xl md:!text-5xl text-slate-500 max-w-xl">
                 <span className="font-bold bg-gradient-to-l from-v2-blue-dark via-v2-green-dark to-v2-green-normal !bg-clip-text text-transparent">
-                  Empowers developers to effortlessly animate images on scroll.
+                  Empowers developers to effortlessly animate contents on
+                  scroll.
                 </span>
               </h2>
 

@@ -37,16 +37,16 @@ export default function Home() {
 
 ## API
 
-| Name                     | Type            | Default         | Description                                                                                 | Required |
-| ------------------------ | --------------- | --------------- | ------------------------------------------------------------------------------------------- | -------- |
-| **children**             | `ReactNode`     |                 | The images for the content you want to animate on scroll                                    | &check;  |
-| **style**                | `CSSProperties` |                 | The styles you want to apply to the wrapper                                                 |          |
-| **className**            | `string`        |                 | The classes you want to apply to the wrapper                                                |          |
-| **itemStyle**            | `CSSProperties` |                 | The styles you want to apply to each item                                                   |          |
-| **itemClassName**        | `string`        |                 | The classes you want to apply to each item                                                  |          |
-| **triggerOn**            | `"in" \| "out"` | `"in"`          | The prop to specify if the animation is triggered when the images go in or out the viewport |          |
-| **isSticky**             | `boolean`       | `true`          | If `true`, then the images stay inside the viewport when animating                          |          |
-| **threshold**            | `number`        | 1/3 view height | the threshold where the animation is triggered                                              |          |
-| **bottomLayer**          | `ReactNode`     |                 | The bottom layer behind the images                                                          |          |
-| **bottomLayerStyle**     | `CSSProperties` |                 | The styles you want to apply to the bottom layer                                            |          |
-| **bottomLayerClassName** | `string`        |                 | The classes you want to apply to the bottom layer                                           |          |
+| Name                     | Type            | Default         | Description                                                                                   | Required |
+| ------------------------ | --------------- | --------------- | --------------------------------------------------------------------------------------------- | -------- |
+| **children**             | `ReactNode`     |                 | The contents you want to animate on scroll                                                    | &check;  |
+| **style**                | `CSSProperties` |                 | The styles you want to apply to the wrapper                                                   |          |
+| **className**            | `string`        |                 | The classes you want to apply to the wrapper                                                  |          |
+| **itemStyle**            | `CSSProperties` |                 | The styles you want to apply to each item                                                     |          |
+| **itemClassName**        | `string`        |                 | The classes you want to apply to each item                                                    |          |
+| **triggerOn**            | `"in" \| "out"` | `"in"`          | The prop to specify if the animation is triggered when the contents go in or out the viewport |          |
+| **isSticky**             | `boolean`       | `true`          | If `true`, then the contents stay inside the viewport when animating                          |          |
+| **threshold**            | `number`        | 1/3 view height | the threshold where the animation is triggered                                                |          |
+| **bottomLayer**          | `ReactNode`     |                 | The bottom layer behind the contents                                                          |          |
+| **bottomLayerStyle**     | `CSSProperties` |                 | The styles you want to apply to the bottom layer                                              |          |
+| **bottomLayerClassName** | `string`        |                 | The classes you want to apply to the bottom layer                                             |          |

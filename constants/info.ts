@@ -34,7 +34,7 @@ export const keyFeatures = [
   {
     title: "Simple Integration",
     description:
-      "Scrollery offers a user-friendly and straightforward integration process, allowing you to easily animate images with minimal setup. Our library provides a set of intuitive components that seamlessly work with your existing codebase, enabling you to focus on creating visually impactful scroll animations without unnecessary complexity.",
+      "Scrollery offers a user-friendly and straightforward integration process, allowing you to easily animate contents with minimal setup. Our library provides a set of intuitive components that seamlessly work with your existing codebase, enabling you to focus on creating visually impactful scroll animations without unnecessary complexity.",
   },
   {
     title: "Customization and Flexibility",
