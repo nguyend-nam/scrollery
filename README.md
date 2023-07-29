@@ -4,7 +4,7 @@ View on: [NPM](https://www.npmjs.com/package/@nguyend-nam/scrollery-ts) &bullet;
 
 [Official website](https://scrollery.js.org)
 
-Scrollery is a specialized UI library that empowers developers to effortlessly animate images as users scroll through web applications. With Scrollery, you can create stunning, interactive, and engaging image animations that leave a lasting impression on your users.
+Scrollery is a specialized UI library that empowers developers to effortlessly animate contents as users scroll through websites/web applications. With Scrollery, you can create stunning, interactive, and engaging image animations that leave a lasting impression on your users.
 
 <image src="https://raw.githubusercontent.com/nguyend-nam/scrollery/main/public/preview.gif"></image>
 

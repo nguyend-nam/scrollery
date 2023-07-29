@@ -33,12 +33,12 @@ export default function StackedWrapperDemo() {
 
 ## API
 
-| Name                        | Type                       | Default | Description                                              | Required |
-| --------------------------- | -------------------------- | ------- | -------------------------------------------------------- | -------- |
-| **children**                | `ReactNode`                |         | The images for the content you want to animate on scroll | &check;  |
-| **style**                   | `CSSProperties`            |         | The styles you want to apply to the wrapper              |          |
-| **className**               | `string`                   |         | The classes you want to apply to the wrapper             |          |
-| **itemStyle**               | `CSSProperties`            |         | The styles you want to apply to each item                |          |
-| **itemClassName**           | `string`                   |         | The classes you want to apply to each item               |          |
-| **getCurrentVisibleAmount** | `(amount: number) => void` |         | Get the amount of child items that appeard in viewport   |          |
-| **transitionDebounce**      | `number`                   | 0       | The debounce (in seconds) to trigger the animation       |          |
+| Name                        | Type                       | Default | Description                                            | Required |
+| --------------------------- | -------------------------- | ------- | ------------------------------------------------------ | -------- |
+| **children**                | `ReactNode`                |         | The contents you want to animate on scroll             | &check;  |
+| **style**                   | `CSSProperties`            |         | The styles you want to apply to the wrapper            |          |
+| **className**               | `string`                   |         | The classes you want to apply to the wrapper           |          |
+| **itemStyle**               | `CSSProperties`            |         | The styles you want to apply to each item              |          |
+| **itemClassName**           | `string`                   |         | The classes you want to apply to each item             |          |
+| **getCurrentVisibleAmount** | `(amount: number) => void` |         | Get the amount of child items that appeard in viewport |          |
+| **transitionDebounce**      | `number`                   | 0       | The debounce (in seconds) to trigger the animation     |          |
