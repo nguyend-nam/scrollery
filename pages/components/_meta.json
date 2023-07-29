@@ -1,5 +1,6 @@
 {
-    "stacked-wrapper": "StackedWrapper",
+    "linearly-scaled-wrapper": "LinearlyScaledWrapper",
+    "parallax-wrapper": "ParallaxWrapper",
     "rotate-wrapper": "RotateWrapper",
-    "linearly-scaled-wrapper": "LinearlyScaledWrapper"
+    "stacked-wrapper": "StackedWrapper"
 }

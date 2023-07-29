@@ -1,4 +1,5 @@
 import { LinearlyScaledWrapper } from "../components/LinearlyScaledWrapper";
+import { ParallaxWrapper } from "../components/ParallaxWrapper";
 import { StackedWrapper } from "../components/StackedWrapper";
 import { Logo } from "../public/Logo";
 import { useRouter } from "next/router";
@@ -36,7 +37,7 @@ export default function Home() {
         <title>Scrollery</title>
       </Head>
       <div>
-        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-4 px-6 text-v2-green-dark font-semibold border-b border-slate-200 justify-between">
+        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-3.5 px-6 text-v2-green-dark font-bold border-b border-slate-200 justify-between">
           <div className="flex gap-2 items-center text-xl">
             {isSafari ? (
               <div className="h-9 w-9 relative overflow-hidden">
@@ -63,7 +64,7 @@ export default function Home() {
           </button>
         </header>
         <div
-          className="flex justify-between md:bg-top bg-right-top items-start md:items-center top-0 min-h-screen bg-slate-100 pt-[69px] gap-24"
+          className="flex justify-between md:bg-top bg-right-top items-start md:items-center top-0 min-h-screen bg-slate-100 pt-[65px] gap-24"
           style={{
             backgroundImage: "url(banner.svg)",
             backgroundRepeat: "no-repeat",
@@ -71,9 +72,9 @@ export default function Home() {
             position: isSafari ? "static" : "sticky",
           }}
         >
-          <div className="bg-white/75 px-6 md:px-8 pt-4 md:pt-8 !pb-0 w-full h-[calc(100vh-69px)] gap-14 md:gap-24 flex flex-col justify-between">
+          <div className="bg-white/75 px-6 md:px-8 pt-4 md:pt-8 !pb-0 w-full h-[calc(100vh-65px)] gap-14 md:gap-24 flex flex-col justify-between">
             <div className="flex flex-col items-center">
-              <h2 className="!text-4xl md:!text-5xl font-normal md:font-light text-slate-500 max-w-xl">
+              <h2 className="!text-4xl md:!text-5xl text-slate-500 max-w-xl">
                 <span className="font-bold bg-gradient-to-l from-v2-blue-dark via-v2-green-dark to-v2-green-normal !bg-clip-text text-transparent">
                   Empowers developers to effortlessly animate images on scroll.
                 </span>
@@ -161,7 +162,7 @@ export default function Home() {
 
             <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
 
-            <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
+            <h2 className="!text-3xl md:!text-4xl font-normal sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
               our
               <br />
               <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
@@ -239,7 +240,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[85px] md:top-[101px] text-slate-50">
+            <h2 className="!text-3xl md:!text-4xl font-normal sticky top-[85px] md:top-[101px] text-slate-50">
               key
               <br />
               <span
@@ -287,12 +288,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-white relative p-6 md:p-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
-          <div
-            className="absolute bottom-0 right-0 w-[120px] md:w-[180px] h-[120px] md:h-[180px] bg-left bg-cover pointer-events-none"
-            style={{ backgroundImage: `url(/iiisometric.svg)` }}
-          />
-          <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
+        <div className="bg-white relative p-0 md:p-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
+          <h2 className="!text-3xl md:!text-4xl px-6 md:px-0 font-normal sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
             meet the
             <br />
             <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
@@ -300,46 +297,69 @@ export default function Home() {
             </span>
           </h2>
 
-          <div className="flex py-4 md:py-0 gap-4 md:gap-20 items-center flex-wrap flex-1 justify-center relative h-full z-10">
-            {teamMems.map((mem) => (
-              <div className="flex flex-col items-center" key={mem.img}>
-                <div className="h-40 w-40 md:h-48 md:w-48 relative rounded-lg overflow-hidden">
-                  <Image
-                    layout="fill"
-                    src={mem.img}
-                    alt={mem.img}
-                    className="object-cover absolute"
+          <div className="flex flex-col py-4 md:py-0 gap-4 relative h-full z-10">
+            {teamMems.map((mem, i) => (
+              <div
+                className={cx(
+                  "flex items-center justify-center gap-4 flex-wrap",
+                  {
+                    "flex-row-reverse": i % 2 === 1,
+                  }
+                )}
+                key={mem.img}
+              >
+                <ParallaxWrapper layer={1.25}>
+                  <div className="h-[180px] w-40 md:h-[200px] md:w-48 relative rounded overflow-hidden bg-slate-200">
+                    <Image
+                      layout="fill"
+                      src={mem.img}
+                      alt={mem.img}
+                      className="object-cover absolute"
+                    />
+                  </div>
+                </ParallaxWrapper>
+                <div className="flex flex-col relative p-2 bg-v2-green-normal w-[160px] md:w-[300px] h-[180px] md:h-[200px]">
+                  <div
+                    className="absolute bottom-0 left-0 w-[120px] md:w-[170px] h-[120px] md:h-[170px] bg-left bg-cover pointer-events-none"
+                    style={{ backgroundImage: `url(${mem.art})` }}
                   />
-                </div>
-                <div className="flex flex-col w-full items-center pt-4 gap-1 md:gap-2 bg-gradient-to-b from-white via-white to-white/0">
-                  <div className="text-lg md:text-xl font-normal text-v2-blue-extraDark">
-                    {mem.fullName}
-                  </div>
-                  <div className="flex gap-2">
-                    <a
-                      href={mem.gitHub}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-2 rounded-full bg-slate-50"
-                    >
-                      <Icon
-                        icon="akar-icons:github-fill"
-                        className="text-2xl md:text-3xl text-v2-purple-dark"
-                      />
-                    </a>
 
-                    <a
-                      href={mem.linkedIn}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-2 rounded-full bg-slate-50"
-                    >
-                      <Icon
-                        icon="akar-icons:linkedin-fill"
-                        className="text-2xl md:text-3xl text-v2-green-normal"
-                      />
-                    </a>
-                  </div>
+                  <ParallaxWrapper layer={1.25} className="relative p-2">
+                    <div className="text-lg md:text-xl font-normal text-white">
+                      {mem.fullName}
+                    </div>
+                  </ParallaxWrapper>
+
+                  <ParallaxWrapper
+                    layer={1.25}
+                    className="absolute bottom-0 right-0"
+                  >
+                    <div className="flex">
+                      <a
+                        href={mem.gitHub}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 bg-v2-green-light rounded-none"
+                      >
+                        <Icon
+                          icon="akar-icons:github-fill"
+                          className="text-2xl md:text-3xl text-v2-purple-dark"
+                        />
+                      </a>
+
+                      <a
+                        href={mem.linkedIn}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 bg-v2-purple-dark rounded-none"
+                      >
+                        <Icon
+                          icon="akar-icons:linkedin-fill"
+                          className="text-2xl md:text-3xl text-v2-green-light"
+                        />
+                      </a>
+                    </div>
+                  </ParallaxWrapper>
                 </div>
               </div>
             ))}
@@ -351,7 +371,7 @@ export default function Home() {
             className="absolute bottom-0 right-0 w-full h-full bg-left bg-cover pointer-events-none"
             style={{ backgroundImage: `url(/bgjar-create-bg.svg)` }}
           />
-          <h2 className="!text-3xl md:!text-4xl font-normal md:font-light sticky top-[100px] text-slate-50">
+          <h2 className="!text-3xl md:!text-4xl font-normal sticky top-[100px] text-slate-50">
             start
             <br />
             <span className="font-bold capitalize bg-gradient-to-r from-v2-green-dark via-v2-green-light to-v2-green-light !bg-clip-text text-transparent">

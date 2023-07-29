@@ -49,11 +49,13 @@ export const teamMems = [
     img: "/namnd.jpg",
     gitHub: "https://github.com/nguyend-nam",
     linkedIn: "https://www.linkedin.com/in/nguyendinhnam0320/",
+    art: "/iiisometric.svg",
   },
   {
     fullName: "Lap Nguyen Ngo",
     img: "/lapnn.jpeg",
     gitHub: "https://github.com/ngolapnguyen",
     linkedIn: "https://www.linkedin.com/in/ngo-lap-nguyen/",
+    art: "/ppperspective.svg",
   },
 ];

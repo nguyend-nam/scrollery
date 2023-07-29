@@ -70,7 +70,7 @@ export const RotateWrapper = ({
       <div
         style={{
           position: "sticky",
-          bottom: viewHeight / 3,
+          bottom: threshold || viewHeight / 3,
           height: isMd ? 300 : viewWidth * 0.6,
           display: "flex",
           justifyContent: "center",

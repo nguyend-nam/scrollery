@@ -21,6 +21,19 @@ Scrollery provides wrapper components for animating images on scroll.
   <Card
     className="h-[240px] border border-slate-200 transition-all duration-400 bg-slate-50 overflow-hidden hover:shadow-md"
     title={
+      <div className="flex flex-col justify-between items-center gap-8 w-full h-full">
+        <code className="w-max text-v2-blue-dark">ParallaxWrapper</code>
+        <img
+          src="/parallax-card-demo.png"
+          className="pointer-events-none w-[180px]"
+        />
+      </div>
+    }
+    href="/components/parallax-wrapper"
+  />
+  <Card
+    className="h-[240px] border border-slate-200 transition-all duration-400 bg-slate-50 overflow-hidden hover:shadow-md"
+    title={
       <div className="flex flex-col justify-between items-center gap-4 w-full h-full">
         <code className="w-max text-v2-blue-dark">RotateWrapper</code>
         <img
@@ -31,25 +44,13 @@ Scrollery provides wrapper components for animating images on scroll.
     }
     href="/components/rotate-wrapper"
   />
-  <Card
-    className="h-[240px] border border-slate-200 transition-all duration-400 bg-slate-50 overflow-hidden hover:shadow-md"
-    title={
-      <div className="flex flex-col justify-between items-center gap-8 w-full h-full">
-        <code className="w-max text-v2-blue-dark">LinearlyScaledWrapper</code>
-        <img
-          src="/linearly-scaled-card-demo.png"
-          className="pointer-events-none w-[180px]"
-        />
-      </div>
-    }
-    href="/components/linearly-scaled-wrapper"
-  />
 </Cards>
 
 <div className="mt-4 flex w-full justify-center">
   And much more components below
 </div>
 
-- [StackedWrapper](/components/stacked-wrapper)
-- [RotateWrapper](/components/rotate-wrapper)
 - [LinearlyScaledWrapper](/components/linearly-scaled-wrapper)
+- [ParallaxWrapper](/components/parallax-wrapper)
+- [RotateWrapper](/components/rotate-wrapper)
+- [StackedWrapper](/components/stacked-wrapper)
