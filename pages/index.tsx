@@ -309,7 +309,7 @@ export default function Home() {
                 )}
                 key={mem.img}
               >
-                <ParallaxWrapper layer={1.25}>
+                <ParallaxWrapper layer={1.75}>
                   <div className="h-[180px] w-40 md:h-[200px] md:w-48 relative rounded overflow-hidden bg-slate-200">
                     <Image
                       layout="fill"
@@ -325,14 +325,14 @@ export default function Home() {
                     style={{ backgroundImage: `url(${mem.art})` }}
                   />
 
-                  <ParallaxWrapper layer={1.25} className="relative p-2">
+                  <ParallaxWrapper layer={1.75} className="relative p-2">
                     <div className="text-lg md:text-xl font-normal text-white">
                       {mem.fullName}
                     </div>
                   </ParallaxWrapper>
 
                   <ParallaxWrapper
-                    layer={1.25}
+                    layer={1.75}
                     className="absolute bottom-0 right-0"
                   >
                     <div className="flex">
