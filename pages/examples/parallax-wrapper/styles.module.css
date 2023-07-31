@@ -1,0 +1,45 @@
+.layout {
+  padding: 32px;
+}
+
+.heading {
+  color: #018383;
+  margin-bottom: 100px;
+}
+
+.message {
+  text-align: center;
+  color: #0dbba5;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  height: 1500px;
+}
+
+.item-wrapper {
+  width: calc(100vw / 3);
+}
+
+.item {
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.item-1 {
+  background-color: #03fba2;
+}
+
+.item-2 {
+  background-color: #0dbba5;
+}
+
+.item-3 {
+  background-color: #02a8a8;
+}

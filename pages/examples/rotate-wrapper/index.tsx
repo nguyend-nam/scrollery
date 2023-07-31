@@ -1,22 +1,23 @@
 import { RotateWrapper } from "../../../components/RotateWrapper";
+import styles from "./styles.module.css";
 
-export default function Home() {
+export default function RotateWrapperDemo() {
   return (
-    <div className="!bg-slate-50 p-8">
-      <h1 className="!text-v2-green-extraDark mb-[300px]">
+    <div className={styles.layout}>
+      <h1 className={styles.heading}>
         <code>RotateWrapper</code>
       </h1>
 
       <RotateWrapper
-        className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]"
+        className={styles["item-wrapper"]}
         bottomLayer={<span>Animate on Scroll</span>}
-        bottomLayerClassName="text-[30px] md:text-[70px] text-v2-green-extraDark font-bold !h-[200px]"
-        itemClassName="!w-[200px] !h-[200px]"
+        bottomLayerClassName={styles["bottom-layer"]}
+        itemStyle={{ height: 200, width: 200 }}
       >
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-extraDark" />
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-dark" />
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-normal" />
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-light" />
+        <div className={`${styles["item"]} ${styles["item-1"]}`} />
+        <div className={`${styles["item"]} ${styles["item-2"]}`} />
+        <div className={`${styles["item"]} ${styles["item-3"]}`} />
+        <div className={`${styles["item"]} ${styles["item-4"]}`} />
       </RotateWrapper>
     </div>
   );

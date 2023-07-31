@@ -1,20 +1,21 @@
 import { StackedWrapper } from "../../../components/StackedWrapper";
+import styles from "./styles.module.css";
 
 export default function StackedWrapperDemo() {
   return (
-    <div className="!bg-slate-50 p-8">
-      <h1 className="!text-v2-green-extraDark">
+    <div className={styles.layout}>
+      <h1 className={styles.heading}>
         <code>StackedWrapper</code>
       </h1>
 
       <StackedWrapper
-        className="w-full space-y-[800px] !mt-8 !mb-40"
-        itemClassName="!h-[300px]"
+        className={styles["item-wrapper"]}
+        itemStyle={{ height: 300 }}
       >
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-extraDark" />
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-dark" />
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-normal" />
-        <div className="rounded-3xl shadow-md h-full bg-v2-green-light" />
+        <div className={`${styles["item"]} ${styles["item-1"]}`} />
+        <div className={`${styles["item"]} ${styles["item-2"]}`} />
+        <div className={`${styles["item"]} ${styles["item-3"]}`} />
+        <div className={`${styles["item"]} ${styles["item-4"]}`} />
       </StackedWrapper>
     </div>
   );

@@ -23,7 +23,7 @@ export default {
   },
   footer: {
     text: (
-      <span>
+      <span style={{ color: "#6B7280" }}>
         <a href="https://choosealicense.com/licenses/isc/" target="_blank">
           ISC
         </a>{" "}
@@ -39,6 +39,13 @@ export default {
       </span>
     ),
   },
+  editLink: {
+    component: null,
+  },
+  feedback: {
+    content: null,
+  },
+  gitTimestamp: null,
   sidebar: {
     titleComponent: ({ title }) => (
       <span className="truncate">{String(title)}</span>

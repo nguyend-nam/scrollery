@@ -11,6 +11,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        word: {
+          light: "#6B7280",
+          main: "#334155",
+        },
         v2: {
           green: {
             light: "#03FBA2",

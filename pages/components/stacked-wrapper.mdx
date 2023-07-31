@@ -1,37 +1,108 @@
-# StackedWrapper
+import { Tab, Tabs, Steps, Cards, Card } from "nextra-theme-docs";
+import { Icon } from "@iconify/react";
 
-## Example
+## StackedWrapper
+
+### Example
 
 <iframe
   src="/examples/stacked-wrapper"
   height={500}
   width="100%"
-  className="mt-6 rounded-xl border bordr-slate-50"
+  className="mt-6 mb-6 rounded-xl border bordr-slate-50"
 />
+
+<Cards>
+  <Card
+    title={
+      <div className="flex items-center gap-4 justify-center w-full">
+        <Icon
+          icon="cib:codesandbox"
+          className="text-2xl"
+        />
+        <div>View on CodeSandbox</div>
+      </div>
+    }
+    target="_blank"
+    href="https://codesandbox.io/s/scrollery-stacked-demo-lw6k7w"
+  />
+</Cards>
+
+<Tabs items={["index.tsx", "styles.css"]}>
+  <Tab>
 
 ```javascript filename="index.tsx" copy
 import { StackedWrapper } from "@nguyend-nam/scrollery-ts";
+import "./styles.css";
 
 export default function StackedWrapperDemo() {
   return (
-    <div className="!bg-slate-50 p-8">
-      <h1 className="!text-[#018383]">Animate on Scroll</h1>
+    <div className="layout">
+      <h1 className="heading">
+        <code>StackedWrapper</code>
+      </h1>
 
-      <StackedWrapper
-        className="w-full space-y-[800px] !mt-8 !mb-40"
-        itemClassName="!h-[300px]"
-      >
-        <div className="rounded-3xl shadow-md h-full bg-[#018383]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#02A8A8]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#0DBBA5]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#03FBA2]" />
+      <StackedWrapper className="item-wrapper" itemStyle={{ height: 300 }}>
+        <div className="item item-1" />
+        <div className="item item-2" />
+        <div className="item item-3" />
+        <div className="item item-4" />
       </StackedWrapper>
     </div>
   );
 }
 ```
 
-## API
+  </Tab>
+  <Tab>
+
+```css filename="styles.css" copy
+.layout {
+  padding: 32px;
+}
+
+.heading {
+  color: #018383;
+  margin-bottom: 100px;
+}
+
+.item-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 800px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 160px;
+}
+
+.item {
+  border-radius: 16px;
+  height: 300px;
+}
+
+.item-4 {
+  background-color: #03fba2;
+}
+
+.item-3 {
+  background-color: #0dbba5;
+}
+
+.item-2 {
+  background-color: #02a8a8;
+}
+
+.item-1 {
+  background-color: #018383;
+}
+```
+
+  </Tab>
+</Tabs>
+
+### API
 
 | Name                        | Type                       | Default | Description                                            | Required |
 | --------------------------- | -------------------------- | ------- | ------------------------------------------------------ | -------- |

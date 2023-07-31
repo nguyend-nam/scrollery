@@ -1,33 +1,87 @@
-# LinearlyScaledWrapper
+import { Tab, Tabs, Steps, Cards, Card } from "nextra-theme-docs";
+import { Icon } from "@iconify/react";
 
-## Example
+## LinearlyScaledWrapper
+
+### Example
 
 <iframe
   src="/examples/linearly-scaled-wrapper"
   height={500}
   width="100%"
-  className="mt-6 rounded-xl border bordr-slate-50"
+  className="mt-6 mb-6 rounded-xl border bordr-slate-50"
 />
+
+<Cards>
+  <Card
+    title={
+      <div className="flex items-center gap-4 justify-center w-full">
+        <Icon
+          icon="cib:codesandbox"
+          className="text-2xl"
+        />
+        <div>View on CodeSandbox</div>
+      </div>
+    }
+    target="_blank"
+    href="https://codesandbox.io/s/scrollery-linearly-scaled-demo-92555m"
+  />
+</Cards>
+
+<Tabs items={["index.tsx", "styles.css"]}>
+  <Tab>
 
 ```javascript filename="index.tsx" copy
 import { LinearlyScaledWrapper } from "@nguyend-nam/scrollery-ts";
+import "./styles.css";
 
 export default function LinearlyScaledWrapperDemo() {
   return (
-    <div className="!bg-slate-50 p-8">
-      <h1 className="!text-[#018383] mb-[300px]">
+    <div className="layout">
+      <h1 className="heading">
         <code>LinearlyScaledWrapper</code>
       </h1>
 
-      <LinearlyScaledWrapper className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]">
-        <div className="rounded-3xl shadow-md h-full bg-[#02A8A8]" />
+      <LinearlyScaledWrapper className="item-wrapper">
+        <div className="item" />
       </LinearlyScaledWrapper>
     </div>
   );
 }
 ```
 
-## API
+  </Tab>
+  <Tab>
+
+```css filename="styles.css" copy
+.layout {
+  padding: 32px;
+}
+
+.heading {
+  color: #018383;
+  margin-bottom: 100px;
+}
+
+.item-wrapper {
+  width: 100%;
+  margin-top: 300px;
+  margin-bottom: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  border-radius: 16px;
+  height: 100%;
+  background-color: #02a8a8;
+}
+```
+
+  </Tab>
+</Tabs>
+
+### API
 
 | Name              | Type            | Default | Description                                                        | Required |
 | ----------------- | --------------- | ------- | ------------------------------------------------------------------ | -------- |
