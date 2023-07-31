@@ -1,41 +1,131 @@
-# RotateWrapper
+import { Tab, Tabs, Steps, Cards, Card } from "nextra-theme-docs";
+import { Icon } from "@iconify/react";
 
-## Example
+## RotateWrapper
+
+### Example
 
 <iframe
   src="/examples/rotate-wrapper"
   height={650}
   width="100%"
-  className="mt-6 rounded-xl border bordr-slate-50"
+  className="mt-6 mb-6 rounded-xl border bordr-slate-50"
 />
+
+<Cards>
+  <Card
+    title={
+      <div className="flex items-center gap-4 justify-center w-full">
+        <Icon
+          icon="cib:codesandbox"
+          className="text-2xl"
+        />
+        <div>View on CodeSandbox</div>
+      </div>
+    }
+    target="_blank"
+    href="https://codesandbox.io/s/scrollery-rotate-demo-7qrznp"
+  />
+</Cards>
+
+<Tabs items={["index.tsx", "styles.css"]}>
+  <Tab>
 
 ```javascript filename="index.tsx" copy
 import { RotateWrapper } from "@nguyend-nam/scrollery-ts";
+import "./styles.css";
 
-export default function Home() {
+export default function RotateWrapperDemo() {
   return (
-    <div className="!bg-slate-50 p-8">
-      <h1 className="!text-[#018383] mb-[300px]">
+    <div className="layout">
+      <h1 className="heading">
         <code>RotateWrapper</code>
       </h1>
 
       <RotateWrapper
-        className="w-full flex flex-col items-center gap-[800px] !mt-8 !mb-[800px]"
+        className="item-wrapper"
         bottomLayer={<span>Animate on Scroll</span>}
-        bottomLayerClassName="text-[30px] md:text-[70px] text-[#018383] font-bold !h-[200px]"
-        itemClassName="!w-[200px] !h-[200px]"
+        bottomLayerClassName="bottom-layer"
+        itemStyle={{ height: 200, width: 200 }}
       >
-        <div className="rounded-3xl shadow-md h-full bg-[#018383]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#02A8A8]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#0DBBA5]" />
-        <div className="rounded-3xl shadow-md h-full bg-[#03FBA2]" />
+        <div className="item item-1" />
+        <div className="item item-2" />
+        <div className="item item-3" />
+        <div className="item item-4" />
       </RotateWrapper>
     </div>
   );
 }
 ```
 
-## API
+  </Tab>
+  <Tab>
+
+```css filename="styles.css" copy
+.layout {
+  padding: 32px;
+}
+
+.heading {
+  color: #018383;
+  margin-bottom: 300px;
+}
+
+.message {
+  text-align: center;
+  color: #0dbba5;
+}
+
+.bottom-layer {
+  font-size: 70px;
+  color: #018383;
+  font-weight: 700;
+  height: 200px !important;
+}
+
+@media (max-width: 600px) {
+  .bottom-layer {
+    font-size: 30px;
+  }
+}
+
+.item-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 800px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 800px;
+}
+
+.item {
+  border-radius: 16px;
+  height: 200px;
+  aspect-ratio: 1/1;
+}
+
+.item-4 {
+  background-color: #03fba2;
+}
+
+.item-3 {
+  background-color: #0dbba5;
+}
+
+.item-2 {
+  background-color: #02a8a8;
+}
+
+.item-1 {
+  background-color: #018383;
+}
+```
+
+  </Tab>
+</Tabs>
+
+### API
 
 | Name                     | Type            | Default         | Description                                                                                   | Required |
 | ------------------------ | --------------- | --------------- | --------------------------------------------------------------------------------------------- | -------- |

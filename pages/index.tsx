@@ -55,7 +55,7 @@ export default function Home() {
           </div>
 
           <button
-            className="ring-slate-400 py-0.5 max-w-full rounded-md text-v2-blue-extraDark shrink flex flex-nowrap gap-2 items-center"
+            className="py-0.5 max-w-full rounded-md text-word-light shrink flex flex-nowrap gap-2 items-center"
             onClick={() => {
               push("/introduction");
             }}
@@ -84,11 +84,11 @@ export default function Home() {
               <ul className="pl-[18px] list-disc !my-4 md:!my-5 max-w-full w-full md:w-max">
                 {featuresSummary.map((sum) => (
                   <li
-                    className="!text-xl md:!text-2xl font-normal text-v2-blue-extraDark"
+                    className="!text-lg md:!text-xl text-word-main"
                     key={sum.feature}
                   >
                     {sum.feature}{" "}
-                    <span className="font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+                    <span className="!text-xl md:!text-2xl font-semibold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
                       {sum.action}
                     </span>
                   </li>
@@ -141,8 +141,8 @@ export default function Home() {
               <div className="w-full h-full md:w-3/5 relative rounded-t-lg overflow-hidden ring ring-v2-purple-dark">
                 <Image
                   layout="fill"
-                  src="/doc-preview.png"
-                  alt="doc-preview"
+                  src="/document-preview.png"
+                  alt="document-preview"
                   className="object-cover object-top"
                 />
               </div>
@@ -163,10 +163,10 @@ export default function Home() {
 
             <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
 
-            <h2 className="!text-3xl md:!text-4xl font-normal sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
+            <h2 className="!text-xl md:!text-2xl sticky top-[85px] md:top-[101px] text-word-main">
               our
               <br />
-              <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+              <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
                 Vision
               </span>
             </h2>
@@ -177,15 +177,15 @@ export default function Home() {
               itemClassName="!w-[500px] max-w-screen"
             >
               <div className="rounded-md relative overflow-hidden h-full p-4 md:p-6 bg-v2-green-dark">
-                <p className="text-lg font-normal leading-9 text-white">
-                  <span className="font-normal border-b">Our vision</span> is to
+                <p className="text-lg leading-9 text-white">
+                  <span className="font-medium border-b">Our vision</span> is to
                   provide a comprehensive set of tools and components
                   specifically designed to enhance the visual experience of
                   images and bring them to life with captivating scroll
                   animations. <br /> With Scrollery, you can create{" "}
-                  <span className="font-normal border-b">stunning</span>,{" "}
-                  <span className="font-normal border-b">interactive</span>, and{" "}
-                  <span className="font-normal border-b">engaging</span> image
+                  <span className="font-medium border-b">stunning</span>,{" "}
+                  <span className="font-medium border-b">interactive</span>, and{" "}
+                  <span className="font-medium border-b">engaging</span> image
                   animations that leave a lasting impression on your users.
                 </p>
                 <div className="absolute bottom-0 py-4 md:py-6 left-0 !w-full flex justify-center bg-gradient-to-b from-white/0 to-v2-green-dark">
@@ -241,11 +241,11 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <h2 className="!text-3xl md:!text-4xl font-normal sticky top-[85px] md:top-[101px] text-slate-50">
+            <h2 className="!text-xl md:!text-2xl sticky top-[85px] md:top-[101px] text-slate-50">
               key
               <br />
               <span
-                className="font-bold capitalize text-v2-green-normal"
+                className="!text-3xl md:!text-4xl font-bold capitalize text-v2-green-normal"
                 style={{ transition: "color 0.4s" }}
               >
                 Features
@@ -263,23 +263,23 @@ export default function Home() {
                   key={feature.title}
                   className="rounded-lg h-max mx-auto max-w-lg bg-white p-4 md:p-6 border"
                 >
-                  <div className="text-slate-600 pb-4 mb-4 border-b text-xl md:text-2xl font-semibold">
+                  <div className="text-word-main pb-4 mb-4 border-b text-xl md:text-2xl font-semibold">
                     {feature.title}
                   </div>
                   <div className="w-full flex justify-center mb-4">
                     <Icon
                       icon={featuresMedias[index].icon}
-                      className="text-slate-500 text-4xl"
+                      className="text-word-main text-4xl"
                     />
                   </div>
-                  <p className="font-normal text-slate-500 text-lg">
+                  <p className="text-word-light text-lg">
                     {feature.description}
                   </p>
                   <a
                     href={featuresMedias[index].url}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-normal text-slate-700 text-sm"
+                    className="text-word-light text-sm"
                   >
                     <i>[Image]</i>
                   </a>
@@ -290,10 +290,10 @@ export default function Home() {
         </div>
 
         <div className="bg-white relative p-0 md:p-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
-          <h2 className="!text-3xl md:!text-4xl px-6 md:px-0 font-normal sticky top-[85px] md:top-[101px] text-v2-blue-extraDark">
+          <h2 className="!text-xl md:!text-2xl px-6 md:px-0 sticky top-[85px] md:top-[101px] text-word-main">
             meet the
             <br />
-            <span className="font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+            <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
               Team
             </span>
           </h2>
@@ -372,10 +372,10 @@ export default function Home() {
             className="absolute bottom-0 right-0 w-full h-full bg-left bg-cover pointer-events-none"
             style={{ backgroundImage: `url(/bgjar-create-bg.svg)` }}
           />
-          <h2 className="!text-3xl md:!text-4xl font-normal sticky top-[100px] text-slate-50">
+          <h2 className="!text-xl md:!text-2xl sticky top-[100px] text-slate-50">
             start
             <br />
-            <span className="font-bold capitalize bg-gradient-to-r from-v2-green-dark via-v2-green-light to-v2-green-light !bg-clip-text text-transparent">
+            <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-r from-v2-green-dark via-v2-green-light to-v2-green-light !bg-clip-text text-transparent">
               Creating
             </span>
           </h2>
@@ -418,7 +418,7 @@ export default function Home() {
                 </span>
               </button>
             </div>
-            <div className="max-w-lg font-normal text-lg text-slate-100">
+            <div className="max-w-lg text-lg text-slate-100">
               Whether you have ideas for new features, want to report bugs, or
               are interested in improving the library&rsquo;s functionality,
               your contributions are highly valued. Visit our GitHub repository
@@ -427,7 +427,7 @@ export default function Home() {
                 href="https://github.com/nguyend-nam/scrollery"
                 target="_blank"
                 rel="noreferrer"
-                className="font-normal border-b rounded-none"
+                className="border-b rounded-none font-medium"
               >
                 https://github.com/nguyend-nam/scrollery
               </a>{" "}
@@ -436,7 +436,7 @@ export default function Home() {
           </div>
         </div>
 
-        <footer className="relative px-6 md:px-8 py-12 bg-slate-100 w-full text-slate-600">
+        <footer className="relative px-6 md:px-8 py-12 bg-slate-100 w-full text-word-light">
           <div>
             View on:{" "}
             <a

@@ -1,0 +1,22 @@
+.layout {
+  padding: 32px;
+}
+
+.heading {
+  color: #018383;
+  margin-bottom: 100px;
+}
+
+.item-wrapper {
+  width: 100%;
+  margin-top: 300px;
+  margin-bottom: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  border-radius: 16px;
+  height: 100%;
+  background-color: #02a8a8;
+}
