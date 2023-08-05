@@ -48,7 +48,7 @@ export default {
   gitTimestamp: null,
   sidebar: {
     titleComponent: ({ title }) => (
-      <span className="truncate">{String(title)}</span>
+      <span className="truncate doc-sidebar-item">{String(title)}</span>
     ),
   },
 };
