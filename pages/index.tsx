@@ -141,8 +141,8 @@ export default function Home() {
               <div className="w-full h-full md:w-3/5 relative rounded-t-lg overflow-hidden ring ring-v2-purple-dark">
                 <Image
                   layout="fill"
-                  src="/document-preview.png"
-                  alt="document-preview"
+                  src="/doc-component-preview.png"
+                  alt="doc-component-preview"
                   className="object-cover object-top"
                 />
               </div>
