@@ -9,17 +9,15 @@ import { Icon } from "@iconify/react";
   src="/examples/linearly-scaled-wrapper"
   height={500}
   width="100%"
-  className="mt-6 mb-6 rounded-xl border bordr-slate-50"
+  className="mt-6 mb-6 rounded-xl border border-slate-200"
 />
 
 <Cards>
   <Card
+    className="border border-slate-100 transition-all duration-400 bg-slate-50 overflow-hidden hover:shadow-md"
     title={
-      <div className="flex items-center gap-4 justify-center w-full">
-        <Icon
-          icon="cib:codesandbox"
-          className="text-2xl"
-        />
+      <div className="flex items-center gap-4 justify-center w-full text-slate-700">
+        <Icon icon="cib:codesandbox" className="text-2xl" />
         <div>View on CodeSandbox</div>
       </div>
     }
@@ -55,12 +53,13 @@ export default function LinearlyScaledWrapperDemo() {
 
 ```css filename="styles.css" copy
 .layout {
-  padding: 32px;
+  padding: 32px 0;
 }
 
 .heading {
   color: #018383;
   margin-bottom: 100px;
+  padding: 0 32px;
 }
 
 .item-wrapper {

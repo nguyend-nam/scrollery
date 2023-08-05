@@ -19,16 +19,44 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+ul > li.active > a {
+  background-color: #03fba22f !important;
 }
 
-.floating {
-  transform: translate(0, 10px) rotate(2deg);
+ul > li.active > ul {
+  display: none !important;
+}
+
+ul > li.active > a > span.doc-sidebar-item {
+  color: #018383 !important;
+}
+
+table.nx-block {
+  border: 1px solid #02a8a8 !important;
+  border-radius: 12px !important;
+  scrollbar-gutter: unset !important;
+}
+
+table.nx-block tr {
+  border: none !important;
+}
+
+table.nx-block tr th {
+  border: none !important;
+  background-color: #02a8a8 !important;
+  color: #ffffff !important;
+  max-width: unset !important;
+  width: unset !important;
+}
+
+table.nx-block td {
+  border: none !important;
+}
+
+.subheading-anchor {
+  display: none !important;
+}
+
+.nextra-scrollbar::-webkit-scrollbar {
+  height: 0px !important;
 }
