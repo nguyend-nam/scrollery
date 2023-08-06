@@ -51,4 +51,5 @@ export default {
       <span className="truncate doc-sidebar-item">{String(title)}</span>
     ),
   },
+  darkMode: false,
 };

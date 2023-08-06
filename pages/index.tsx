@@ -37,34 +37,49 @@ export default function Home() {
         <title>Scrollery</title>
       </Head>
       <div>
-        <header className="fixed flex items-center gap-2 top-0 z-20 bg-white w-screen p-3.5 px-6 text-v2-green-dark font-bold border-b border-slate-200 justify-between">
-          <div className="flex gap-2 items-center text-xl">
-            {isSafari ? (
-              <div className="h-9 w-9 relative overflow-hidden">
-                <Image
-                  layout="fill"
-                  src="/logo.png"
-                  alt="/logo.png"
-                  className="object-cover absolute"
-                />
-              </div>
-            ) : (
-              <Logo width={36} height={36} />
-            )}
-            Scrollery
-          </div>
+        <header className="fixed flex top-0 z-20 bg-white w-screen h-[65px] px-6 text-v2-green-dark font-bold border-b border-slate-200 justify-center">
+          <div className="max-w-full w-[calc(90rem-48px)] flex gap-2 justify-between items-center">
+            <div className="flex gap-2 items-center text-xl">
+              {isSafari ? (
+                <div className="h-9 w-9 relative overflow-hidden">
+                  <Image
+                    layout="fill"
+                    src="/logo.png"
+                    alt="/logo.png"
+                    className="object-cover absolute"
+                  />
+                </div>
+              ) : (
+                <Logo width={36} height={36} />
+              )}
+              Scrollery
+            </div>
 
-          <button
-            className="py-0.5 max-w-full rounded-md text-word-light shrink flex flex-nowrap gap-2 items-center"
-            onClick={() => {
-              push("/introduction");
-            }}
-          >
-            <span className="truncate w-full font-normal">Docs</span>
-          </button>
+            <div className="flex items-center gap-2">
+              <button
+                className="py-2 px-3 max-w-full rounded-lg bg-[rgba(0,0,0,.05)] shrink flex flex-nowrap gap-2 items-center"
+                onClick={() => {
+                  push("/introduction");
+                }}
+              >
+                <span className="truncate w-full text-sm font-normal text-slate-500 leading-[1.25]">
+                  Docs
+                </span>
+              </button>
+
+              <a
+                href="https://github.com/nguyend-nam/scrollery"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2"
+              >
+                <Icon icon="cib:github" className="text-[24px] text-black" />
+              </a>
+            </div>
+          </div>
         </header>
         <div
-          className="flex justify-between md:bg-top bg-right-top items-start md:items-center top-0 min-h-screen bg-slate-100 pt-[65px] gap-24"
+          className="flex justify-between md:bg-top overflow-hidden bg-right-top items-start md:items-center top-0 min-h-screen bg-slate-100 pt-[65px] gap-24"
           style={{
             backgroundImage: "url(banner.svg)",
             backgroundRepeat: "no-repeat",
@@ -309,7 +324,7 @@ export default function Home() {
                 )}
                 key={mem.img}
               >
-                <ParallaxWrapper layer={1.75}>
+                <ParallaxWrapper layer={1.5}>
                   <div className="h-[180px] w-40 md:h-[200px] md:w-48 relative rounded overflow-hidden bg-slate-200">
                     <Image
                       layout="fill"
@@ -325,14 +340,14 @@ export default function Home() {
                     style={{ backgroundImage: `url(${mem.art})` }}
                   />
 
-                  <ParallaxWrapper layer={1.75} className="relative p-2">
+                  <ParallaxWrapper layer={1.5} className="relative p-2">
                     <div className="text-lg md:text-xl font-normal text-white">
                       {mem.fullName}
                     </div>
                   </ParallaxWrapper>
 
                   <ParallaxWrapper
-                    layer={1.75}
+                    layer={1.5}
                     className="absolute bottom-0 right-0"
                   >
                     <div className="flex">
@@ -343,7 +358,7 @@ export default function Home() {
                         className="p-2 bg-v2-green-light rounded-none"
                       >
                         <Icon
-                          icon="akar-icons:github-fill"
+                          icon="cib:github"
                           className="text-2xl md:text-3xl text-v2-purple-dark"
                         />
                       </a>
@@ -436,7 +451,7 @@ export default function Home() {
           </div>
         </div>
 
-        <footer className="relative px-6 md:px-8 py-12 bg-slate-100 w-full text-word-light">
+        <footer className="relative text-center md:text-left px-6 md:px-8 py-12 bg-slate-100 w-full text-word-light">
           <div>
             View on:{" "}
             <a
