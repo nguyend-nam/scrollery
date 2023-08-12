@@ -178,7 +178,7 @@ export default function Home() {
 
             <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
 
-            <h2 className="!text-xl md:!text-2xl sticky top-[85px] md:top-[101px] text-word-main">
+            <h2 className="!text-xl md:!text-2xl sticky top-[85px] md:top-[101px] text-word-light">
               our
               <br />
               <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
@@ -305,7 +305,7 @@ export default function Home() {
         </div>
 
         <div className="bg-white relative p-0 md:p-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
-          <h2 className="!text-xl md:!text-2xl px-6 md:px-0 sticky top-[85px] md:top-[101px] text-word-main">
+          <h2 className="!text-xl md:!text-2xl px-6 md:px-0 sticky top-[85px] md:top-[101px] text-word-light">
             meet the
             <br />
             <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
@@ -324,7 +324,7 @@ export default function Home() {
                 )}
                 key={mem.img}
               >
-                <ParallaxWrapper layer={1.5}>
+                <ParallaxWrapper layer={2}>
                   <div className="h-[180px] w-40 md:h-[200px] md:w-48 relative rounded overflow-hidden bg-slate-200">
                     <Image
                       layout="fill"
@@ -340,14 +340,14 @@ export default function Home() {
                     style={{ backgroundImage: `url(${mem.art})` }}
                   />
 
-                  <ParallaxWrapper layer={1.5} className="relative p-2">
+                  <ParallaxWrapper layer={2} className="relative p-2">
                     <div className="text-lg md:text-xl font-normal text-white">
                       {mem.fullName}
                     </div>
                   </ParallaxWrapper>
 
                   <ParallaxWrapper
-                    layer={1.5}
+                    layer={2}
                     className="absolute bottom-0 right-0"
                   >
                     <div className="flex">
