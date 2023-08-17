@@ -37,7 +37,7 @@ export default function Home() {
         <title>Scrollery</title>
       </Head>
       <div>
-        <header className="fixed flex top-0 z-20 bg-white w-screen h-[65px] px-6 text-v2-green-dark font-bold border-b border-slate-200 justify-center">
+        <header className="fixed flex top-0 z-20 bg-[rgb(255,255,255,0.85)] backdrop-blur-md w-screen h-[65px] px-6 text-v2-green-dark font-bold border-b border-slate-200 justify-center">
           <div className="max-w-full w-[calc(90rem-48px)] flex gap-2 justify-between items-center">
             <div className="flex gap-2 items-center text-xl">
               {isSafari ? (
