@@ -71,7 +71,7 @@ export default function Home() {
                 href="https://github.com/nguyend-nam/scrollery"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2"
+                className="p-2 h-10 w-10"
               >
                 <Icon icon="cib:github" className="text-[24px] text-black" />
               </a>
@@ -128,12 +128,12 @@ export default function Home() {
                 </button>
 
                 <button
-                  className="ring-2 ring-v2-blue-dark max-w-full p-2 text-lg rounded-md text-v2-blue-dark shrink flex flex-nowrap gap-2 items-center"
+                  className="ring-2 ring-v2-blue-dark max-w-full p-2 text-lg rounded-md text-v2-blue-dark shrink flex flex-nowrap justify-start gap-2 items-center"
                   onClick={() => {
                     onCopy();
                   }}
                 >
-                  <span className="truncate w-full">
+                  <span className="truncate">
                     yarn add @nguyend-nam/scrollery-ts
                   </span>
                   <span className="w-6">
@@ -156,6 +156,7 @@ export default function Home() {
               <div className="w-full h-full md:w-3/5 relative rounded-t-lg overflow-hidden ring ring-v2-purple-dark">
                 <Image
                   layout="fill"
+                  priority
                   src="/doc-component-preview.png"
                   alt="doc-component-preview"
                   className="object-cover object-top"
@@ -178,10 +179,10 @@ export default function Home() {
 
             <div className="absolute bottom-0 right-0 w-full h-[100px] bg-gradient-to-b from-white/0 to-white" />
 
-            <h2 className="!text-xl md:!text-2xl sticky top-[85px] md:top-[101px] text-word-light">
+            <h2 className="!text-xl md:!text-2xl sticky top-[81px] md:top-[97px] text-word-light">
               our
               <br />
-              <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+              <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-r from-v2-green-normal via-v2-green-extraDark to-v2-green-extraDark !bg-clip-text text-transparent">
                 Vision
               </span>
             </h2>
@@ -216,9 +217,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative bg-v2-purple-dark">
+        <div className="relative bg-gradient-to-r from-v2-purple-dark via-v2-purple-dark to-v2-blue-normal">
           <div className="relative p-6 md:p-8 pt-4 md:pt-8">
-            {/* images bg */}
+            {/* images */}
             <div className="absolute top-0 right-0 h-full w-full bg-white md:w-[calc(100vw/3.5)] opacity-10 md:opacity-100">
               <div className="sticky top-0 right-0 w-full h-screen">
                 {featuresMedias.map((media) => (
@@ -238,7 +239,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            {/* icons bg */}
+            {/* icons */}
             <div className="absolute top-0 right-0 h-full w-[calc(100vw/3.5)] hidden md:block">
               <div className="sticky top-0 right-0 w-full p-4 h-screen pointer-events-none flex justify-end items-end">
                 {featuresMedias.map((media) => (
@@ -246,7 +247,7 @@ export default function Home() {
                     key={media.id}
                     icon={media.icon}
                     className={cx(
-                      "text-[80px] absolute transition-all text-v2-green-normal",
+                      "text-[80px] absolute transition-all text-v2-purple-dark",
                       {
                         "opacity-1": visibleAmount === media.id,
                         "opacity-0": visibleAmount !== media.id,
@@ -256,19 +257,16 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <h2 className="!text-xl md:!text-2xl sticky top-[85px] md:top-[101px] text-slate-50">
+            <h2 className="!text-xl md:!text-2xl sticky top-[81px] md:top-[97px] text-slate-50">
               key
               <br />
-              <span
-                className="!text-3xl md:!text-4xl font-bold capitalize text-v2-green-normal"
-                style={{ transition: "color 0.4s" }}
-              >
+              <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-r from-v2-green-normal via-v2-green-normal to-v2-green-dark !bg-clip-text text-transparent">
                 Features
               </span>
             </h2>
             <StackedWrapper
-              className="w-full md:w-[calc(100vw*2.5/3.5-64px)] left-0 md:right-4 space-y-[800px] !my-20 md:!mb-[calc(100vh/4)]"
-              itemClassName="!h-max !top-[calc(100vh/4)]"
+              className="w-full md:w-[calc(100vw*2.5/3.5-64px)] left-0 md:right-4 space-y-[800px] !mt-20 !mb-[calc((100vh-460px)/2-24px)] md:!mb-[calc((100vh-396px)/2-32px)]"
+              itemClassName="!h-max !top-[calc((100vh-460px)/2)] md:!top-[calc((100vh-396px)/2)]"
               itemStyle={{ transition: "0.25s" }}
               getCurrentVisibleItems={setVisibleAmount}
               transitionDebounce={0.15}
@@ -276,44 +274,46 @@ export default function Home() {
               {keyFeatures.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="rounded-lg h-max mx-auto max-w-lg bg-white p-4 md:p-6 border"
+                  className="rounded-lg h-[460px] md:h-[396px] mx-auto max-w-lg bg-white p-4 md:p-6 border flex flex-col"
                 >
                   <div className="text-word-main pb-4 mb-4 border-b text-xl md:text-2xl font-semibold">
                     {feature.title}
                   </div>
-                  <div className="w-full flex justify-center mb-4">
+                  <div className="w-full flex justify-center mb-4 h-9">
                     <Icon
                       icon={featuresMedias[index].icon}
                       className="text-word-main text-4xl"
                     />
                   </div>
-                  <p className="text-word-light text-lg">
-                    {feature.description}
-                  </p>
-                  <a
-                    href={featuresMedias[index].url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-word-light text-sm"
-                  >
-                    <i>[Image]</i>
-                  </a>
+                  <div className="flex flex-col justify-between flex-1">
+                    <p className="text-word-light text-lg">
+                      {feature.description}
+                    </p>
+                    <a
+                      href={featuresMedias[index].url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-word-light text-sm text-right"
+                    >
+                      <i>[Image source]</i>
+                    </a>
+                  </div>
                 </div>
               ))}
             </StackedWrapper>
           </div>
         </div>
 
-        <div className="bg-white relative p-0 md:p-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
-          <h2 className="!text-xl md:!text-2xl px-6 md:px-0 sticky top-[85px] md:top-[101px] text-word-light">
+        <div className="bg-white relative p-0 pb-6 md:pb-8 pt-4 md:pt-8 min-h-[calc(100vh/1.2)] flex flex-col">
+          <h2 className="!text-xl md:!text-2xl px-6 md:px-8 sticky top-[81px] md:top-[97px] text-word-light">
             meet the
             <br />
-            <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-l from-v2-green-extraDark via-v2-green-extraDark to-v2-green-normal !bg-clip-text text-transparent">
+            <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-r from-v2-green-normal via-v2-green-extraDark to-v2-green-extraDark !bg-clip-text text-transparent">
               Team
             </span>
           </h2>
 
-          <div className="flex flex-col py-4 md:py-0 gap-4 relative h-full z-10">
+          <div className="flex flex-col gap-4 relative h-full justify-center flex-1 z-10">
             {teamMems.map((mem, i) => (
               <div
                 className={cx(
@@ -324,7 +324,7 @@ export default function Home() {
                 )}
                 key={mem.img}
               >
-                <ParallaxWrapper layer={2}>
+                <ParallaxWrapper layer={1.75}>
                   <div className="h-[180px] w-40 md:h-[200px] md:w-48 relative rounded overflow-hidden bg-slate-200">
                     <Image
                       layout="fill"
@@ -334,20 +334,20 @@ export default function Home() {
                     />
                   </div>
                 </ParallaxWrapper>
-                <div className="flex flex-col relative p-2 bg-v2-green-normal w-[160px] md:w-[300px] h-[180px] md:h-[200px]">
+                <div className="flex flex-col relative p-2 bg-v2-green-normal w-[160px] md:w-[300px] h-[180px] md:h-[200px] rounded">
                   <div
                     className="absolute bottom-0 left-0 w-[120px] md:w-[170px] h-[120px] md:h-[170px] bg-left bg-cover pointer-events-none"
                     style={{ backgroundImage: `url(${mem.art})` }}
                   />
 
-                  <ParallaxWrapper layer={2} className="relative p-2">
+                  <ParallaxWrapper layer={1} className="relative p-2">
                     <div className="text-lg md:text-xl font-normal text-white">
                       {mem.fullName}
                     </div>
                   </ParallaxWrapper>
 
                   <ParallaxWrapper
-                    layer={2}
+                    layer={1}
                     className="absolute bottom-0 right-0"
                   >
                     <div className="flex">
@@ -395,7 +395,7 @@ export default function Home() {
             </span>
           </h2>
 
-          <div className="flex flex-col mt-4 lg:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10">
+          <div className="flex flex-col lg:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10">
             <div className="flex flex-col items-start lg:items-end gap-4 flex-wrap w-full max-w-lg lg:w-max">
               <button
                 className="bg-v2-green-extraDark p-2 text-lg rounded-md text-white flex gap-2 items-center"

@@ -40,7 +40,7 @@ export default {
     ),
   },
   editLink: {
-    component: null,
+    component: () => null,
   },
   feedback: {
     content: null,
