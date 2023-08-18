@@ -91,7 +91,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <h2 className="!text-4xl md:!text-5xl text-slate-500 max-w-xl">
                 <span className="font-bold bg-gradient-to-l from-v2-blue-dark via-v2-green-dark to-v2-green-normal !bg-clip-text text-transparent">
-                  Empowers developers to effortlessly animate contents on
+                  Empowers developers to effortlessly animate websites on
                   scroll.
                 </span>
               </h2>
@@ -193,15 +193,16 @@ export default function Home() {
               itemClassName="!w-[500px] max-w-screen"
             >
               <div className="rounded-md relative overflow-hidden h-full p-4 md:p-6 bg-v2-green-dark">
-                <p className="text-lg leading-9 text-white">
+                <p className="text-lg md:leading-8 text-white">
                   <span className="font-medium border-b">Our vision</span> is to
                   provide a comprehensive set of tools and components
                   specifically designed to enhance the visual experience of
-                  images and bring them to life with captivating scroll
-                  animations. <br /> With Scrollery, you can create{" "}
+                  websites and bring them to life with captivating scroll
+                  animations. <br />
+                  <br /> With Scrollery, you can effortlessly create{" "}
                   <span className="font-medium border-b">stunning</span>,{" "}
                   <span className="font-medium border-b">interactive</span>, and{" "}
-                  <span className="font-medium border-b">engaging</span> image
+                  <span className="font-medium border-b">engaging</span> scroll
                   animations that leave a lasting impression on your users.
                 </p>
                 <div className="absolute bottom-0 py-4 md:py-6 left-0 !w-full flex justify-center bg-gradient-to-b from-white/0 to-v2-green-dark">
@@ -265,8 +266,8 @@ export default function Home() {
               </span>
             </h2>
             <StackedWrapper
-              className="w-full md:w-[calc(100vw*2.5/3.5-64px)] left-0 md:right-4 space-y-[800px] !mt-20 !mb-[calc((100vh-460px)/2-24px)] md:!mb-[calc((100vh-396px)/2-32px)]"
-              itemClassName="!h-max !top-[calc((100vh-460px)/2)] md:!top-[calc((100vh-396px)/2)]"
+              className="w-full md:w-[calc(100vw*2.5/3.5-64px)] left-0 md:right-4 space-y-[800px] !mt-20 !mb-[calc((100vh-460px)/2-24px)] md:!mb-[calc((100vh-415px)/2-32px)]"
+              itemClassName="!h-max !top-[calc((100vh-460px)/2)] md:!top-[calc((100vh-415px)/2)]"
               itemStyle={{ transition: "0.25s" }}
               getCurrentVisibleItems={setVisibleAmount}
               transitionDebounce={0.15}
@@ -274,7 +275,7 @@ export default function Home() {
               {keyFeatures.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="rounded-lg h-[460px] md:h-[396px] mx-auto max-w-lg bg-white p-4 md:p-6 border flex flex-col"
+                  className="rounded-lg h-[460px] md:h-[415px] mx-auto max-w-lg bg-white p-4 md:p-6 border flex flex-col"
                 >
                   <div className="text-word-main pb-4 mb-4 border-b text-xl md:text-2xl font-semibold">
                     {feature.title}
@@ -286,7 +287,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex flex-col justify-between flex-1">
-                    <p className="text-word-light text-lg">
+                    <p className="text-word-light text-base md:text-lg md:leading-8">
                       {feature.description}
                     </p>
                     <a
@@ -433,7 +434,7 @@ export default function Home() {
                 </span>
               </button>
             </div>
-            <div className="max-w-lg text-lg text-slate-100">
+            <div className="max-w-lg text-base md:text-lg md:leading-8 text-slate-100">
               Whether you have ideas for new features, want to report bugs, or
               are interested in improving the library&rsquo;s functionality,
               your contributions are highly valued. Visit our GitHub repository

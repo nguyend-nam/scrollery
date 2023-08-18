@@ -11,7 +11,7 @@ export default function Document() {
         <meta property="og:title" content="Scrollery" />
         <meta
           property="og:description"
-          content="React TypeScript library for animating your image gallery on scroll."
+          content="React TypeScript library for effortlessly animating your websites on scroll."
         />
         <meta property="og:image" content="/og.png" />
 
