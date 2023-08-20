@@ -157,9 +157,9 @@ export default function Home() {
                 <Image
                   layout="fill"
                   priority
-                  src="/doc-component-preview.png"
-                  alt="doc-component-preview"
-                  className="object-cover object-top"
+                  src="/doc-components-preview.png"
+                  alt="doc-components-preview"
+                  className="object-cover object-top pointer-events-none"
                 />
               </div>
             </div>
@@ -218,7 +218,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative bg-gradient-to-r from-v2-purple-dark via-v2-purple-dark to-v2-blue-normal">
+        <div className="relative bg-v2-purple-dark">
           <div className="relative p-6 md:p-8 pt-4 md:pt-8">
             {/* images */}
             <div className="absolute top-0 right-0 h-full w-full bg-white md:w-[calc(100vw/3.5)] opacity-10 md:opacity-100">
@@ -275,7 +275,7 @@ export default function Home() {
               {keyFeatures.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="rounded-lg h-[460px] md:h-[415px] mx-auto max-w-lg bg-white p-4 md:p-6 border flex flex-col"
+                  className="rounded-lg h-[460px] md:h-[415px] mx-auto max-w-lg bg-white p-4 md:p-6 border border-slate-100 flex flex-col"
                 >
                   <div className="text-word-main pb-4 mb-4 border-b text-xl md:text-2xl font-semibold">
                     {feature.title}
@@ -283,7 +283,7 @@ export default function Home() {
                   <div className="w-full flex justify-center mb-4 h-9">
                     <Icon
                       icon={featuresMedias[index].icon}
-                      className="text-word-main text-4xl"
+                      className="text-v2-green-dark text-4xl"
                     />
                   </div>
                   <div className="flex flex-col justify-between flex-1">
@@ -331,7 +331,7 @@ export default function Home() {
                       layout="fill"
                       src={mem.img}
                       alt={mem.img}
-                      className="object-cover absolute"
+                      className="object-cover absolute pointer-events-none"
                     />
                   </div>
                 </ParallaxWrapper>
