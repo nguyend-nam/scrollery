@@ -388,7 +388,7 @@ export default function Home() {
             className="absolute bottom-0 right-0 w-full h-full bg-left bg-cover pointer-events-none"
             style={{ backgroundImage: `url(/bgjar-create-bg.svg)` }}
           />
-          <h2 className="!text-xl md:!text-2xl sticky top-[100px] text-slate-50">
+          <h2 className="!text-xl md:!text-2xl sticky top-[81px] md:top-[97px] text-slate-50">
             start
             <br />
             <span className="!text-3xl md:!text-4xl font-bold capitalize bg-gradient-to-r from-v2-green-dark via-v2-green-light to-v2-green-light !bg-clip-text text-transparent">
