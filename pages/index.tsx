@@ -121,7 +121,7 @@ export default function Home() {
                   Get started
                   <span className="w-6">
                     <Icon
-                      icon="gg:scroll-h"
+                      icon="streamline:interface-arrows-horizonal-scroll-point-move-scroll-horizonal"
                       className={`text-2xl ${isLoading ? "animate-spin" : ""}`}
                     />
                   </span>
@@ -399,7 +399,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-4 items-center flex-wrap flex-1 justify-center relative h-full z-10">
             <div className="flex flex-col items-start lg:items-end gap-4 flex-wrap w-full max-w-lg lg:w-max">
               <button
-                className="bg-v2-green-extraDark p-2 text-lg rounded-md text-white flex gap-2 items-center"
+                className="bg-gradient-to-r from-v2-green-extraDark to-v2-green-dark p-2 text-lg rounded-md text-white flex gap-2 items-center"
                 onClick={() => {
                   setIsLoading(true);
                   push("/introduction");
@@ -407,7 +407,7 @@ export default function Home() {
               >
                 Get started
                 <Icon
-                  icon="gg:scroll-h"
+                  icon="streamline:interface-arrows-horizonal-scroll-point-move-scroll-horizonal"
                   className={`text-2xl ${isLoading ? "animate-spin" : ""}`}
                 />
               </button>

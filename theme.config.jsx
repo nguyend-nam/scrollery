@@ -52,4 +52,8 @@ export default {
     ),
   },
   darkMode: false,
+  nextThemes: {
+    defaultTheme: "light",
+    forcedTheme: "light",
+  },
 };
