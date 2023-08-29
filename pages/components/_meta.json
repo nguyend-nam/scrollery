@@ -2,5 +2,6 @@
     "linearly-scaled-wrapper": "LinearlyScaledWrapper",
     "parallax-wrapper": "ParallaxWrapper",
     "rotate-wrapper": "RotateWrapper",
-    "stacked-wrapper": "StackedWrapper"
+    "stacked-wrapper": "StackedWrapper",
+    "vertical-flip-wrapper": "VerticalFlipWrapper"
 }

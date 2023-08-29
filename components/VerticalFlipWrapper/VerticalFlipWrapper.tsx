@@ -6,21 +6,23 @@ interface Props {
   style?: CSSProperties;
   className?: string;
   threshold?: number;
-  layer: number;
+  disableFlipUp?: boolean;
+  disableFlipDown?: boolean;
 }
 
-export const ParallaxWrapper = ({
+export const VerticalFlipWrapper = ({
   children,
   style,
   className,
-  threshold = 200,
-  layer = 0,
+  threshold = 0,
+  disableFlipUp = false,
+  disableFlipDown = false,
 }: Props) => {
   const ref = createRef<HTMLDivElement>();
   const [offset, setOffset] = useState<number>(0);
   const [viewHeight, setViewHeight] = useState<number>(0);
 
-  const handleScroll = useCallback(() => {
+  const handleOffset = useCallback(() => {
     if (ref?.current) {
       const yTop = ref?.current?.getBoundingClientRect().top;
       const yBottom = ref?.current?.getBoundingClientRect().bottom;
@@ -31,20 +33,32 @@ export const ParallaxWrapper = ({
       ) {
         const value = (yBottom + yTop) / 2;
         if (value <= viewHeight + threshold && value >= -threshold) {
-          setOffset((value / (viewHeight / 2) - 1) * 12 * layer);
+          setOffset((value / (viewHeight / 2) - 1) * 60);
+          if (disableFlipDown && value < viewHeight / 2) {
+            setOffset(0);
+          }
+          if (disableFlipUp && value > viewHeight / 2) {
+            setOffset(0);
+          }
+        } else {
+          if (value > viewHeight + threshold) {
+            setOffset(disableFlipUp ? 0 : 60);
+          } else if (value < -viewHeight) {
+            setOffset(disableFlipDown ? 0 : -60);
+          }
         }
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ref, viewHeight]);
+  }, [ref, viewHeight, disableFlipUp, disableFlipDown]);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleOffset);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleOffset);
     };
-  }, [handleScroll]);
+  }, [handleOffset]);
 
   useEffect(() => {
     setTimeout(() => window.scrollBy({ left: 0, top: 0.5 }));
@@ -55,7 +69,7 @@ export const ParallaxWrapper = ({
   return (
     <div
       style={{
-        transform: `translateY(${offset}px)`,
+        transform: `perspective(1400px) rotateX(${offset}deg)`,
         ...style,
       }}
       ref={ref}

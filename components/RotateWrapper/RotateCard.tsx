@@ -4,6 +4,7 @@ import {
   useState,
   ReactNode,
   CSSProperties,
+  useCallback,
 } from "react";
 import { useIsMdScreenSize } from "../../hooks/useIsMdScreenSize";
 
@@ -36,18 +37,26 @@ export const RotateCard = ({
   const [viewWidth, setViewWidth] = useState<number>(0);
   const isMd = useIsMdScreenSize();
 
-  useEffect(() => {
-    if (window && ref?.current) {
-      window.addEventListener("scroll", () => {
-        const y = ref?.current?.getBoundingClientRect().bottom;
-        if (typeof y === "number") {
-          setOffset(y);
-        }
-      });
+  const handleScroll = useCallback(() => {
+    if (ref?.current) {
+      const y = ref?.current?.getBoundingClientRect().bottom;
+      if (typeof y === "number") {
+        setOffset(y);
+      }
     }
-  }, [ref, setOffset]);
+  }, [ref]);
 
   useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
+  useEffect(() => {
+    setTimeout(() => window.scrollBy({ left: 0, top: 0.5 }));
+    setTimeout(() => window.scrollBy({ left: 0, top: -0.5 }), 10);
     setViewHeight(window.innerHeight);
     setViewWidth(window.innerWidth);
   }, []);

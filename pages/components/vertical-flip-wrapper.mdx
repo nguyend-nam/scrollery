@@ -1,0 +1,97 @@
+import { Tab, Tabs, Steps, Cards, Card } from "nextra-theme-docs";
+import { Icon } from "@iconify/react";
+
+# VerticalFlipWrapper
+
+## Example
+
+<iframe
+  src="/examples/vertical-flip-wrapper"
+  height={500}
+  width="100%"
+  className="mt-6 mb-6 rounded-xl border border-slate-200"
+/>
+
+<Tabs items={["index.tsx", "styles.css"]}>
+  <Tab>
+   
+```javascript filename="index.tsx" copy
+import { VerticalFlipWrapper } from "@nguyend-nam/scrollery-ts";
+import "./styles.css";
+
+export default function VerticalFlipWrapperDemo() {
+  return (
+    <div className="layout">
+      <h1 className="heading">
+        <code>VerticalFlipWrapper</code>
+      </h1>
+
+      <div className="message">
+        <p>Start scrolling</p>
+      </div>
+
+      <div className="container">
+        <VerticalFlipWrapper className="item-wrapper">
+          <div className="item" />
+        </VerticalFlipWrapper>
+      </div>
+    </div>
+  );
+}
+```
+
+  </Tab>
+  <Tab>
+
+```css filename="styles.css" copy
+.layout {
+  padding: 32px;
+}
+
+.heading {
+  color: #018383;
+  margin-bottom: 100px;
+}
+
+.message {
+  text-align: center;
+  color: #0dbba5;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  height: 1500px;
+}
+
+.item-wrapper {
+  width: calc(80vw);
+  height: 70vh;
+}
+
+.item {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #0dbba5;
+}
+```
+
+  </Tab>
+</Tabs>
+
+## API
+
+| Name                | Type            | Default | Description                                                                                          | Required |
+| ------------------- | --------------- | ------- | ---------------------------------------------------------------------------------------------------- | -------- |
+| **children**        | `JSX.Element`   |         | The single component for the content you want to animate on scroll                                   | &check;  |
+| **style**           | `CSSProperties` |         | The styles you want to apply to the wrapper                                                          |          |
+| **className**       | `string`        |         | The classes you want to apply to the wrapper                                                         |          |
+| **threshold**       | `number`        | `0`     | The threshold (in pixels) to start applying the transition when the content enter/leave the viewport |          |
+| **disableFlipUp**   | `boolean`       | `false` | Prevent the content from being flipped up                                                            |          |
+| **disableFlipDown** | `boolean`       | `false` | Prevent the content from being flipped down                                                          |          |

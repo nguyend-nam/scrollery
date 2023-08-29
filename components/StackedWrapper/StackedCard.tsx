@@ -5,6 +5,7 @@ import {
   createRef,
   MutableRefObject,
   ReactNode,
+  useCallback,
 } from "react";
 import { useIsOnScreen } from "../../hooks/useIsOnScreen";
 import { CSSProperties } from "react";
@@ -45,55 +46,52 @@ export const StackedCard = ({
     elRefs.current[index] = ref;
   }, [elRefs, index, ref]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isVisible) {
-        const currentRect = ref.current?.getBoundingClientRect();
-        if (index > 0 && index < childrenAmount - 1) {
-          const prevRect =
-            elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
-          const nextRect =
-            elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
+  const handleScroll = useCallback(() => {
+    if (isVisible) {
+      const currentRect = ref.current?.getBoundingClientRect();
+      if (index > 0 && index < childrenAmount - 1) {
+        const prevRect =
+          elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
+        const nextRect =
+          elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
 
-          if (currentRect && prevRect && nextRect) {
-            if (currentRect.top < prevRect.bottom) {
-              if (!(nextRect.top < currentRect.bottom)) {
-                setVisibleAmount(index + 1);
-              }
-            } else {
-              setVisibleAmount(index);
+        if (currentRect && prevRect && nextRect) {
+          if (currentRect.top < prevRect.bottom) {
+            if (!(nextRect.top < currentRect.bottom)) {
+              setVisibleAmount(index + 1);
             }
-          }
-        } else if (index === 0) {
-          const nextRect =
-            elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
-          if (currentRect && nextRect && nextRect.top > currentRect.bottom) {
-            setVisibleAmount(1);
-          }
-        } else {
-          const prevRect =
-            elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
-          if (currentRect && prevRect && currentRect.top < prevRect.bottom) {
-            setVisibleAmount(childrenAmount);
+          } else {
+            setVisibleAmount(index);
           }
         }
+      } else if (index === 0) {
+        const nextRect =
+          elRefs.current?.[index + 1]?.current?.getBoundingClientRect();
+        if (currentRect && nextRect && nextRect.top > currentRect.bottom) {
+          setVisibleAmount(1);
+        }
+      } else {
+        const prevRect =
+          elRefs.current?.[index - 1]?.current?.getBoundingClientRect();
+        if (currentRect && prevRect && currentRect.top < prevRect.bottom) {
+          setVisibleAmount(childrenAmount);
+        }
       }
-    };
+    }
+  }, [childrenAmount, elRefs, index, isVisible, ref, setVisibleAmount]);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [
-    childrenAmount,
-    elRefs,
-    index,
-    isVisible,
-    ref,
-    setVisibleAmount,
-    visibleAmount,
-  ]);
+  }, [handleScroll]);
+
+  useEffect(() => {
+    setTimeout(() => window.scrollBy({ left: 0, top: 0.5 }));
+    setTimeout(() => window.scrollBy({ left: 0, top: -0.5 }), 10);
+  }, []);
 
   return (
     <div

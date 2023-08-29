@@ -1,4 +1,11 @@
-import { useEffect, createRef, useState, RefObject, ReactNode } from "react";
+import {
+  useEffect,
+  createRef,
+  useState,
+  RefObject,
+  ReactNode,
+  useCallback,
+} from "react";
 import { CSSProperties } from "react";
 
 interface Props {
@@ -26,44 +33,46 @@ export const LinearlyScaledCard = ({
 
   const [viewHeight, setViewHeight] = useState<number>(0);
 
-  useEffect(() => {
+  const handleOffset = useCallback(() => {
     const currentRef = ref?.current;
-    const handleOffset = () => {
-      if (window && currentRef) {
-        const yTop = ref?.current?.getBoundingClientRect().top;
-        const yBottom = ref?.current?.getBoundingClientRect().bottom;
-        if (typeof yTop === "number" && typeof yBottom === "number") {
-          setOffset((yTop + yBottom) / 2);
-        }
+    if (currentRef) {
+      const yTop = ref?.current?.getBoundingClientRect().top;
+      const yBottom = ref?.current?.getBoundingClientRect().bottom;
+      if (typeof yTop === "number" && typeof yBottom === "number") {
+        setOffset((yTop + yBottom) / 2);
       }
-    };
+    }
+  }, [ref]);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleOffset);
 
     return () => {
       window.removeEventListener("scroll", handleOffset);
     };
-  }, [ref, setOffset]);
+  }, [handleOffset]);
+
+  const handleContainerOffset = useCallback(() => {
+    const currentRef = ref?.current;
+    if (currentRef) {
+      const y = headerRef?.current?.getBoundingClientRect().top;
+      if (typeof y === "number") {
+        setContainerOffset(y);
+      }
+    }
+  }, [headerRef, ref]);
 
   useEffect(() => {
-    const currentRef = ref?.current;
-    const handleContainerOffset = () => {
-      if (window && currentRef) {
-        const y = headerRef?.current?.getBoundingClientRect().top;
-        if (typeof y === "number") {
-          setContainerOffset(y);
-        }
-      }
-    };
-
     window.addEventListener("scroll", handleContainerOffset);
 
     return () => {
       window.removeEventListener("scroll", handleContainerOffset);
     };
-  }, [headerRef, ref, setContainerOffset]);
+  }, [handleContainerOffset]);
 
   useEffect(() => {
+    setTimeout(() => window.scrollBy({ left: 0, top: 0.5 }));
+    setTimeout(() => window.scrollBy({ left: 0, top: -0.5 }), 10);
     setViewHeight(window.innerHeight);
   }, []);
 
